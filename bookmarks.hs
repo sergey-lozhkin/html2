@@ -200,6 +200,8 @@ main = do
             "https://free.cofree.io/2020/09/01/type-errors/",
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
+            "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
+            "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
             e_ ]
         div_ $ do
           h4_ "Done"
