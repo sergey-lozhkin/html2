@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Function: onload</title>
+    <script>
+      // <does-not-exec>
+      document.body.style.margin = "20rem";
+      alert ("head script");
+      // </does-not-exec>
+
+      function onLoad1() {
+        document.body.innerHTML += "<h1 style='font-size:96pt'>Hello World!</h1>";
+        alert("Page is loaded 1");
+      }
+    </script>
+  </head>
+  <body onload="onLoad1()">
+    <h1>Hello World!</h1>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // document.body.style.margin = "20rem";
+      // alert ("head2 script");
+    </script>
+  </head>
+  <body>
+    <p>This example uses the HTML DOM to assign an "onload" event to an iframe element.</p>
+    <iframe id="frame1" src="003.html"></iframe>
+    <p id="demo1"></p>
+    <script>
+      // document.getElementById("frame1").onload = function() {onLoad2()};
+      document.getElementById("frame1").onload = onLoad2;
+
+      function onLoad2() {
+        document.getElementById("demo1").innerHTML = "Iframe is loaded 2";
+        alert("Page is loaded 2");
+      }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // document.body.style.margin = "20rem";
+      // alert ("head3 script");
+    </script>
+  </head>
+  <body>
+    <p>This example uses the addEventListener() method to attach a "load" event to an iframe element.</p>
+    <iframe id="frame2" src="003.html"></iframe>
+    <p id="demo2"></p>
+    <script>
+      document.getElementById("frame2").addEventListener("load", onLoad3);
+
+      function onLoad3() {
+        document.getElementById("demo2").innerHTML = "Iframe is loaded 3";
+        alert("Page is loaded 3");
+      }
+    </script>
+  </body>
+</html>
