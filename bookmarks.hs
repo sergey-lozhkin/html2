@@ -30,9 +30,9 @@ main = do
       body_ $ do
         div_ $ do
           h3_ "Now"
-          link2 "Draft --- " "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           links [
-              "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+              "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
+            , "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
             ]
         div_ $ do
           h3_ "Learn"
@@ -44,7 +44,6 @@ main = do
             , "https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload"
             , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"
             , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout"
-            , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
             , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
             , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout"
             , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby"
@@ -81,5 +80,5 @@ main = do
             ]
         div_ $ do
           h3_ "Done"
-          links [
-            ]
+          links []
+          link2 "!!! Draft !!! " "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
