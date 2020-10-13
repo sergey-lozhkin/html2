@@ -31,7 +31,7 @@ main = do
         meta_ [charset_ "utf-8"]
         title_ "Bookmarks"
         style_ $
-          "body { font-size: 12pt; font-family: Arial; line-height: 1.2; }"
+          "body { font-size: 12pt; font-family: Arial; line-height: 1.5; }"
       body_ $ do
         div_ $ do
           h3_ "Now"
