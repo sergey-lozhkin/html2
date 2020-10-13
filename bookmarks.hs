@@ -6,6 +6,7 @@ module Main where
 import Prelude hiding (writeFile)
 import Lucid
 import Lucid.Base
+import Data.List (sort)
 import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 import Control.Monad (mapM_)
@@ -15,11 +16,11 @@ zz = "" :: Text
 link :: Text -> Text -> Html ()
 link url text = div_ [style_ "padding: .1em"] $ a_ [href_ url] $ toHtml text
 
-link2 :: Text -> Text -> Html ()
-link2 text url = link url $ text <> url
+queuedLinks :: [Text] -> Html ()
+queuedLinks = mapM_ (\url -> link url url)
 
-links :: [Text] -> Html ()
-links = mapM_ (\url -> link url url)
+orderedLinks :: [Text] -> Html ()
+orderedLinks = mapM_ (\url -> link url url) . sort
 
 main :: IO ()
 main = do
@@ -34,23 +35,26 @@ main = do
       body_ $ do
         div_ $ do
           h3_ "Now"
-          links [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
+          queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Overflow",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
             zz ]
         div_ $ do
           h3_ "Queue"
-          links [
+          queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             "https://www.google.com/search?q=html+position+property",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
             "https://www.google.com/search?q=html+anonymous+box",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
             "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode",
             zz ]
         div_ $ do
           h3_ "Learn"
-          links [
+          orderedLinks [
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
             "http://www.simplehtmlguide.com/text.php",
@@ -77,6 +81,8 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
             "https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context",
@@ -89,6 +95,7 @@ main = do
             "https://javascript.info/dom-attributes-and-properties",
             "https://jurosh.com/blog/css-float-table-flex-grid",
             "https://purecss.io/grids/",
+            "https://specifishity.com/",
             "https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css",
             "https://stackoverflow.com/questions/23352182/responsive-thumbnail-grid-equal-spacing/23352245#23352245",
             "https://stackoverflow.com/questions/2359443/making-a-piece-of-text-non-breaking",
@@ -156,7 +163,7 @@ main = do
             zz ]
         div_ $ do
           h3_ "Sites"
-          links [
+          orderedLinks [
             "http://www.simplehtmlguide.com/",
             "https://css-tricks.com/",
             "https://developer.mozilla.org/en-US/",
@@ -166,7 +173,7 @@ main = do
             zz ]
         div_ $ do
           h3_ "Tools"
-          links [
+          orderedLinks [
             "http://www.jsfuck.com/",
             "https://jquery.com/",
             "https://jsconsole.com/",
@@ -174,7 +181,7 @@ main = do
             zz ]
         div_ $ do
           h3_ "Style"
-          links [
+          orderedLinks [
             "https://artagnon.com/articles/pl",
             "https://free.cofree.io/2020/09/01/type-errors/",
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
@@ -182,7 +189,8 @@ main = do
             zz ]
         div_ $ do
           h3_ "Done"
-          links [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
+          orderedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
             zz ]
