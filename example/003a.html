@@ -43,10 +43,9 @@
     </style>
     <script>
       function onload() {
-        // var e = document.getElementById("d0");
-        // e.style.height = "100px";
-        // e.style.width = "800px";
-        // e.innerHTML += "[" + e.offsetWidth + ", " + e.offsetHeight + "]";
+        var e = document.getElementById("d0");
+        var r = document.body.getBoundingClientRect();
+        e.innerHTML += "[" + r.width + ", " + r.height + "]";
       }
     </script>
   </head>
