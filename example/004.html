@@ -23,7 +23,7 @@
       // have to invent a name for this
       // '.pid' is not really super-unique
       // reference semantics
-      document.pid = document.getElementById("pid");
+      pid = document.getElementById("pid");
     </script>
 
     <script>
@@ -34,8 +34,8 @@
       document.getElementById("p1").innerHTML += " !!!";
       document.getElementById("p2").innerHTML += " !!!";
 
-      document.pid.innerHTML = "!!! Yay !!!"
-      // document.body.innerHTML = document.pid.innerHTML; // works as well !!!
+      pid.innerHTML = "!!! Yay !!!"
+      // document.body.innerHTML = pid.innerHTML; // works as well !!!
 
       document.getElementById("btn1p").style.display = "none";
       document.getElementById("btn1").style.display = "none";
@@ -44,6 +44,7 @@
   </body>
 </html>
 
+<!-- visibility -->
 <!DOCTYPE html>
   <html>
   <head>
@@ -68,7 +69,7 @@
   </body>
 </html>
 
-<!-- third example -->
+<!-- toggle visibility -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -100,6 +101,22 @@
         } else {
           x.style.visibility = 'hidden';
         }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- report visibility -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="myP" style="visibility:hidden;">This is a p element.</p>
+
+    <button type="button" onclick="myFunction()">Return the visibility type of p</button>
+
+    <script>
+      function myFunction() {
+        alert(document.getElementById("myP").style.visibility);
       }
     </script>
   </body>
