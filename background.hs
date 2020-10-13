@@ -36,3 +36,10 @@ main = do
             <>  "background:pink;"
             <>  "background-clip:padding-box;"] $ do
           "Hola, Mundo!"
+        -- div_ [class_ "nil", style_ "position: relative; overflow: hidden; width: 180px; height: 45px;"] $ do
+        --   div_ [class_ "nil", style_ "margin: auto; width: 180px; height: 23px; position: absolute; left: 50%; top: 50%; transform: translateX(-90px) translateY(-11px);"] $ do
+        --     div_ [class_ "nil", style_ "width: 15px; height: 1px; float: left;"] ""
+        --     div_ [class_ "nil", style_ "visibility: visible; text-align: center; width: 150px; height: 23px; float: left;"] $ do
+        --       span_ [class_ "nil", style_ "color:rgb(48, 48, 48);font-size:17px;font-family:'Roboto Light';"] $ do
+        --         a_ [class_ "nil", href_ "SupportUsDonations.html"] "Support & Volunteer"
+        --     div_ [class_ "nil", style_ "width: 15px; height: 1px; float: left;"] ""
