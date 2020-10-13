@@ -9,9 +9,6 @@ import Lucid.Base
 import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 
-nil :: Html ()
-nil = ""
-
 dataRide_ :: Text -> Attribute
 dataRide_ = makeAttribute "data-ride"
 
@@ -47,8 +44,8 @@ main = do
           ".carousel-inner>.item>img{width:100%;height:100%;}"
       body_ [class_ "zero-border"] $ do
         noscript_ "Please, enable JavaScript"
-        script_ [type_ "text/javascript", src_ "js/jquery.min.js"] nil
-        script_ [type_ "text/javascript", src_ "js/bootstrap.min.js"] nil
+        script_ [type_ "text/javascript", src_ "js/jquery.min.js"] ""
+        script_ [type_ "text/javascript", src_ "js/bootstrap.min.js"] ""
 
         div_ [id_ "homeCarousel", class_ "carousel slide zero-border", dataRide_ "carousel", dataInterval_ "3000"] $ do
           div_ [class_ "carousel-inner zero-border"] $ do
@@ -67,5 +64,5 @@ main = do
             div_ [class_ "item zero-border"] $ do
               a_ [href_ "EventDecorator.html", class_ "zero-border"] $ do
                 img_ [src_ "assets/banner-decorator-ph3.jpg", class_ "zero-border"]
-          a_ [class_ "left carousel-control zero-border", href_ "#homeCarousel", dataSlide_ "prev"] nil
-          a_ [class_ "right carousel-control zero-border", href_ "#homeCarousel", dataSlide_ "next"] nil
+          a_ [class_ "left carousel-control zero-border", href_ "#homeCarousel", dataSlide_ "prev"] ""
+          a_ [class_ "right carousel-control zero-border", href_ "#homeCarousel", dataSlide_ "next"] ""
