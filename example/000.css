@@ -43,11 +43,3 @@ body {
 p:not(.intro) {
   text-align: center;
 }
-
-$("#content").on("click", function() {
-  $("*").css("box-sizing", $(this).text());
-});
-
-$("#border").on("click", function() {
-  $("*").css("box-sizing", $(this).text());
-});
