@@ -233,6 +233,7 @@ main = do
             "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
             "https://github.com/unimonkiez/self-adjusting-interval",
             "https://chrispenner.ca/posts/traversal-systems",
+            "https://www.youtube.com/watch?v=LZTWYdU4nKk",
             e_ ]
         div_ $ do
           h4_ "Style"
@@ -246,6 +247,7 @@ main = do
             "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             "https://ihp.digitallyinduced.com/",
+            "https://quuxplusone.github.io/blog/2020/10/12/grab-bag/",
             e_ ]
         div_ $ do
           h4_ "Done"
