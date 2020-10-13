@@ -143,6 +143,7 @@ main = do
             "https://www.w3schools.com/jsref/event_onmouseover.asp",
             "https://www.w3schools.com/jsref/obj_window.asp",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
             zz ]
         div_ $ do
           h3_ "Sites"
