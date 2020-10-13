@@ -3,12 +3,35 @@
   <head>
     <meta charset="utf-8">
     <style>
+      html, body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
       ::marker {
         content: "---";
+      }
+      p {
+        background-color: lightblue;
       }
     </style>
   </head>
   <body>
+    <div style="margin: 0rem;
+                padding: 2rem;
+                border: 0;
+                position: absolute;
+                bottom: 0;
+                /*height: auto;*/
+                background-clip: border-box;
+                background-color: rebeccapurple;
+                color: #eee">
+      Absolute bottom
+    </div>
     Anonymous <em>text</em> box
     <p>Paragraph</p>
     Anonymous <em>text</em> box

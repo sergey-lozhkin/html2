@@ -36,6 +36,8 @@ main = do
           h3_ "Now"
           links [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             "https://www.google.com/search?q=html+anonymous+box",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
             "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
@@ -44,6 +46,7 @@ main = do
         div_ $ do
           h3_ "Learn"
           links [
+            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
             "https://www.google.com/search?q=html+li+marker",
             "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
