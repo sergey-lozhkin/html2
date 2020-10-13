@@ -14,13 +14,16 @@ import Control.Monad (mapM_)
 e_ = "" :: Text
 
 link :: Text -> Text -> Html ()
-link url text = div_ [style_ "padding: .1em"] $ a_ [href_ url] $ toHtml text
+link url text = div_ [class_ "item"] $ a_ [href_ url] $ toHtml text
 
 queuedLinks :: [Text] -> Html ()
 queuedLinks = mapM_ (\url -> link url url)
 
 orderedLinks :: [Text] -> Html ()
 orderedLinks = mapM_ (\url -> link url url) . sort
+
+notes :: [Text] -> Html ()
+notes = mapM_ (div_ [class_ "item"] . toHtml)
 
 main :: IO ()
 main = do
@@ -32,17 +35,25 @@ main = do
         title_ "Bookmarks"
         link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
         style_ $
-          "body { font-size: 12pt; font-family: Arial; line-height: 1.5; }"
+          "body { font-size: 12pt; font-family: Arial; line-height: 1.5; }" <>
+          ".item { margin-left: 2em; }" <>
+          "h4 { margin-bottom: 0; }"
       body_ $ do
         div_ $ do
-          h3_ "Now"
+          h4_ "Now"
           queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             e_ ]
         div_ $ do
-          h3_ "Queue"
+          h4_ "Notes"
+          notes [
+            "How to: html page in email",
+            "How to: open a link in new tab",
+            e_ ]
+        div_ $ do
+          h4_ "Queue"
           queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context",
             "https://www.google.com/search?q=html+position+property",
@@ -56,7 +67,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode",
             e_ ]
         div_ $ do
-          h3_ "Learn"
+          h4_ "Learn"
           orderedLinks [
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
@@ -165,7 +176,7 @@ main = do
             "https://www.w3schools.com/jsref/obj_window.asp",
             e_ ]
         div_ $ do
-          h3_ "Sites"
+          h4_ "Sites"
           orderedLinks [
             "http://www.simplehtmlguide.com/",
             "https://css-tricks.com/",
@@ -175,7 +186,7 @@ main = do
             "https://popper.js.org/",
             e_ ]
         div_ $ do
-          h3_ "Tools"
+          h4_ "Tools"
           orderedLinks [
             "http://www.jsfuck.com/",
             "https://jquery.com/",
@@ -183,7 +194,7 @@ main = do
             "https://jsfiddle.net/",
             e_ ]
         div_ $ do
-          h3_ "Style"
+          h4_ "Style"
           orderedLinks [
             "https://artagnon.com/articles/pl",
             "https://free.cofree.io/2020/09/01/type-errors/",
@@ -191,7 +202,7 @@ main = do
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             e_ ]
         div_ $ do
-          h3_ "Done"
+          h4_ "Done"
           orderedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
