@@ -9,21 +9,10 @@ import Lucid.Base
 import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 
-dataRide_ :: Text -> Attribute
-dataRide_ = makeAttribute "data-ride"
-
-dataInterval_ :: Text -> Attribute
-dataInterval_ = makeAttribute "data-interval"
-
-dataSlide_ :: Text -> Attribute
-dataSlide_ = makeAttribute "data-slide"
-
 main :: IO ()
 main = do
   writeFile "html/background.html" $ renderText $ do
-    doctype_
-    -- html_ [lang_ "en"] $ do
-    html_ $ do
+    doctypehtml_ $ do
       head_ $ do
         title_ "Background"
         meta_ [charset_ "UTF-8"]
