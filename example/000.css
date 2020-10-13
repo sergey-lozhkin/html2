@@ -1,8 +1,9 @@
-<!-- reset -->
+/* default border-box */
 *, *:before, *:after {
   box-sizing: border-box;
 }
-<!-- reset universal -->
+
+/* universal reset */
 html {
   box-sizing: border-box;
 }
@@ -10,26 +11,6 @@ html {
   box-sizing: inherit;
 }
 
-<!-- html -->
-<div class="buttons">
-  <p class="intro">Click the <code>border-box</code> button to fix the layout with the power of Box Sizing!</p>
-  <button id="content">content-box</button>
-  <button id="border">border-box</button>
-</div>
-<div class="parent">
-  <p>Parent div with 50% width.</p>
-  <div class="child">
-    <p>Child div with 90% width, 4px black border, and 20% padding </p>
-  </div>
-  <div class="twins">
-    <p>Child div with 50% width, 4px black border, and 1em padding</p>
-  </div>
-  <div class="twins">
-    <p>Child div with 50% width, 4px black border, and 1em padding</p>
-  </div>
-</div>
-
-<!-- css -->
 .parent {
   width: 50%;
   border: 5px solid #E18728;
@@ -59,7 +40,6 @@ body {
   margin-bottom: .5em;
 }
 
-<!-- javascript -->
 p:not(.intro) {
   text-align: center;
 }
