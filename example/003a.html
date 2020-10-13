@@ -9,20 +9,28 @@
         margin: 0;
         border-width: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
       }
       div {
         margin: 1rem;
         border-width: 0;
         padding: 0;
+        /* uncomment the next line to see all margins */
+        /*border: .1px solid darkgray;*/
       }
       h1 {
-        margin: 0;
+        margin: 1rem 0;
         border-width: 0;
         padding: 0;
+        /* uncomment the next line to see all margins */
+        /*border: .1px solid darkgray;*/
       }
       p {
-        margin: 1rem; /* margins collapse vertically, the bigger wins */
-        border: .1px solid darkgray; /* ultra thin line */
+        margin: 1rem;
+        border: .1px solid darkgray;
         padding: 1rem;
         background: lightgray;
         background-clip: content-box;
@@ -31,18 +39,30 @@
   </head>
   <body>
     <div>
+      <!-- h1.margin-top collapses with parent div.margin-top -->
       <h1>Basic document flow</h1>
+      <!-- p.margin-top collapses with previous h1.margin-bottom -->
       <p>
         I am a basic block level element. My adjacent block level elements sit on new lines below me.
       </p>
+      <!-- p.margin-top collapses with previous p.margin-bottom -->
       <p>
         By default we span 100% of the width of our parent element, and we are as tall as our child content.
         Our total width and height is our content + padding + border width/height.
       </p>
+      <!-- p.margin-top collapses with previous p.margin-bottom -->
       <p>
         We are separated by our margins.
         Because of margin collapsing, we are separated by the width of one of our margins, not both.
       </p>
+      <!-- previous p.margin-bottom collapses with parent div.margin-bottom -->
+    </div>
+    <!-- div.margin-top collapses with previous div.margin-boottom -->
+    <div style="border: 0.1px solid darkgray;
+                padding: 1rem;
+                background: lightgray;
+                background-clip: content-box;">
+      Text
     </div>
   </body>
 </html>
