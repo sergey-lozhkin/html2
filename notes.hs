@@ -1,3 +1,6 @@
+<link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
+<link rel="shortcut icon" type="image/png" href="html/assets/avatar-500x500.png">
+
 data Normal Line Height == 1.4285714285714286 em == 10/7
 
 data Property
