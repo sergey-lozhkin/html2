@@ -1,4 +1,5 @@
 data Learn = [Lots of advanced stuff on this site and IN its HTML/CSS/JS/SVG code]
+  https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html
   https://css-tricks.com/
   http://www.jsfuck.com/
   https://www.google.com/search?client=firefox-b-1-d&q=html+window+clientWidth
