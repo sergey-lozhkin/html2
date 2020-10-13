@@ -33,6 +33,7 @@ main = do
         div_ [class_ "nil", style_ "width:100%;height:100%;padding:2em;background:lightyellow"] $ do
           div_ [class_ "nil", style_
             $   "border:2em solid lightblue;"
+            <>  "border-radius: 2em;"
             <>  "padding:2em;"
             <>  "background:pink;"
             <>  "background-clip:padding-box;"
