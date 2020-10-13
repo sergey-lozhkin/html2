@@ -36,15 +36,14 @@ main = do
         div_ $ do
           h3_ "Now"
           queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Overflow",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
+            "https://www.google.com/search?q=html+position+property",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
             zz ]
         div_ $ do
           h3_ "Queue"
           queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
-            "https://www.google.com/search?q=html+position+property",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
             "https://www.google.com/search?q=html+anonymous+box",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
