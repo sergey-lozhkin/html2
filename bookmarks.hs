@@ -81,6 +81,7 @@ main = do
         div_ $ do
           h4_ "Learn"
           orderedLinks [
+            "https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d",
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
             "http://www.simplehtmlguide.com/text.php",
