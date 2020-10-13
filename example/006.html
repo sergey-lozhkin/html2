@@ -13,10 +13,16 @@
         document.body.innerHTML += "<h1 style='font-size:96pt'>Hello World!</h1>";
         alert("Page is loaded 1");
       }
+
+      function onUnload1() {
+        // does not work on firefox/chrome
+        // does it work at all?
+        alert ("Are you completely sure ???");
+      }
     </script>
   </head>
-  <body onload="onLoad1()">
-    <h1>Hello World!</h1>
+  <body onload="onLoad1()" onunload="onUnload1()">
+    <h1 onunload="onUnload1()">Hello World!</h1>
   </body>
 </html>
 
