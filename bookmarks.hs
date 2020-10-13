@@ -220,6 +220,7 @@ main = do
             "https://www.google.com/search?q=haskell+obelisk",
             "https://www.google.com/search?q=haskell+reflex",
             "https://www.google.com/search?q=html+sass",
+            "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
             e_ ]
         div_ $ do
           h4_ "Style"
