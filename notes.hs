@@ -16,6 +16,8 @@ data Learn = [Lots of advanced stuff on this site and IN its HTML/CSS/JS/SVG cod
   http://www.javascriptkit.com/dhtmltutors/customattributes.shtml
   https://www.google.com/search?client=firefox-b-1-d&q=%3C%3Fphp
   https://javascript.info/
+  https://www.google.com/search?client=firefox-b-1-d&q=htyml+textcontent
+  https://www.google.com/search?client=firefox-b-1-d&q=html+how+script+executed
 
 data TODO =
   WebSockets
