@@ -35,7 +35,12 @@ main = do
         title_ "Bookmarks"
         link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
         style_ $
-          "body { font-size: 12pt; font-family: Arial; line-height: 1.4285714285714286; }" <>
+          "body { " <>
+            "font-size: 12pt;" <>
+            "font-family: Helvetica, Arial;" <>
+            "font-weight: 300;" <>
+            "line-height: 1.4285714285714286;" <>
+          "}" <>
           ".item { margin-left: 2em; }" <>
           "h4 { margin-bottom: 0; }"
       body_ $ do
@@ -195,8 +200,8 @@ main = do
             "https://jsfiddle.net/",
             "https://www.google.com/search?q=html+sass",
             "https://chrisdone.com/posts/lucid2/",
-            "https://www.google.com/search?client=firefox-b-1-d&q=haskell+obelisk",
-            "https://www.google.com/search?client=firefox-b-1-d&q=haskell+reflex",
+            "https://www.google.com/search?q=haskell+obelisk",
+            "https://www.google.com/search?q=haskell+reflex",
             "https://dev.yorhel.nl/doc/funcweb",
             "https://trycatchchris.co.uk/hackagecompare/comparePackage/blaze-html/hamlet/heist/lucid/mustache",
             "https://jonreeve.com/2020/09/type-safe-blog/",
