@@ -35,11 +35,17 @@ main = do
         title_ "Bookmarks"
         link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
         style_ $
-          "body { " <>
+          "html, body { " <>
             "font-size: 12pt;" <>
             "font-family: Helvetica, Arial;" <>
             "font-weight: 300;" <>
             "line-height: 1.4285714285714286;" <>
+          "}" <>
+          "*, *:before, *:after {" <>
+            "font-size: inherit;" <>
+            "font-family: inherit;" <>
+            "font-weight: inherit;" <>
+            "line-height: inherit;" <>
           "}" <>
           ".item { margin-left: 2em; }" <>
           "h4 { margin-bottom: 0; font-weight: 400; }"
