@@ -1,0 +1,106 @@
+<!-- two htmls are concatenated together -->
+<!-- <head> of the second one is ignored; so it seems -->
+<!-- all htmls are in a single namespace -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First HTML</title>
+  </head>
+  <body>
+    <p id="p1">First</p>
+    <p id="p2">Second</p>
+
+    <p id="pid">I am a paragraph.</p>
+
+    <p id="btn1p">Click the button get the HTML content of the p element.</p>
+
+    <button id="btn1" onclick="myFunction1()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      // have to invent a name for this
+      // '.pid' is not really super-unique
+      // reference semantics
+      document.pid = document.getElementById("pid");
+    </script>
+
+    <script>
+    function myFunction1() {
+      var x = document.getElementById("pid").innerHTML;
+      document.getElementById("demo").innerHTML = "<div style='margin:3em;background:lightgray'>"+x+"</div>";
+
+      document.getElementById("p1").innerHTML += " !!!";
+      document.getElementById("p2").innerHTML += " !!!";
+
+      document.pid.innerHTML = "!!! Yay !!!"
+      // document.body.innerHTML = document.pid.innerHTML; // works as well !!!
+
+      document.getElementById("btn1p").style.display = "none";
+      document.getElementById("btn1").style.display = "none";
+    }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Second HTML</title>
+  </head>
+  <body>
+    <p id="myP1">This is some text.</p>
+    <p id="myP2">This is some text.</p>
+
+    <input type="button" onclick="demoDisplay()" value="Hide text with display property">
+    <input type="button" onclick="demoVisibility()" value="Hide text with visibility property">
+
+    <script>
+      function demoDisplay() {
+        document.getElementById("myP1").style.display = "none";
+      }
+
+      function demoVisibility() {
+        document.getElementById("myP2").style.visibility = "hidden";
+      }
+    </script>
+  </body>
+</html>
+
+<!-- third example -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #myDIV {
+        width: 500px;
+        height: 500px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <div id="myDIV">
+    This is my DIV element.
+    </div>
+
+    <p>Note that even though the element is hidden, it stays in its original position and size.</p>
+
+    <script>
+      function myFunction2()
+      {
+        var x = document.getElementById('myDIV');
+        if (x.style.visibility === 'hidden') {
+          x.style.visibility = 'visible';
+        } else {
+          x.style.visibility = 'hidden';
+        }
+      }
+    </script>
+  </body>
+</html>

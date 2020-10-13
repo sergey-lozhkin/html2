@@ -1,9 +1,13 @@
 'use strict';
-var Elm = {}; Elm.Native = {}; Elm.Native.Graphics = {};
-var ElmRuntime = {}; ElmRuntime.Render = {};
+var Elm = {};
+Elm.Native = {};
+Elm.Native.Graphics = {};
+var ElmRuntime = {};
+ElmRuntime.Render = {};
 
 Elm.Native.Basics = {};
-Elm.Native.Basics.make = function(elm) {
+Elm.Native.Basics.make = function (elm)
+{
   elm.Native = elm.Native || {};
   elm.Native.Basics = elm.Native.Basics || {};
   if (elm.Native.Basics.values) return elm.Native.Basics.values;
@@ -18,8 +22,7 @@ Elm.Native.Basics.make = function(elm) {
   function logBase(base,n) { return Math.log(n) / Math.log(base); }
   function min(a,b) { return Utils.cmp(a,b) < 0 ? a : b; }
   function max(a,b) { return Utils.cmp(a,b) > 0 ? a : b; }
-  function clamp(lo,hi,n) {
-      return Utils.cmp(n,lo) < 0 ? lo : Utils.cmp(n,hi) > 0 ? hi : n; }
+  function clamp(lo,hi,n) { return Utils.cmp(n,lo) < 0 ? lo : Utils.cmp(n,hi) > 0 ? hi : n; }
   function xor(a,b) { return a !== b; }
   function not(b) { return !b; }
   function isInfinite(n) { return n === Infinity || n === -Infinity }
@@ -63,226 +66,240 @@ Elm.Native.Basics.make = function(elm) {
 
   return elm.Native.Basics.values = basics;
 };
+
 Elm.Native.Bitwise = {};
-Elm.Native.Bitwise.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Bitwise = elm.Native.Bitwise || {};
-    if (elm.Native.Bitwise.values) return elm.Native.Bitwise.values;
+Elm.Native.Bitwise.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Bitwise = elm.Native.Bitwise || {};
+  if (elm.Native.Bitwise.values) return elm.Native.Bitwise.values;
 
-    function and(a,b) { return a & b; }
-    function or (a,b) { return a | b; }
-    function xor(a,b) { return a ^ b; }
-    function not(a) { return ~a; }
-    function sll(a,offset) { return a << offset; }
-    function sra(a,offset) { return a >> offset; }
-    function srl(a,offset) { return a >>> offset; }
+  function and(a,b) { return a & b; }
+  function or (a,b) { return a | b; }
+  function xor(a,b) { return a ^ b; }
+  function not(a) { return ~a; }
+  function sll(a,offset) { return a << offset; }
+  function sra(a,offset) { return a >> offset; }
+  function srl(a,offset) { return a >>> offset; }
 
-    return elm.Native.Bitwise.values = {
-        and: F2(and),
-        or : F2(or ),
-        xor: F2(xor),
-        complement: not,
-        shiftLeft           : F2(sll),
-        shiftRightArithmatic: F2(sra),
-        shiftRightLogical   : F2(srl),
-    };
-    
+  return elm.Native.Bitwise.values = {
+    and: F2(and),
+    or : F2(or ),
+    xor: F2(xor),
+    complement: not,
+    shiftLeft           : F2(sll),
+    shiftRightArithmatic: F2(sra),
+    shiftRightLogical   : F2(srl),
+  };
 };
+
 Elm.Native.Char = {};
-Elm.Native.Char.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Char = elm.Native.Char || {};
-    if (elm.Native.Char.values) return elm.Native.Char.values;
+Elm.Native.Char.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Char = elm.Native.Char || {};
+  if (elm.Native.Char.values) return elm.Native.Char.values;
 
-    function isBetween(lo,hi) { return function(chr) {
-	var c = chr.charCodeAt(0);
-	return lo <= c && c <= hi;
+  function isBetween(lo,hi) {
+    return function(chr) {
+      var c = chr.charCodeAt(0);
+      return lo <= c && c <= hi;
     };
-                              }
-    var isDigit = isBetween('0'.charCodeAt(0),'9'.charCodeAt(0));
-    var chk1 = isBetween('a'.charCodeAt(0),'f'.charCodeAt(0));
-    var chk2 = isBetween('A'.charCodeAt(0),'F'.charCodeAt(0));
+  }
 
-    return elm.Native.Char.values = {
-        fromCode : function(c) { return String.fromCharCode(c); },
-        toCode   : function(c) { return c.toUpperCase().charCodeAt(0); },
-        toUpper  : function(c) { return c.toUpperCase(); },
-        toLower  : function(c) { return c.toLowerCase(); },
-        toLocaleUpper : function(c) { return c.toLocaleUpperCase(); },
-        toLocaleLower : function(c) { return c.toLocaleLowerCase(); },
-        isLower    : isBetween('a'.charCodeAt(0),'z'.charCodeAt(0)),
-        isUpper    : isBetween('A'.charCodeAt(0),'Z'.charCodeAt(0)),
-        isDigit    : isDigit,
-        isOctDigit : isBetween('0'.charCodeAt(0),'7'.charCodeAt(0)),
-        isHexDigit : function(c) { return isDigit(c) || chk1(c) || chk2(c); }
-    };
+  var isDigit = isBetween('0'.charCodeAt(0),'9'.charCodeAt(0));
+  var chk1 = isBetween('a'.charCodeAt(0),'f'.charCodeAt(0));
+  var chk2 = isBetween('A'.charCodeAt(0),'F'.charCodeAt(0));
+
+  return elm.Native.Char.values = {
+    fromCode : function(c) { return String.fromCharCode(c); },
+    toCode   : function(c) { return c.toUpperCase().charCodeAt(0); },
+    toUpper  : function(c) { return c.toUpperCase(); },
+    toLower  : function(c) { return c.toLowerCase(); },
+    toLocaleUpper : function(c) { return c.toLocaleUpperCase(); },
+    toLocaleLower : function(c) { return c.toLocaleLowerCase(); },
+    isLower    : isBetween('a'.charCodeAt(0),'z'.charCodeAt(0)),
+    isUpper    : isBetween('A'.charCodeAt(0),'Z'.charCodeAt(0)),
+    isDigit    : isDigit,
+    isOctDigit : isBetween('0'.charCodeAt(0),'7'.charCodeAt(0)),
+    isHexDigit : function(c) { return isDigit(c) || chk1(c) || chk2(c); }
+  };
 };
+
 Elm.Native.Color = {};
-Elm.Native.Color.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Color = elm.Native.Color || {};
-    if (elm.Native.Color.values) return elm.Native.Color.values;
+Elm.Native.Color.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Color = elm.Native.Color || {};
+  if (elm.Native.Color.values) return elm.Native.Color.values;
 
-    var Utils = Elm.Native.Utils.make(elm);
+  var Utils = Elm.Native.Utils.make(elm);
 
-    function toCss(c) {
-        return (c._3 === 1)
-            ? ('rgb(' + c._0 + ', ' + c._1 + ', ' + c._2 + ')')
-            : ('rgba(' + c._0 + ', ' + c._1 + ', ' + c._2 + ', ' + c._3 + ')');
-    }
+  function toCss(c) {
+    return (c._3 === 1)
+      ? ('rgb(' + c._0 + ', ' + c._1 + ', ' + c._2 + ')')
+      : ('rgba(' + c._0 + ', ' + c._1 + ', ' + c._2 + ', ' + c._3 + ')');
+  }
 
-    function complement(rgb) {
-        var hsv = toHSV(rgb);
-        hsv.hue = (hsv.hue + 180) % 360;
-        return toRGB(hsv);
-    }
+  function complement(rgb) {
+    var hsv = toHSV(rgb);
+    hsv.hue = (hsv.hue + 180) % 360;
+    return toRGB(hsv);
+  }
 
-    function hsva(h,s,v,a) {
-        var degree = A2(Utils.mod, h * 180 / Math.PI, 360);
-        var clr = toRGB({hue:degree, saturation:s, value:v});
-        clr._3 = a;
-        return clr;
-    }
+  function hsva(h,s,v,a) {
+    var degree = A2(Utils.mod, h * 180 / Math.PI, 360);
+    var clr = toRGB({hue:degree, saturation:s, value:v});
+    clr._3 = a;
+    return clr;
+  }
 
-    function hsv(h,s,v) {
-        var degree = A2(Utils.mod, h * 180 / Math.PI, 360);
-        return toRGB({hue:degree, saturation:s, value:v});
-    }
+  function hsv(h,s,v) {
+    var degree = A2(Utils.mod, h * 180 / Math.PI, 360);
+    return toRGB({hue:degree, saturation:s, value:v});
+  }
 
-    function toHSV(rgb) {
-        var hsv = {};
-        var r = rgb._0 / 255.0, g = rgb._1 / 255.0, b = rgb._2 / 255.0;
-        var M = Math.max(r,g,b);
-        var m = Math.min(r,g,b);
-        var c = M - m;
+  function toHSV(rgb) {
+    var hsv = {};
+    var r = rgb._0 / 255.0, g = rgb._1 / 255.0, b = rgb._2 / 255.0;
+    var M = Math.max(r,g,b);
+    var m = Math.min(r,g,b);
+    var c = M - m;
 
-        var h = 0;
-             if (c === 0) { h = 0; }
-        else if (M === r) { h = ((g - b) / c) % 6; }
-        else if (M === g) { h = ((b - r) / c) + 2; }
-        else if (M === b) { h = ((r - g) / c) + 4; }
-        h *= 60;
+    var h = 0;
+         if (c === 0) { h = 0; }
+    else if (M === r) { h = ((g - b) / c) % 6; }
+    else if (M === g) { h = ((b - r) / c) + 2; }
+    else if (M === b) { h = ((r - g) / c) + 4; }
+    h *= 60;
 
-        return { value : M, hue : h, saturation : (M === 0 ? 0 : c / M) };
-    }
+    return { value : M, hue : h, saturation : (M === 0 ? 0 : c / M) };
+  }
 
-    function between(lo,hi,x) { return lo <= x && x < hi; }
-    function norm(n) { return Math.round(n*255); }
+  function between(lo,hi,x) { return lo <= x && x < hi; }
+  function norm(n) { return Math.round(n*255); }
 
-    function toRGB(hsv) {
-        var c = hsv.value * hsv.saturation;
-        var hue = hsv.hue / 60;
-        var x = c * (1 - Math.abs((hue % 2) - 1));
-        var r = 0, g = 0, b = 0;
-             if (between(0,1,hue)) { r = c; g = x; b = 0; }
-        else if (between(1,2,hue)) { r = x; g = c; b = 0; }
-        else if (between(2,3,hue)) { r = 0; g = c; b = x; }
-        else if (between(3,4,hue)) { r = 0; g = x; b = c; }
-        else if (between(4,5,hue)) { r = x; g = 0; b = c; }
-        else if (between(5,6,hue)) { r = c; g = 0; b = x; }
+  function toRGB(hsv) {
+    var c = hsv.value * hsv.saturation;
+    var hue = hsv.hue / 60;
+    var x = c * (1 - Math.abs((hue % 2) - 1));
+    var r = 0, g = 0, b = 0;
+         if (between(0,1,hue)) { r = c; g = x; b = 0; }
+    else if (between(1,2,hue)) { r = x; g = c; b = 0; }
+    else if (between(2,3,hue)) { r = 0; g = c; b = x; }
+    else if (between(3,4,hue)) { r = 0; g = x; b = c; }
+    else if (between(4,5,hue)) { r = x; g = 0; b = c; }
+    else if (between(5,6,hue)) { r = c; g = 0; b = x; }
 
-        var m = hsv.value - c;
-        return { ctor:"Color", _0:norm(r+m), _1:norm(g+m), _2:norm(b+m), _3:1 };
-    }
+    var m = hsv.value - c;
+    return { ctor:"Color", _0:norm(r+m), _1:norm(g+m), _2:norm(b+m), _3:1 };
+  }
 
-    return elm.Native.Color.values = {
-        hsva:F4(hsva),
-        hsv:F3(hsv),
-        complement:complement,
-        toCss:toCss
-    };
-
+  return elm.Native.Color.values = {
+    hsva:F4(hsva),
+    hsv:F3(hsv),
+    complement:complement,
+    toCss:toCss
+  };
 };
+
 Elm.Native.Date = {};
-Elm.Native.Date.make = function(elm) {
- elm.Native = elm.Native || {};
- elm.Native.Date = elm.Native.Date || {};
- if (elm.Native.Date.values) return elm.Native.Date.values;
+Elm.Native.Date.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Date = elm.Native.Date || {};
+  if (elm.Native.Date.values) return elm.Native.Date.values;
 
- var JS = Elm.JavaScript.make(elm);
- var Maybe = Elm.Maybe.make(elm);
+  var JS = Elm.JavaScript.make(elm);
+  var Maybe = Elm.Maybe.make(elm);
 
- function dateNow() { return new window.Date; }
- function readDate(str) {
-     var d = new window.Date(JS.fromString(str));
-     if (isNaN(d.getTime())) return Maybe.Nothing;
-     return Maybe.Just(d);
- }
+  function dateNow() { return new window.Date; }
+  function readDate(str) {
+    var d = new window.Date(JS.fromString(str));
+    if (isNaN(d.getTime())) return Maybe.Nothing;
+    return Maybe.Just(d);
+  }
 
- var dayTable = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
- var monthTable = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-		   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; 
+  var dayTable = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var monthTable = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
- return elm.Native.Date.values = {
-     read    : readDate,
-     year    : function(d) { return d.getFullYear(); },
-     month   : function(d) { return { ctor:monthTable[d.getMonth()] }; },
-     day     : function(d) { return d.getDate(); },
-     hour    : function(d) { return d.getHours(); },
-     minute  : function(d) { return d.getMinutes(); },
-     second  : function(d) { return d.getSeconds(); },
-     toTime  : function(d) { return d.getTime(); },
-     fromTime: function(t) { return new window.Date(t); },
-     dayOfWeek : function(d) { return { ctor:dayTable[d.getDay()] }; }
- };
-
+  return elm.Native.Date.values = {
+    read    : readDate,
+    year    : function(d) { return d.getFullYear(); },
+    month   : function(d) { return { ctor:monthTable[d.getMonth()] }; },
+    day     : function(d) { return d.getDate(); },
+    hour    : function(d) { return d.getHours(); },
+    minute  : function(d) { return d.getMinutes(); },
+    second  : function(d) { return d.getSeconds(); },
+    toTime  : function(d) { return d.getTime(); },
+    fromTime: function(t) { return new window.Date(t); },
+    dayOfWeek : function(d) { return { ctor:dayTable[d.getDay()] }; }
+  };
 };
+
 Elm.Native.Debug = {};
-Elm.Native.Debug.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Debug = elm.Native.Debug || {};
-    if (elm.Native.Debug.values) return elm.Native.Debug.values;
+Elm.Native.Debug.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Debug = elm.Native.Debug || {};
+  if (elm.Native.Debug.values) return elm.Native.Debug.values;
 
-    var show = Elm.Native.Show.make(elm).show;
+  var show = Elm.Native.Show.make(elm).show;
 
-    function log(tag,value) {
-        var msg = tag + ': ' + show(value);
-        var process = process || {};
-        if (process.stdout) {
-            process.stdout.write(msg);
-        } else {
-            console.log(msg);
-        }
-        return value;
+  function log(tag,value) {
+    var msg = tag + ': ' + show(value);
+    var process = process || {};
+    if (process.stdout) {
+      process.stdout.write(msg);
+    } else {
+      console.log(msg);
     }
+    return value;
+  }
 
-    return elm.Native.Debug.values = {
-        log: F2(log)
-    };
-    
+  return elm.Native.Debug.values = {
+    log: F2(log)
+  };
 };
+
 Elm.Native.Error = {};
-Elm.Native.Error.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Error = elm.Native.Error || {};
-    if (elm.Native.Error.values) return elm.Native.Error.values;
+Elm.Native.Error.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Error = elm.Native.Error || {};
+  if (elm.Native.Error.values) return elm.Native.Error.values;
 
-    var fromString = Elm.Native.JavaScript.make(elm).fromString;
+  var fromString = Elm.Native.JavaScript.make(elm).fromString;
 
-    function indent(lines) {
-        var msg = '';
-        for (var i = 0; i < lines.length; ++i) {
-            msg += '<br/>&nbsp; &nbsp; ' + lines[i];
-        }
-        return msg;
+  function indent(lines) {
+    var msg = '';
+    for (var i = 0; i < lines.length; ++i) {
+      msg += '<br/>&nbsp; &nbsp; ' + lines[i];
     }
+    return msg;
+  }
 
-    function Case(moduleName, span) { 
-	var msg = indent(['Non-exhaustive pattern match in case-expression.',
-                          'Make sure your patterns cover every case!']);
-	throw new Error('Runtime error in module ' + moduleName + ' (' + span + '):' + msg);
-    }
+  function Case(moduleName, span)
+  {
+    var msg = indent([
+      'Non-exhaustive pattern match in case-expression.',
+      'Make sure your patterns cover every case!']);
+    throw new Error('Runtime error in module ' + moduleName + ' (' + span + '):' + msg);
+  }
 
-    function If(moduleName, span) { 
-	var msg = indent(['Non-exhaustive pattern match in multi-way-if expression.',
-                          'It is best to use \'otherwise\' as the last branch of multi-way-if.']);
-	throw new Error('Runtime error in module ' + moduleName + ' (' + span + '):' + msg);
-    }
+  function If(moduleName, span)
+  {
+    var msg = indent([
+      'Non-exhaustive pattern match in multi-way-if expression.',
+      'It is best to use \'otherwise\' as the last branch of multi-way-if.']);
+      throw new Error('Runtime error in module ' + moduleName + ' (' + span + '):' + msg);
+  }
 
-    function raise(str) { throw new Error(fromString(str)); }
+  function raise(str) { throw new Error(fromString(str)); }
 
-    return elm.Native.Error.values = { Case: Case, If: If, raise: raise };
+  return elm.Native.Error.values = { Case: Case, If: If, raise: raise };
 };
+
 function F2(fun) {
   function wrapper(a) { return function(b) { return fun(a,b) } }
   wrapper.arity = 2;
@@ -383,8 +400,10 @@ function A9(fun,a,b,c,d,e,f,g,h,i) {
   return fun.arity === 9 ? fun.func(a,b,c,d,e,f,g,h,i)
                          : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
+
 Elm.Native.JavaScript = {};
-Elm.Native.JavaScript.make = function(elm) {
+Elm.Native.JavaScript.make = function(elm)
+{
   elm.Native = elm.Native || {};
   elm.Native.JavaScript = elm.Native.JavaScript || {};
   if (elm.Native.JavaScript.values) return elm.Native.JavaScript.values;
@@ -392,100 +411,102 @@ Elm.Native.JavaScript.make = function(elm) {
   var List = Elm.Native.List.make(elm);
   var Render = ElmRuntime.use(ElmRuntime.Render.Element);
 
-  function fromJS(v) {
-      var type = typeof v;
-      if (type === 'number' ) return v;
-      if (type === 'boolean') return v;
-      if (type === 'string' ) return v;
-      if (v instanceof Array) {
-          var arr = [];
-          var len = v.length;
-          for (var i = 0; i < len; ++i) {
-              var x = fromJS(v[i]);
-              if (x !== null) arr.push(x);
-          }
-          return List.fromArray(arr);
+  function fromJS(v)
+  {
+    var type = typeof v;
+    if (type === 'number' ) return v;
+    if (type === 'boolean') return v;
+    if (type === 'string' ) return v;
+    if (v instanceof Array) {
+      var arr = [];
+      var len = v.length;
+      for (var i = 0; i < len; ++i) {
+        var x = fromJS(v[i]);
+        if (x !== null) arr.push(x);
       }
-      if (type === 'object') {
-          var rec = { _:{} };
-          for (var f in v) {
-              var x = fromJS(v[f]);
-              if (x !== null) rec[f] = x;
-          }
-          return rec;
+      return List.fromArray(arr);
+    }
+    if (type === 'object') {
+      var rec = { _:{} };
+      for (var f in v) {
+        var x = fromJS(v[f]);
+        if (x !== null) rec[f] = x;
       }
-      return null;
+      return rec;
+    }
+    return null;
   }
 
-  function toJS(v) {
-      var type = typeof v;
-      if (type === 'number' || type === 'boolean' || type === 'string') return v;
-      if (type === 'object' && '_' in v) {
-          var obj = {};
-          for (var k in v) {
-              var x = toJS(v[k]);
-              if (x !== null) obj[k] = x;
-          }
-          return obj;
+  function toJS(v)
+  {
+    var type = typeof v;
+    if (type === 'number' || type === 'boolean' || type === 'string') return v;
+    if (type === 'object' && '_' in v) {
+      var obj = {};
+      for (var k in v) {
+        var x = toJS(v[k]);
+        if (x !== null) obj[k] = x;
       }
-      if (type === 'object' && (v.ctor === '::' || v.ctor === '[]')) {
-          var array = List.toArray(v);
-          for (var i = array.length; i--; ) {
-              array[i] = toJS(array[i]);
-          }
-          return array;
+      return obj;
+    }
+    if (type === 'object' && (v.ctor === '::' || v.ctor === '[]')) {
+      var array = List.toArray(v);
+      for (var i = array.length; i--; ) {
+        array[i] = toJS(array[i]);
       }
-      return null;
+      return array;
+    }
+    return null;
   }
 
   function fromRecord(r) {
-      if (typeof r === 'object' && '_' in r) {
-          return toJS(r);
-      }
-      throw new Error("'fromRecord' must be called on a record.");
+    if (typeof r === 'object' && '_' in r) {
+      return toJS(r);
+    }
+    throw new Error("'fromRecord' must be called on a record.");
   }
 
   function id(n) { return n; }
 
   function toElement(w,h,domNode) {
-      return A3( newElement, w, h, {
-              ctor: 'Custom',
-              type: 'DomNode',
-              render: function(node) { return node; },
-              update: function(node,oldNode,newNode) {
-                  if (node === newNode) return;
-                  node.parentNode.replaceChild(newNode, node);
-              },
-              model: domNode
-          });
+    return A3( newElement, w, h, {
+      ctor: 'Custom',
+      type: 'DomNode',
+      render: function(node) { return node; },
+      update: function(node,oldNode,newNode) {
+        if (node === newNode) return;
+        node.parentNode.replaceChild(newNode, node);
+      },
+      model: domNode
+    });
   }
 
   function fromElement(element) {
-      return Render.render(element);
+    return Render.render(element);
   }
 
   return elm.Native.JavaScript.values = {
-      toInt      : function(n) { return n|0; },
-      toFloat    : function(n) { return +n; },
-      toBool     : id,
-      toString   : id,
-      toList     : List.fromArray,
-      fromString : id,
-      fromList   : List.toArray,
-      fromInt    : id,
-      fromFloat  : id,
-      fromBool   : id,
+    toInt      : function(n) { return n|0; },
+    toFloat    : function(n) { return +n; },
+    toBool     : id,
+    toString   : id,
+    toList     : List.fromArray,
+    fromString : id,
+    fromList   : List.toArray,
+    fromInt    : id,
+    fromFloat  : id,
+    fromBool   : id,
 
-      toElement   : toElement,
-      fromElement : fromElement,
-      toRecord    : fromJS,
-      fromRecord  : fromRecord
+    toElement   : toElement,
+    fromElement : fromElement,
+    toRecord    : fromJS,
+    fromRecord  : fromRecord
   };
-
 };
-Elm.Native.Json = {};
-Elm.Native.Json.make = function(elm) {
 
+Elm.Native.Json = {};
+Elm.Native.Json.make = function(elm)
+{
   elm.Native = elm.Native || {};
   elm.Native.Json = elm.Native.Json || {};
   if (elm.Native.Json.values) return elm.Native.Json.values;
@@ -504,13 +525,13 @@ Elm.Native.Json.make = function(elm) {
       var obj = {};
       var array = JS.fromList(Dict.toList(v._0));
       for (var i = array.length; i--; ) {
-	obj[JS.fromString(array[i]._0)] = fromValue(array[i]._1);
+        obj[JS.fromString(array[i]._0)] = fromValue(array[i]._1);
       }
       return obj;
     case 'Array'  :
       var array = JS.fromList(v._0);
       for (var i = array.length; i--; ) {
-	array[i] = fromValue(array[i]);
+        array[i] = fromValue(array[i]);
       }
       return array;
     default :
@@ -530,8 +551,8 @@ Elm.Native.Json.make = function(elm) {
     case 'object' :
       if (v === null) return { ctor:"Null" };
       if (v instanceof Array) {
-          for (var i = v.length; i--; ) { v[i] = toValue(v[i]); }
-	  return { ctor:"Array", _0: JS.toList(v) };
+        for (var i = v.length; i--; ) { v[i] = toValue(v[i]); }
+          return { ctor:"Array", _0: JS.toList(v) };
       }
       var array = [];
       for (var k in v) array.push(Utils.Tuple2(JS.toString(k), toValue(v[k])));
@@ -541,438 +562,444 @@ Elm.Native.Json.make = function(elm) {
 
   function fromJSString(str) {
     try {
-	return Maybe.Just(toValue(JSON.parse(str)));
+      return Maybe.Just(toValue(JSON.parse(str)));
     } catch (e) {
-	return Maybe.Nothing;
+      return Maybe.Nothing;
     }
   }
 
   return elm.Native.Json.values = {
-      toJSString : F2(toPrettyJSString),
-      fromJSString : fromJSString,
-      toJSObject : fromValue,
-      fromJSObject : toValue
+    toJSString : F2(toPrettyJSString),
+    fromJSString : fromJSString,
+    toJSObject : fromValue,
+    fromJSObject : toValue
   };
-
 };
+
 Elm.Native.List = {};
-Elm.Native.List.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.List = elm.Native.List || {};
-    if (elm.Native.List.values) return elm.Native.List.values;
-    if ('values' in Elm.Native.List)
-        return elm.Native.List.values = Elm.Native.List.values;
-
-    var Utils = Elm.Native.Utils.make(elm);
-
-    // TODO: Improve Nil handling
-    // We can change places like:  if (xs.ctor === '[]') ... to if (xs === Nil) ...
-    // but only if we're confident Nil can only be defined once.
-    // Currently (27Mar2013) each module can have different instantiations, so multiple Nil objects can exist
-    // (and if they're used interchangeably then direct object comparison fails where ctor doesn't).
-    // So, this can only be fixed when modules initialisation is also fixed.
-    // The performance overhead of the .ctor calls is 5-10% according to jsperf (depending on fn + list size)
-    // (on firefox 19)
-
-    var Nil = { ctor:'[]' };
-
-    // using freeze for every cons would be nice but is a huge (9x on firefox 19)
-    // performance penalty
-    function Cons(hd,tl) { return { ctor:"::", _0:hd, _1:tl }; }
-
-    function throwError(f) {
-        throw new Error("Function '" + f + "' expects a non-empty list!");
-    }
-
-    function toArray(xs) {
-        var out = [];
-        while (xs.ctor !== '[]') {
-            out.push(xs._0);
-            xs = xs._1;
-        }
-        return out;
-    }
-
-    function fromArray(arr) {
-        var out = Nil;
-        for (var i = arr.length; i--; ) {
-            out = Cons(arr[i], out);
-        }
-        return out;
-    }
-
-    function range(lo,hi) {
-        var lst = Nil;
-        if (lo <= hi) {
-            do { lst = Cons(hi,lst) } while (hi-->lo);
-        }
-        return lst
-    }
-
-    function append(xs,ys) {
-        // append Text
-        if (xs.text || ys.text) {
-            return Utils.txt(Utils.makeText(xs) + Utils.makeText(ys));
-        }
-
-        // append Strings
-        if (typeof xs === "string") return xs + ys;
-
-        // append Lists
-        if (xs.ctor === '[]') { return ys; }
-        var root = Cons(xs._0, Nil);
-        var curr = root;
-        xs = xs._1;
-        while (xs.ctor !== '[]') {
-	    curr._1 = Cons(xs._0, Nil);
-	    xs = xs._1;
-	    curr = curr._1;
-        }
-        curr._1 = ys;
-        return root;
-    }
-
-    function head(v) { return v.ctor === '[]' ? throwError('head') : v._0; }
-    function tail(v) { return v.ctor === '[]' ? throwError('tail') : v._1; }
-
-    function last(xs) {
-        if (xs.ctor === '[]') { throwError('last'); }
-        var out = xs._0;
-        while (xs.ctor !== '[]') {
-            out = xs._0;
-            xs = xs._1;
-        }
-        return out;
-    }
-
-    function map(f, xs) {
-        var arr = [];
-        while (xs.ctor !== '[]') {
-            arr.push(f(xs._0));
-            xs = xs._1;
-        }
-        return fromArray(arr);
-    }
-
-    // f defined similarly for both foldl and foldr (NB: different from Haskell)
-    // ie, foldl : (a -> b -> b) -> b -> [a] -> b
-    function foldl(f, b, xs) {
-        var acc = b;
-        while (xs.ctor !== '[]') {
-            acc = A2(f, xs._0, acc);
-            xs = xs._1;
-        }
-        return acc;
-    }
-
-    function foldr(f, b, xs) {
-        var arr = toArray(xs);
-        var acc = b;
-        for (var i = arr.length; i--; ) {
-            acc = A2(f, arr[i], acc);
-        }
-        return acc;
-    }
-
-    function foldl1(f, xs) {
-        return xs.ctor === '[]' ? throwError('foldl1') : foldl(f, xs._0, xs._1);
-    }
-
-    function foldr1(f, xs) {
-        if (xs.ctor === '[]') { throwError('foldr1'); }
-        var arr = toArray(xs);
-        var acc = arr.pop();
-        for (var i = arr.length; i--; ) {
-            acc = A2(f, arr[i], acc);
-        }
-        return acc;
-    }
-
-    function scanl(f, b, xs) {
-        var arr = toArray(xs);
-        arr.unshift(b);
-        var len = arr.length;
-        for (var i = 1; i < len; ++i) {
-            arr[i] = A2(f, arr[i], arr[i-1]);
-        }
-        return fromArray(arr);
-    }
-
-    function scanl1(f, xs) {
-        return xs.ctor === '[]' ? throwError('scanl1') : scanl(f, xs._0, xs._1);
-    }
-
-    function filter(pred, xs) {
-        var arr = [];
-        while (xs.ctor !== '[]') {
-            if (pred(xs._0)) { arr.push(xs._0); }
-            xs = xs._1;
-        }
-        return fromArray(arr);
-    }
-
-    function length(xs) {
-        var out = 0;
-        while (xs.ctor !== '[]') {
-            out += 1;
-            xs = xs._1;
-        }
-        return out;
-    }
-
-    function member(x, xs) {
-        while (xs.ctor !== '[]') {
-            if (Utils.eq(x,xs._0)) return true;
-            xs = xs._1;
-        }
-        return false;
-    }
-
-    function reverse(xs) { return fromArray(toArray(xs).reverse()); }
-
-    function concat(xss) {
-        if (xss.ctor === '[]') return xss;
-        var arr = toArray(xss);
-        var xs = arr[arr.length-1];
-        for (var i = arr.length-1; i--; ) {
-	    xs = append(arr[i], xs);
-        }
-        return xs;
-    }
-
-    function all(pred, xs) {
-        while (xs.ctor !== '[]') {
-            if (!pred(xs._0)) return false;
-            xs = xs._1;
-        }
-        return true;
-    }
-
-    function any(pred, xs) {
-        while (xs.ctor !== '[]') {
-            if (pred(xs._0)) return true;
-            xs = xs._1;
-        }
-        return false;
-    }
-
-    function zipWith(f, xs, ys) {
-        var arr = [];
-        while (xs.ctor !== '[]' && ys.ctor !== '[]') {
-            arr.push(A2(f, xs._0, ys._0));
-            xs = xs._1;
-            ys = ys._1;
-        }
-        return fromArray(arr);
-    }
-
-    function zip(xs, ys) {
-        var arr = [];
-        while (xs.ctor !== '[]' && ys.ctor !== '[]') {
-            arr.push(Utils.Tuple2(xs._0, ys._0));
-            xs = xs._1;
-            ys = ys._1;
-        }
-        return fromArray(arr);
-    }
-
-    function sort(xs) {
-        return fromArray(toArray(xs).sort(Utils.cmp));
-    }
-
-    function sortBy(f, xs) {
-        return fromArray(toArray(xs).sort(function(a,b){
-            return Utils.cmp(f(a), f(b));
-        }));
-    }
-
-    function sortWith(f, xs) {
-        return fromArray(toArray(xs).sort(function(a,b){
-            var ord = f(a)(b).ctor;
-            return ord === 'EQ' ? 0 : ord === 'LT' ? -1 : 1;
-        }));
-    }
-
-    function nth(xs, n) {
-        return toArray(xs)[n];
-    }
-
-    function take(n, xs) {
-        var arr = [];
-        while (xs.ctor !== '[]' && n > 0) {
-            arr.push(xs._0);
-            xs = xs._1;
-            --n;
-        }
-        return fromArray(arr);
-    }
-
-    function drop(n, xs) {
-        while (xs.ctor !== '[]' && n > 0) {
-            xs = xs._1;
-            --n;
-        }
-        return xs;
-    }
-
-    function repeat(n, x) {
-        var arr = [];
-        var pattern = [x];
-        while (n > 0) {
-            if (n & 1) arr = arr.concat(pattern);
-            n >>= 1, pattern = pattern.concat(pattern);
-        }
-        return fromArray(arr);
-    }
-
-    function join(sep, xss) {
-        if (sep.text) {
-            sep = Utils.makeText(sep);
-            xss = toArray(xss);
-            for (var i = xss.length; i--; ) {
-                xss[i] = Utils.makeText(xss[i]);
-            }
-            return Utils.txt(xss.join(sep));
-        }
-        if (typeof sep === 'string') return toArray(xss).join(sep);
-        if (xss.ctor === '[]') return Nil;
-        var s = toArray(sep);
-        var out = toArray(xss._0);
-        xss = xss._1;
-        while (xss.ctor !== '[]') {
-            out = out.concat(s, toArray(xss._0));
-            xss = xss._1;
-        }
-        return fromArray(out);
-    }
-
-    Elm.Native.List.values = {
-        Nil:Nil,
-        Cons:Cons,
-        cons:F2(Cons),
-        toArray:toArray,
-        fromArray:fromArray,
-        range:range,
-        append:append,
-
-        head:head,
-        tail:tail,
-        last:last,
-
-        map:F2(map),
-        foldl:F3(foldl),
-        foldr:F3(foldr),
-
-        foldl1:F2(foldl1),
-        foldr1:F2(foldr1),
-        scanl:F3(scanl),
-        scanl1:F2(scanl1),
-        filter:F2(filter),
-        length:length,
-        member:F2(member),
-        reverse:reverse,
-        concat:concat,
-
-        all:F2(all),
-        any:F2(any),
-        zipWith:F3(zipWith),
-        zip:F2(zip),
-        sort:sort,
-        sortBy:F2(sortBy),
-        sortWith:F2(sortWith),
-        nth:F2(nth),
-        take:F2(take),
-        drop:F2(drop),
-        repeat:F2(repeat),
-
-        join:F2(join)
-    };
+Elm.Native.List.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.List = elm.Native.List || {};
+  if (elm.Native.List.values) return elm.Native.List.values;
+  if ('values' in Elm.Native.List)
     return elm.Native.List.values = Elm.Native.List.values;
 
+  var Utils = Elm.Native.Utils.make(elm);
+
+  // TODO: Improve Nil handling
+  // We can change places like:  if (xs.ctor === '[]') ... to if (xs === Nil) ...
+  // but only if we're confident Nil can only be defined once.
+  // Currently (27Mar2013) each module can have different instantiations, so multiple Nil objects can exist
+  // (and if they're used interchangeably then direct object comparison fails where ctor doesn't).
+  // So, this can only be fixed when modules initialisation is also fixed.
+  // The performance overhead of the .ctor calls is 5-10% according to jsperf (depending on fn + list size)
+  // (on firefox 19)
+
+  var Nil = { ctor:'[]' };
+
+  // using freeze for every cons would be nice but is a huge (9x on firefox 19)
+  // performance penalty
+  function Cons(hd,tl) { return { ctor:"::", _0:hd, _1:tl }; }
+
+  function throwError(f) {
+    throw new Error("Function '" + f + "' expects a non-empty list!");
+  }
+
+  function toArray(xs) {
+    var out = [];
+    while (xs.ctor !== '[]') {
+      out.push(xs._0);
+      xs = xs._1;
+    }
+    return out;
+  }
+
+  function fromArray(arr) {
+    var out = Nil;
+    for (var i = arr.length; i--; ) {
+      out = Cons(arr[i], out);
+    }
+    return out;
+  }
+
+  function range(lo,hi) {
+    var lst = Nil;
+    if (lo <= hi) {
+      do { lst = Cons(hi,lst) } while (hi-->lo);
+    }
+    return lst
+  }
+
+  function append(xs,ys)
+  {
+    // append Text
+    if (xs.text || ys.text) {
+      return Utils.txt(Utils.makeText(xs) + Utils.makeText(ys));
+    }
+
+    // append Strings
+    if (typeof xs === "string") return xs + ys;
+
+    // append Lists
+    if (xs.ctor === '[]') { return ys; }
+    var root = Cons(xs._0, Nil);
+    var curr = root;
+    xs = xs._1;
+    while (xs.ctor !== '[]') {
+      curr._1 = Cons(xs._0, Nil);
+      xs = xs._1;
+      curr = curr._1;
+    }
+    curr._1 = ys;
+    return root;
+  }
+
+  function head(v) { return v.ctor === '[]' ? throwError('head') : v._0; }
+  function tail(v) { return v.ctor === '[]' ? throwError('tail') : v._1; }
+
+  function last(xs) {
+    if (xs.ctor === '[]') { throwError('last'); }
+    var out = xs._0;
+    while (xs.ctor !== '[]') {
+      out = xs._0;
+      xs = xs._1;
+    }
+    return out;
+  }
+
+  function map(f, xs) {
+    var arr = [];
+    while (xs.ctor !== '[]') {
+      arr.push(f(xs._0));
+      xs = xs._1;
+    }
+    return fromArray(arr);
+  }
+
+  // f defined similarly for both foldl and foldr (NB: different from Haskell)
+  // ie, foldl : (a -> b -> b) -> b -> [a] -> b
+  function foldl(f, b, xs) {
+    var acc = b;
+    while (xs.ctor !== '[]') {
+      acc = A2(f, xs._0, acc);
+      xs = xs._1;
+    }
+    return acc;
+  }
+
+  function foldr(f, b, xs) {
+    var arr = toArray(xs);
+    var acc = b;
+    for (var i = arr.length; i--; ) {
+      acc = A2(f, arr[i], acc);
+    }
+    return acc;
+  }
+
+  function foldl1(f, xs) {
+    return xs.ctor === '[]' ? throwError('foldl1') : foldl(f, xs._0, xs._1);
+  }
+
+  function foldr1(f, xs) {
+    if (xs.ctor === '[]') { throwError('foldr1'); }
+    var arr = toArray(xs);
+    var acc = arr.pop();
+    for (var i = arr.length; i--; ) {
+      acc = A2(f, arr[i], acc);
+    }
+    return acc;
+  }
+
+  function scanl(f, b, xs) {
+    var arr = toArray(xs);
+    arr.unshift(b);
+    var len = arr.length;
+    for (var i = 1; i < len; ++i) {
+      arr[i] = A2(f, arr[i], arr[i-1]);
+    }
+    return fromArray(arr);
+  }
+
+  function scanl1(f, xs) {
+    return xs.ctor === '[]' ? throwError('scanl1') : scanl(f, xs._0, xs._1);
+  }
+
+  function filter(pred, xs) {
+    var arr = [];
+    while (xs.ctor !== '[]') {
+      if (pred(xs._0)) { arr.push(xs._0); }
+      xs = xs._1;
+    }
+    return fromArray(arr);
+  }
+
+  function length(xs) {
+    var out = 0;
+    while (xs.ctor !== '[]') {
+      out += 1;
+      xs = xs._1;
+    }
+    return out;
+  }
+
+  function member(x, xs) {
+    while (xs.ctor !== '[]') {
+      if (Utils.eq(x,xs._0)) return true;
+      xs = xs._1;
+    }
+    return false;
+  }
+
+  function reverse(xs) { return fromArray(toArray(xs).reverse()); }
+
+  function concat(xss) {
+    if (xss.ctor === '[]') return xss;
+    var arr = toArray(xss);
+    var xs = arr[arr.length-1];
+    for (var i = arr.length-1; i--; ) {
+      xs = append(arr[i], xs);
+    }
+    return xs;
+  }
+
+  function all(pred, xs) {
+    while (xs.ctor !== '[]') {
+      if (!pred(xs._0)) return false;
+      xs = xs._1;
+    }
+    return true;
+  }
+
+  function any(pred, xs) {
+    while (xs.ctor !== '[]') {
+      if (pred(xs._0)) return true;
+      xs = xs._1;
+    }
+    return false;
+  }
+
+  function zipWith(f, xs, ys) {
+    var arr = [];
+    while (xs.ctor !== '[]' && ys.ctor !== '[]') {
+      arr.push(A2(f, xs._0, ys._0));
+      xs = xs._1;
+      ys = ys._1;
+    }
+    return fromArray(arr);
+  }
+
+  function zip(xs, ys) {
+    var arr = [];
+    while (xs.ctor !== '[]' && ys.ctor !== '[]') {
+      arr.push(Utils.Tuple2(xs._0, ys._0));
+      xs = xs._1;
+      ys = ys._1;
+    }
+    return fromArray(arr);
+  }
+
+  function sort(xs) {
+    return fromArray(toArray(xs).sort(Utils.cmp));
+  }
+
+  function sortBy(f, xs) {
+      return fromArray(toArray(xs).sort(function(a,b){
+          return Utils.cmp(f(a), f(b));
+      }));
+  }
+
+  function sortWith(f, xs) {
+      return fromArray(toArray(xs).sort(function(a,b){
+          var ord = f(a)(b).ctor;
+          return ord === 'EQ' ? 0 : ord === 'LT' ? -1 : 1;
+      }));
+  }
+
+  function nth(xs, n) {
+      return toArray(xs)[n];
+  }
+
+  function take(n, xs) {
+      var arr = [];
+      while (xs.ctor !== '[]' && n > 0) {
+          arr.push(xs._0);
+          xs = xs._1;
+          --n;
+      }
+      return fromArray(arr);
+  }
+
+  function drop(n, xs) {
+      while (xs.ctor !== '[]' && n > 0) {
+          xs = xs._1;
+          --n;
+      }
+      return xs;
+  }
+
+  function repeat(n, x) {
+      var arr = [];
+      var pattern = [x];
+      while (n > 0) {
+          if (n & 1) arr = arr.concat(pattern);
+          n >>= 1, pattern = pattern.concat(pattern);
+      }
+      return fromArray(arr);
+  }
+
+  function join(sep, xss) {
+      if (sep.text) {
+          sep = Utils.makeText(sep);
+          xss = toArray(xss);
+          for (var i = xss.length; i--; ) {
+              xss[i] = Utils.makeText(xss[i]);
+          }
+          return Utils.txt(xss.join(sep));
+      }
+      if (typeof sep === 'string') return toArray(xss).join(sep);
+      if (xss.ctor === '[]') return Nil;
+      var s = toArray(sep);
+      var out = toArray(xss._0);
+      xss = xss._1;
+      while (xss.ctor !== '[]') {
+          out = out.concat(s, toArray(xss._0));
+          xss = xss._1;
+      }
+      return fromArray(out);
+  }
+
+  Elm.Native.List.values =
+  {
+    Nil:Nil,
+    Cons:Cons,
+    cons:F2(Cons),
+    toArray:toArray,
+    fromArray:fromArray,
+    range:range,
+    append:append,
+
+    head:head,
+    tail:tail,
+    last:last,
+
+    map:F2(map),
+    foldl:F3(foldl),
+    foldr:F3(foldr),
+
+    foldl1:F2(foldl1),
+    foldr1:F2(foldr1),
+    scanl:F3(scanl),
+    scanl1:F2(scanl1),
+    filter:F2(filter),
+    length:length,
+    member:F2(member),
+    reverse:reverse,
+    concat:concat,
+
+    all:F2(all),
+    any:F2(any),
+    zipWith:F3(zipWith),
+    zip:F2(zip),
+    sort:sort,
+    sortBy:F2(sortBy),
+    sortWith:F2(sortWith),
+    nth:F2(nth),
+    take:F2(take),
+    drop:F2(drop),
+    repeat:F2(repeat),
+
+    join:F2(join)
+  };
+  return elm.Native.List.values = Elm.Native.List.values;
 };
+
 Elm.Native.Ports = {};
-Elm.Native.Ports.make = function(elm) {
-    elm.Native = elm.Native || {};
-    elm.Native.Ports = elm.Native.Ports || {};
-    if (elm.Native.Ports.values) return elm.Native.Ports.values;
+Elm.Native.Ports.make = function(elm)
+{
+  elm.Native = elm.Native || {};
+  elm.Native.Ports = elm.Native.Ports || {};
+  if (elm.Native.Ports.values) return elm.Native.Ports.values;
 
-    var Signal = Elm.Signal.make(elm);
+  var Signal = Elm.Signal.make(elm);
 
-    function incomingSignal(converter) {
-        converter.isSignal = true;
-        return converter;
+  function incomingSignal(converter) {
+    converter.isSignal = true;
+    return converter;
+  }
+
+  function outgoingSignal(converter)
+  {
+    return function(signal) {
+      var subscribers = []
+      function subscribe(handler) {
+        subscribers.push(handler);
+      }
+      function unsubscribe(handler) {
+        subscribers.pop(subscribers.indexOf(handler));
+      }
+      A2( Signal.lift, function(value) {
+        var val = converter(value);
+        var len = subscribers.length;
+        for (var i = 0; i < len; ++i) {
+          subscribers[i](val);
+        }
+      }, signal);
+      return { subscribe:subscribe, unsubscribe:unsubscribe };
+    }
+  }
+
+  function portIn(name, converter)
+  {
+    var jsValue = elm.ports.incoming[name];
+    if (jsValue === undefined) {
+      throw new Error("Initialization Error: port '" + name +
+                      "' was not given an input!");
+    }
+    elm.ports.uses[name] += 1;
+    try {
+      var elmValue = converter(jsValue);
+    } catch(e) {
+      throw new Error("Initialization Error on port '" + name + "': \n" + e.message);
     }
 
-    function outgoingSignal(converter) {
-        return function(signal) {
-            var subscribers = []
-            function subscribe(handler) {
-                subscribers.push(handler);
-            }
-            function unsubscribe(handler) {
-                subscribers.pop(subscribers.indexOf(handler));
-            }
-            A2( Signal.lift, function(value) {
-                var val = converter(value);
-                var len = subscribers.length;
-                for (var i = 0; i < len; ++i) {
-                    subscribers[i](val);
-                }
-            }, signal);
-            return { subscribe:subscribe, unsubscribe:unsubscribe };
-        }
+    // just return a static value if it is not a signal
+    if (!converter.isSignal) {
+      return elmValue;
     }
 
-    function portIn(name, converter) {
-        var jsValue = elm.ports.incoming[name];
-        if (jsValue === undefined) {
-            throw new Error("Initialization Error: port '" + name +
-                            "' was not given an input!");
-        }
-        elm.ports.uses[name] += 1;
-        try {
-            var elmValue = converter(jsValue);
-        } catch(e) {
-            throw new Error("Initialization Error on port '" + name + "': \n" + e.message);
-        }
-
-        // just return a static value if it is not a signal
-        if (!converter.isSignal) {
-            return elmValue;
-        }
-
-        // create a signal if necessary
-        var signal = Signal.constant(elmValue);
-        function send(jsValue) {
-            try {
-                var elmValue = converter(jsValue);
-            } catch(e) {
-                throw new Error("Error sending to port '" + name + "': \n" + e.message);
-            }
-            setTimeout(function() {
-                elm.notify(signal.id, elmValue);
-            }, 0);
-        }
-        elm.ports.outgoing[name] = { send:send };
-        return signal;
+    // create a signal if necessary
+    var signal = Signal.constant(elmValue);
+    function send(jsValue)
+    {
+      try {
+        var elmValue = converter(jsValue);
+      } catch(e) {
+        throw new Error("Error sending to port '" + name + "': \n" + e.message);
+      }
+      setTimeout (function() { elm.notify(signal.id, elmValue); }, 0);
     }
+    elm.ports.outgoing[name] = { send:send };
+    return signal;
+  }
 
-    function portOut(name, converter, value) {
-        try {
-            elm.ports.outgoing[name] = converter(value);
-        } catch(e) {
-            throw new Error("Initialization Error on port '" + name + "': \n" + e.message);
-        }
-        return value;
+  function portOut(name, converter, value) {
+    try {
+      elm.ports.outgoing[name] = converter(value);
+    } catch(e) {
+      throw new Error("Initialization Error on port '" + name + "': \n" + e.message);
     }
+    return value;
+  }
 
-    return elm.Native.Ports.values = {
-        incomingSignal: incomingSignal,
-        outgoingSignal: outgoingSignal,
-        portOut: portOut,
-        portIn: portIn
-    };
+  return elm.Native.Ports.values = {
+    incomingSignal: incomingSignal,
+    outgoingSignal: outgoingSignal,
+    portOut: portOut,
+    portIn: portIn
+  };
 };
+
 Elm.Native.Regex = {};
 Elm.Native.Regex.make = function(elm) {
     elm.Native = elm.Native || {};
@@ -1455,7 +1482,7 @@ Elm.Native.Text.make = function(elm) {
     function makeSpaces(s) {
         if (s.length == 0) { return s; }
         var arr = s.split('');
-        if (arr[0] == ' ') { arr[0] = "&nbsp;" }      
+        if (arr[0] == ' ') { arr[0] = "&nbsp;" }
         for (var i = arr.length; --i; ) {
             if (arr[i][0] == ' ' && arr[i-1] == ' ') {
                 arr[i-1] = arr[i-1] + arr[i];
@@ -2493,24 +2520,24 @@ Elm.Native.Keyboard.make = function(elm) {
     // Ignore starting values here
     this.value = NList.Nil
     this.kids = [];
-    
+
     var n = args.length;
     var count = 0;
     var isChanged = false;
 
     this.recv = function(timestep, changed, parentID) {
       ++count;
-      if (changed) { 
+      if (changed) {
         // We know this a change must only be one of the following cases
         if (parentID === down.id && !(NList.member(down.value)(this.value))) {
           isChanged = true;
-          this.value = NList.Cons(down.value, this.value); 
-        } 
+          this.value = NList.Cons(down.value, this.value);
+        }
         if (parentID === up.id) {
           isChanged = true;
           var notEq = function(kc) { return kc !== up.value };
           this.value = NList.filter(notEq)(this.value);
-        } 
+        }
         if (parentID === blur.id) {
           isChanged = true;
           this.value = NList.Nil;
@@ -2982,7 +3009,7 @@ Elm.Native.Touch.make = function(elm) {
             this.values = [];
         };
     }
-    
+
     var root = Signal.constant([]),
     tapTime = 500,
     hasTap = false,
@@ -3114,7 +3141,7 @@ Elm.Native.WebSocket.make = function(elm) {
 
     var pending = [];
     var ready = false;
-    
+
     ws.onopen = function(e) {
       var len = pending.length;
       for (var i = 0; i < len; ++i) { ws.send(pending[i]); }
@@ -3123,12 +3150,12 @@ Elm.Native.WebSocket.make = function(elm) {
     ws.onmessage = function(event) {
       elm.notify(incoming.id, JS.toString(event.data));
     };
-    
+
     function send(msg) {
       var s = JS.fromString(msg);
       ready ? ws.send(s) : pending.push(s);
     }
-    
+
     function take1(x,y) { return x }
     return A3(Signal.lift2, F2(take1), incoming, A2(Signal.lift, send, outgoing));
   }
@@ -6643,11 +6670,8 @@ Elm.Graphics.Element.make = function (_elm) {
              ,_0: a
              ,_1: b};
    });
-   var Container = F2(function (a,
-   b) {
-      return {ctor: "Container"
-             ,_0: a
-             ,_1: b};
+   var Container = F2(function (a,b) {
+      return {ctor: "Container",_0: a,_1: b};
    });
    var Image = F4(function (a,
    b,
@@ -6789,22 +6813,23 @@ Elm.Graphics.Element.make = function (_elm) {
              ,tag: g
              ,width: b};
    });
-   var newElement = F3(function (w,
-   h,
-   e) {
-      return {_: {}
-             ,element: e
-             ,props: A9(Properties,
-             Native.Utils.guid({ctor: "_Tuple0"}),
-             w,
-             h,
-             1,
-             Maybe.Nothing,
-             emptyStr,
-             emptyStr,
-             {ctor: "_Tuple0"},
-             {ctor: "_Tuple0"})};
-   });
+  var newElement = F3(function (w,h,e)
+  {
+    return {
+      _: {},
+      element: e,
+      props: A9 (
+        Properties,
+        Native.Utils.guid ({ctor: "_Tuple0"}),
+      w,
+      h,
+      1,
+      Maybe.Nothing,
+      emptyStr,
+      emptyStr,
+      {ctor: "_Tuple0"},
+      {ctor: "_Tuple0"})};
+  });
    var image = F3(function (w,
    h,
    src) {
@@ -6854,14 +6879,8 @@ Elm.Graphics.Element.make = function (_elm) {
       h,
       JavaScript.fromString(src)));
    });
-   var container = F4(function (w,
-   h,
-   pos,
-   e) {
-      return A3(newElement,
-      w,
-      h,
-      A2(Container,pos,e));
+   var container = F4 (function (w,h,pos,e) {
+      return A3 (newElement, w, h, A2 (Container,pos,e));
    });
    var spacer = F2(function (w,h) {
       return A3(newElement,
@@ -7404,7 +7423,7 @@ function checkPorts(elm) {
         }
     }
 }
-    
+
 function filterListeners(inputs, listeners) {
     loop:
     for (var i = listeners.length; i--; ) {
