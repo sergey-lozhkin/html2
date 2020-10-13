@@ -1,8 +1,10 @@
-all:: html/background.html html/Carousel.html
-	runhaskell Main.hs
+all:: html/background.html html/Carousel.html bookmarks.html
+
+%.html:: %.hs
+	runhaskell $^
 
 html/background.html:: background.hs
-	runhaskell $^
 
 html/Carousel.html:: Carousel.hs
-	runhaskell $^
+
+bookmarks.html:: bookmarks.hs
