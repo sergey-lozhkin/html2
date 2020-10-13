@@ -16,7 +16,7 @@
         margin: 0px;
         padding: 0px;
         border-width: 0px;
-        line-height: 1.5;
+        line-height: 1.4142;
         font-family: Arial;
         /*font-family: Helvetica;*/
         /*font-style: italic;*/
@@ -25,6 +25,11 @@
       p {
         background-color: lightblue;
         color: #111;
+        position: relative;
+        /*top: .5rem;*/
+        /*bottom: .5rem;*/
+        /*left: .5rem;*/
+        /*right: .5rem;*/
       }
       .absbottom {
         padding: 1rem;
@@ -41,6 +46,9 @@
         /*display: inline-block;*/
         float: left;
       }
+      .text {
+        padding: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -48,11 +56,11 @@
       <div class="absbottom">
         Absolute bottom
       </div>
-      <div style="padding: 1rem">
+      <div class="text">
         Anonymous <em>text</em> box
         <p>Paragraph</p>
         Anonymous <em>text</em> box
-
+        <div class="text"></div>
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
         Line spacing is commonly measured as a percentage of font size.
         Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -69,11 +77,11 @@
       <div class="absbottom">
         Absolute bottom
       </div>
-      <div style="padding: 1rem">
+      <div class="text">
         Anonymous <em>text</em> box
         <p>Paragraph</p>
         Anonymous <em>text</em> box
-
+        <div class="text"></div>
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
         Line spacing is commonly measured as a percentage of font size.
         Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
