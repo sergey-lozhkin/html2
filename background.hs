@@ -21,21 +21,25 @@ main = do
         title_ "Background"
         -- link_ [rel_ "icon", type_ "image/png", href_ "assets/avatar-500x500.png"]
         link_ [rel_ "icon", type_ "image/png", href_ "assets/icons-10.png"]
-        style_ $
-          "a:link{color:inherit;text-decoration:inherit;}" <>
-          "a:visited{color:inherit;text-decoration:inherit;}" <>
-          "a:hover{color:inherit;text-decoration:inherit;}" <>
-          "a:active{color:inherit;text-decoration:inherit;}" <>
-          "a{outline-style:none;outline-width:0px;}" <>
-          ".nil{padding:0px;border-width:0px;margin:0px;}"
-      body_ [class_ "nil"] $ do
-        div_ [style_
-            $   "margin:2em;"
-            <>  "border:2em solid lightblue;"
+        style_
+          $   "a:link{color:inherit;text-decoration:inherit;}"
+          <>  "a:visited{color:inherit;text-decoration:inherit;}"
+          <>  "a:hover{color:inherit;text-decoration:inherit;}"
+          <>  "a:active{color:inherit;text-decoration:inherit;}"
+          <>  "a{outline-style:none;outline-width:0px;}"
+          <>  ".nil{padding:0px;border-width:0px;margin:0px;}"
+          <>  "*{box-sizing:border-box;}"
+      body_ [class_ "nil", style_ "width:100vw;height:100vh;"] $ do
+        div_ [class_ "nil", style_ "width:100%;height:100%;padding:2em;background:lightyellow"] $ do
+          div_ [class_ "nil", style_
+            $   "border:2em solid lightblue;"
             <>  "padding:2em;"
             <>  "background:pink;"
-            <>  "background-clip:padding-box;"] $ do
-          "Hola, Mundo!"
+            <>  "background-clip:padding-box;"
+            <>  "width:100%;"
+            <>  "height:100%;"
+            ] $ do
+            "Hola, Mundo!"
         -- div_ [class_ "nil", style_ "position: relative; overflow: hidden; width: 180px; height: 45px;"] $ do
         --   div_ [class_ "nil", style_ "margin: auto; width: 180px; height: 23px; position: absolute; left: 50%; top: 50%; transform: translateX(-90px) translateY(-11px);"] $ do
         --     div_ [class_ "nil", style_ "width: 15px; height: 1px; float: left;"] ""
