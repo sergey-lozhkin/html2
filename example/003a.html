@@ -42,14 +42,20 @@
       }
     </style>
     <script>
-      function onload() {
+      window.addEventListener("resize", showSizes);
+
+      function showSizes() {
         var e = document.getElementById("d0");
-        var r = document.body.getBoundingClientRect();
-        e.innerHTML += "[" + r.width + ", " + r.height + "]";
+        // var r = document.body.getBoundingClientRect();
+        // e.innerHTML += "[" + r.width + ", " + r.height + "]";
+        e.innerHTML =
+          // root html element is document.documentElement
+          "html [" + document.documentElement.offsetWidth + ", " + document.documentElement.offsetHeight + "], " +
+          "body [" + document.body.offsetWidth + ", " + document.body.offsetHeight + "]";
       }
     </script>
   </head>
-  <body onload="onload()">
+  <body onload="showSizes()">
     <div>
       <!-- h1.margin-top collapses with parent div.margin-top -->
       <h1>Basic document flow</h1>
