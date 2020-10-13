@@ -44,6 +44,8 @@ main = do
         div_ $ do
           h3_ "Learn"
           links [
+            "https://www.google.com/search?q=html+li+marker",
+            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
             "http://www.simplehtmlguide.com/text.php",
@@ -140,6 +142,7 @@ main = do
             "https://www.w3schools.com/jsref/event_onmousedown.asp",
             "https://www.w3schools.com/jsref/event_onmouseover.asp",
             "https://www.w3schools.com/jsref/obj_window.asp",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
             zz ]
         div_ $ do
           h3_ "Sites"
