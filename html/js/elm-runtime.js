@@ -7538,87 +7538,87 @@ function depthFirstTraversals(f, queueOld, queueNew) {
 }());
 
 (function() {
-'use strict';
+  'use strict';
 
-ElmRuntime.Display = { FULLSCREEN: 0, COMPONENT: 1, NONE: 2 };
+  ElmRuntime.Display = { FULLSCREEN: 0, COMPONENT: 1, NONE: 2 };
 
-ElmRuntime.counter = 0;
-ElmRuntime.guid = function() { return ElmRuntime.counter++; }
+  ElmRuntime.counter = 0;
+  ElmRuntime.guid = function() { return ElmRuntime.counter++; }
 
-ElmRuntime.use = function(M) {
+  ElmRuntime.use = function(M) {
     if (typeof M === 'function') M = M();
     return M;
-};
+  };
 
-function isAlive(input) {
+  function isAlive(input) {
     if (!('defaultNumberOfKids' in input)) return true;
     var len = input.kids.length;
     if (len === 0) return false;
     if (len > input.defaultNumberOfKids) return true;
     var alive = false;
     for (var i = len; i--; ) {
-        alive = alive || isAlive(input.kids[i]);
+      alive = alive || isAlive(input.kids[i]);
     }
     return alive;
-}
+  }
 
-ElmRuntime.filterDeadInputs = function(inputs) {
+  ElmRuntime.filterDeadInputs = function(inputs) {
     var temp = [];
     for (var i = inputs.length; i--; ) {
-        if (isAlive(inputs[i])) temp.push(inputs[i]);
+      if (isAlive(inputs[i])) temp.push(inputs[i]);
     }
     return temp;
-};
+  };
 
-// define the draw function
-var vendors = ['ms', 'moz', 'webkit', 'o'];
-var win = typeof window !== 'undefined' ? window : {};
-for (var i = 0; i < vendors.length && !win.requestAnimationFrame; ++i) {
+  // define the draw function
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  var win = typeof window !== 'undefined' ? window : {};
+  for (var i = 0; i < vendors.length && !win.requestAnimationFrame; ++i) {
     win.requestAnimationFrame = win[vendors[i]+'RequestAnimationFrame'];
     win.cancelAnimationFrame  = win[vendors[i]+'CancelAnimationFrame'] ||
                                 win[vendors[i]+'CancelRequestAnimationFrame'];
-}
+  }
 
-if (win.requestAnimationFrame && win.cancelAnimationFrame) {
+  if (win.requestAnimationFrame && win.cancelAnimationFrame) {
     var previous = 0;
     ElmRuntime.draw = function(callback) {
-        win.cancelAnimationFrame(previous);
-        previous = win.requestAnimationFrame(callback);
+      win.cancelAnimationFrame(previous);
+      previous = win.requestAnimationFrame(callback);
     };
-} else {
+  } else {
     ElmRuntime.draw = function(callback) { callback(); };
-}
-
+  }
 }());
 
-ElmRuntime.Render.Collage = function() {
+ElmRuntime.Render.Collage = function()
+{
+  var Render = ElmRuntime.use(ElmRuntime.Render.Element);
+  var Transform = Elm.Transform2D.make({});
+  var Utils = ElmRuntime.use(ElmRuntime.Render.Utils);
+  var newElement = Utils.newElement,
+      extract = Utils.extract, fromList = Utils.fromList,
+      fromString = Utils.fromString, addTransform = Utils.addTransform;
 
-var Render = ElmRuntime.use(ElmRuntime.Render.Element);
-var Transform = Elm.Transform2D.make({});
-var Utils = ElmRuntime.use(ElmRuntime.Render.Utils);
-var newElement = Utils.newElement,
-    extract = Utils.extract, fromList = Utils.fromList,
-    fromString = Utils.fromString, addTransform = Utils.addTransform;
-
-function trace(ctx, path) {
+  function trace(ctx, path) {
     var points = fromList(path);
     var i = points.length - 1;
     if (i <= 0) return;
     ctx.moveTo(points[i]._0, points[i]._1);
     while (i--) { ctx.lineTo(points[i]._0, points[i]._1); }
     if (path.closed) {
-        i = points.length - 1;
-        ctx.lineTo(points[i]._0, points[i]._1);
+      i = points.length - 1;
+      ctx.lineTo(points[i]._0, points[i]._1);
     }
-}
+  }
 
-function line(ctx,style,path) {
+  function line(ctx,style,path) {
     style.dashing.ctor === 'Nil' ? trace(ctx, path) : customLineHelp(ctx, style, path);
     ctx.scale(1,-1);
     ctx.stroke();
-}
+  }
 
-function customLineHelp(ctx, style, path) {
+  function customLineHelp(ctx, style, path)
+  {
     var points = fromList(path);
     if (path.closed) points.push(points[0]);
     var pattern = fromList(style.dashing);
@@ -7629,31 +7629,34 @@ function customLineHelp(ctx, style, path) {
     var pindex = 0, plen = pattern.length;
     var draw = true, segmentLength = pattern[0];
     ctx.moveTo(x0,y0);
-    while (i--) {
-        x1 = points[i]._0; y1 = points[i]._1;
+    while (i--)
+    {
+      x1 = points[i]._0; y1 = points[i]._1;
+      dx = x1 - x0; dy = y1 - y0;
+      remaining = Math.sqrt(dx * dx + dy * dy);
+      while (segmentLength <= remaining)
+      {
+        x0 += dx * segmentLength / remaining;
+        y0 += dy * segmentLength / remaining;
+        ctx[draw ? 'lineTo' : 'moveTo'](x0, y0);
+        // update starting position
         dx = x1 - x0; dy = y1 - y0;
         remaining = Math.sqrt(dx * dx + dy * dy);
-        while (segmentLength <= remaining) {
-            x0 += dx * segmentLength / remaining;
-            y0 += dy * segmentLength / remaining;
-            ctx[draw ? 'lineTo' : 'moveTo'](x0, y0);
-            // update starting position
-            dx = x1 - x0; dy = y1 - y0;
-            remaining = Math.sqrt(dx * dx + dy * dy);
-            // update pattern
-            draw = !draw;
-            pindex = (pindex + 1) % plen;
-            segmentLength = pattern[pindex];
-        }
-        if (remaining > 0) {
-            ctx[draw ? 'lineTo' : 'moveTo'](x1, y1);
-            segmentLength -= remaining;
-        }
-        x0 = x1; y0 = y1;
+        // update pattern
+        draw = !draw;
+        pindex = (pindex + 1) % plen;
+        segmentLength = pattern[pindex];
+      }
+      if (remaining > 0) {
+        ctx[draw ? 'lineTo' : 'moveTo'](x1, y1);
+        segmentLength -= remaining;
+      }
+      x0 = x1; y0 = y1;
     }
-}
+  }
 
-function drawLine(ctx, style, path) {
+  function drawLine(ctx, style, path)
+  {
     ctx.lineWidth = style.width;
     var cap = style.cap.ctor;
     ctx.lineCap = cap === 'Flat' ? 'butt' :
@@ -7664,46 +7667,46 @@ function drawLine(ctx, style, path) {
     ctx.miterLimit = style.join._0 || 10;
     ctx.strokeStyle = extract(style.color);
     return line(ctx, style, path);
-}
+  }
 
-function texture(redo, ctx, src) {
+  function texture(redo, ctx, src) {
     var img = new Image();
     img.src = fromString(src);
     img.onload = redo;
     return ctx.createPattern(img, 'repeat');
-}
-
-function gradient(ctx, grad) {
-  var g;
-  var stops = [];
-  if (grad.ctor === 'Linear') {
-    var p0 = grad._0, p1 = grad._1;
-    g = ctx.createLinearGradient(p0._0, -p0._1, p1._0, -p1._1);
-    stops = fromList(grad._2);
-  } else {
-    var p0 = grad._0, p2 = grad._2;
-    g = ctx.createRadialGradient(p0._0, -p0._1, grad._1, p2._0, -p2._1, grad._3);
-    stops = fromList(grad._4);
   }
-  var len = stops.length;
-  for (var i = 0; i < len; ++i) {
-    var stop = stops[i];
-    g.addColorStop(stop._0, extract(stop._1));
-  }
-  return g;
-}
 
-function drawShape(redo, ctx, style, path) {
+  function gradient(ctx, grad) {
+    var g;
+    var stops = [];
+    if (grad.ctor === 'Linear') {
+      var p0 = grad._0, p1 = grad._1;
+      g = ctx.createLinearGradient(p0._0, -p0._1, p1._0, -p1._1);
+      stops = fromList(grad._2);
+    } else {
+      var p0 = grad._0, p2 = grad._2;
+      g = ctx.createRadialGradient(p0._0, -p0._1, grad._1, p2._0, -p2._1, grad._3);
+      stops = fromList(grad._4);
+    }
+    var len = stops.length;
+    for (var i = 0; i < len; ++i) {
+      var stop = stops[i];
+      g.addColorStop(stop._0, extract(stop._1));
+    }
+    return g;
+  }
+
+  function drawShape(redo, ctx, style, path) {
     trace(ctx, path);
     var sty = style.ctor;
     ctx.fillStyle =
-        sty === 'Solid' ? extract(style._0) :
-        sty === 'Texture' ? texture(redo, ctx, style._0) : gradient(ctx, style._0);
+      sty === 'Solid' ? extract(style._0) :
+      sty === 'Texture' ? texture(redo, ctx, style._0) : gradient(ctx, style._0);
     ctx.scale(1,-1);
     ctx.fill();
-}
+  }
 
-function drawImage(redo, ctx, form) {
+  function drawImage(redo, ctx, form) {
     var img = new Image();
     img.onload = redo;
     img.src = fromString(form._3);
@@ -7721,9 +7724,9 @@ function drawImage(redo, ctx, form) {
 
     ctx.scale(1,-1);
     ctx.drawImage(img, srcX, srcY, srcW, srcH, destX, destY, destW, destH);
-}
+  }
 
-function renderForm(redo, ctx, form) {
+  function renderForm(redo, ctx, form) {
     ctx.save();
     var x = form.x, y = form.y, theta = form.theta, scale = form.scale;
     if (x !== 0 || y !== 0) ctx.translate(x, y);
@@ -7745,25 +7748,25 @@ function renderForm(redo, ctx, form) {
     break;
     }
     ctx.restore();
-}
+  }
 
-function formToMatrix(form) {
-   var scale = form.scale;
-   var matrix = A6( Transform.matrix, scale, 0, 0, scale, form.x, form.y );
+  function formToMatrix(form) {
+    var scale = form.scale;
+    var matrix = A6( Transform.matrix, scale, 0, 0, scale, form.x, form.y );
 
-   var theta = form.theta
-   if (theta !== 0)
-       matrix = A2( Transform.multiply, matrix, Transform.rotation(theta) );
+    var theta = form.theta
+    if (theta !== 0)
+      matrix = A2( Transform.multiply, matrix, Transform.rotation(theta) );
 
-   return matrix;
-}
+    return matrix;
+  }
 
-function str(n) {
+  function str(n) {
     if (n < 0.00001 && n > -0.00001) return 0;
     return n;
-}
+  }
 
-function makeTransform(w, h, form, matrices) {
+  function makeTransform(w, h, form, matrices) {
     var props = form.form._0.props;
     var m = A6( Transform.matrix, 1, 0, 0, -1,
                 (w - props.width ) / 2,
@@ -7775,64 +7778,65 @@ function makeTransform(w, h, form, matrices) {
     return 'matrix(' + str( m[0]) + ', ' + str( m[3]) + ', ' +
                        str(-m[1]) + ', ' + str(-m[4]) + ', ' +
                        str( m[2]) + ', ' + str( m[5]) + ')';
-}
+  }
 
-function stepperHelp(list) {
+  function stepperHelp(list) {
     var arr = fromList(list);
     var i = 0;
     function peekNext() {
-        return i < arr.length ? arr[i].form.ctor : '';
+      return i < arr.length ? arr[i].form.ctor : '';
     }
     // assumes that there is a next element
     function next() {
-        var out = arr[i];
-        ++i;
-        return out;
+      var out = arr[i];
+      ++i;
+      return out;
     }
     return { peekNext:peekNext, next:next };
-}
+  }
 
-function formStepper(forms) {
+  function formStepper(forms) {
     var ps = [stepperHelp(forms)];
     var matrices = [];
     var alphas = [];
     function peekNext() {
-        var len = ps.length;
-        var formType = '';
-        for (var i = 0; i < len; ++i ) {
-            if (formType = ps[i].peekNext()) return formType;
-        }
-        return '';
+      var len = ps.length;
+      var formType = '';
+      for (var i = 0; i < len; ++i ) {
+        if (formType = ps[i].peekNext()) return formType;
+      }
+      return '';
     }
     // assumes that there is a next element
-    function next(ctx) {
-        while (!ps[0].peekNext()) {
-            ps.shift();
-            matrices.pop();
-            alphas.shift();
-            if (ctx) { ctx.restore(); }
-        }
-        var out = ps[0].next();
-        var f = out.form;
-        if (f.ctor === 'FGroup') {
-            ps.unshift(stepperHelp(f._1));
-            var m = A2(Transform.multiply, f._0, formToMatrix(out));
-            ctx.save();
-            ctx.transform(m[0], m[3], m[1], m[4], m[2], m[5]);
-            matrices.push(m);
+    function next(ctx)
+    {
+      while (!ps[0].peekNext()) {
+        ps.shift();
+        matrices.pop();
+        alphas.shift();
+        if (ctx) { ctx.restore(); }
+      }
+      var out = ps[0].next();
+      var f = out.form;
+      if (f.ctor === 'FGroup') {
+        ps.unshift(stepperHelp(f._1));
+        var m = A2(Transform.multiply, f._0, formToMatrix(out));
+        ctx.save();
+        ctx.transform(m[0], m[3], m[1], m[4], m[2], m[5]);
+        matrices.push(m);
 
-            var alpha = (alphas[0] || 1) * out.alpha;
-            alphas.unshift(alpha);
-            ctx.globalAlpha = alpha;
-        }
-        return out;
+        var alpha = (alphas[0] || 1) * out.alpha;
+        alphas.unshift(alpha);
+        ctx.globalAlpha = alpha;
+      }
+      return out;
     }
     function transforms() { return matrices; }
     function alpha() { return alphas[0] || 1; }
     return { peekNext:peekNext, next:next, transforms:transforms, alpha:alpha };
-}
+  }
 
-function makeCanvas(w,h) {
+  function makeCanvas(w,h) {
     var canvas = newElement('canvas');
     canvas.style.width  = w + 'px';
     canvas.style.height = h + 'px';
@@ -7841,78 +7845,77 @@ function makeCanvas(w,h) {
     canvas.width  = w;
     canvas.height = h;
     return canvas;
-}
+  }
 
-function render(model) {
+  function render(model) {
     var div = newElement('div');
     div.style.overflow = 'hidden';
     div.style.position = 'relative';
     update(div, model, model);
     return div;
-}
+  }
 
-function nodeStepper(w,h,div) {
+  function nodeStepper(w,h,div) {
     var kids = div.childNodes;
     var i = 0;
     function transform(transforms, ctx) {
-        ctx.translate(w/2, h/2);
-        ctx.scale(1,-1);
-        var len = transforms.length;
-        for (var i = 0; i < len; ++i) {
-            var m = transforms[i];
-            ctx.save();
-            ctx.transform(m[0], m[3], m[1], m[4], m[2], m[5]);
-        }
-        return ctx;
+      ctx.translate(w/2, h/2);
+      ctx.scale(1,-1);
+      var len = transforms.length;
+      for (var i = 0; i < len; ++i) {
+        var m = transforms[i];
+        ctx.save();
+        ctx.transform(m[0], m[3], m[1], m[4], m[2], m[5]);
+      }
+      return ctx;
     }
     function nextContext(transforms) {
-        while (i < kids.length) {
-            var node = kids[i];
-            if (node.getContext) {
-                node.width = w;
-                node.height = h;
-                node.style.width = w + 'px';
-                node.style.height = h + 'px';
-                ++i;
-                return transform(transforms, node.getContext('2d'));
-            }
-            div.removeChild(node);
+      while (i < kids.length) {
+        var node = kids[i];
+        if (node.getContext) {
+          node.width = w;
+          node.height = h;
+          node.style.width = w + 'px';
+          node.style.height = h + 'px';
+          ++i;
+          return transform(transforms, node.getContext('2d'));
         }
-        var canvas = makeCanvas(w,h);
-        div.appendChild(canvas);
-        // we have added a new node, so we must step our position
-        ++i;
-        return transform(transforms, canvas.getContext('2d'));
+        div.removeChild(node);
+      }
+      var canvas = makeCanvas(w,h);
+      div.appendChild(canvas);
+      // we have added a new node, so we must step our position
+      ++i;
+      return transform(transforms, canvas.getContext('2d'));
     }
     function addElement(matrices, alpha, form) {
-        var kid = kids[i];
-        var elem = form.form._0;
+      var kid = kids[i];
+      var elem = form.form._0;
 
-        var node = (!kid || kid.getContext)
-            ? Render.render(elem)
-            : (Render.update(kid, kid.oldElement, elem), kids[i]);
+      var node = (!kid || kid.getContext)
+          ? Render.render(elem)
+          : (Render.update(kid, kid.oldElement, elem), kids[i]);
 
-        node.style.position = 'absolute';
-        node.style.opacity = alpha * form.alpha;
-        addTransform(node.style, makeTransform(w, h, form, matrices));
-        node.oldElement = elem;
-        ++i;
-        if (!kid) {
-            div.appendChild(node);
-        } else if (kid.getContext) {
-            div.insertBefore(node, kid);
-        }
+      node.style.position = 'absolute';
+      node.style.opacity = alpha * form.alpha;
+      addTransform(node.style, makeTransform(w, h, form, matrices));
+      node.oldElement = elem;
+      ++i;
+      if (!kid) {
+        div.appendChild(node);
+      } else if (kid.getContext) {
+        div.insertBefore(node, kid);
+      }
     }
     function clearRest() {
-        while (i < kids.length) {
-            div.removeChild(kids[i]);
-        }
+      while (i < kids.length) {
+        div.removeChild(kids[i]);
+      }
     }
     return { nextContext:nextContext, addElement:addElement, clearRest:clearRest };
-}
+  }
 
-
-function update(div, _, model) {
+  function update(div, _, model) {
     var w = model.w;
     var h = model.h;
 
@@ -7922,39 +7925,39 @@ function update(div, _, model) {
     var formType = '';
 
     while (formType = forms.peekNext()) {
-        // make sure we have context if we need it
-        if (ctx === null && formType !== 'FElement') {
-            ctx = nodes.nextContext(forms.transforms());
-            ctx.globalAlpha = forms.alpha();
-        }
+      // make sure we have context if we need it
+      if (ctx === null && formType !== 'FElement') {
+        ctx = nodes.nextContext(forms.transforms());
+        ctx.globalAlpha = forms.alpha();
+      }
 
-        var form = forms.next(ctx);
-        // if it is FGroup, all updates are made within formStepper when next is called.
-        if (formType === 'FElement') {
-            // update or insert an element, get a new context
-            nodes.addElement(forms.transforms(), forms.alpha(), form);
-            ctx = null;
-        } else if (formType !== 'FGroup') {
-            renderForm(function() { update(div, model, model); }, ctx, form);
-        }
+      var form = forms.next(ctx);
+      // if it is FGroup, all updates are made within formStepper when next is called.
+      if (formType === 'FElement') {
+        // update or insert an element, get a new context
+        nodes.addElement(forms.transforms(), forms.alpha(), form);
+        ctx = null;
+      } else if (formType !== 'FGroup') {
+        renderForm(function() { update(div, model, model); }, ctx, form);
+      }
     }
     nodes.clearRest();
     return false;
-}
+  }
 
-return { render:render, update:update };
-
+  return { render:render, update:update };
 };
 
-ElmRuntime.Render.Element = function() {
-'use strict';
+ElmRuntime.Render.Element = function()
+{
+  'use strict';
 
-var Utils = ElmRuntime.use(ElmRuntime.Render.Utils);
-var newElement = Utils.newElement, extract = Utils.extract,
-    addTransform = Utils.addTransform, removeTransform = Utils.removeTransform,
-    fromList = Utils.fromList, eq = Utils.eq;
+  var Utils = ElmRuntime.use(ElmRuntime.Render.Utils);
+  var newElement = Utils.newElement, extract = Utils.extract,
+      addTransform = Utils.addTransform, removeTransform = Utils.removeTransform,
+      fromList = Utils.fromList, eq = Utils.eq;
 
-function setProps(elem, e) {
+  function setProps(elem, e) {
     var props = elem.props;
     var element = elem.element;
     var width = props.width - (element.adjustWidth || 0);
@@ -7962,102 +7965,102 @@ function setProps(elem, e) {
     e.style.width  = (width |0) + 'px';
     e.style.height = (height|0) + 'px';
     if (props.opacity !== 1) {
-        e.style.opacity = props.opacity;
+      e.style.opacity = props.opacity;
     }
     if (props.color.ctor === 'Just') {
-        e.style.backgroundColor = extract(props.color._0);
+      e.style.backgroundColor = extract(props.color._0);
     }
     if (props.tag !== '') { e.id = props.tag; }
     if (props.href !== '') {
-        var a = newElement('a');
-        a.href = props.href;
-        a.style.width = '100%';
-        a.style.height = '100%';
-        a.style.top = 0;
-        a.style.left = 0;
-        a.style.display = 'block';
-        a.style.position = 'absolute';
-        e.style.position = 'relative';
-        e.appendChild(a);
+      var a = newElement('a');
+      a.href = props.href;
+      a.style.width = '100%';
+      a.style.height = '100%';
+      a.style.top = 0;
+      a.style.left = 0;
+      a.style.display = 'block';
+      a.style.position = 'absolute';
+      e.style.position = 'relative';
+      e.appendChild(a);
     }
     if (props.hover.ctor !== '_Tuple0') {
-        addHover(e, props.hover);
+      addHover(e, props.hover);
     }
     if (props.click.ctor !== '_Tuple0') {
-        addClick(e, props.click);
+      addClick(e, props.click);
     }
     return e;
-}
+  }
 
-function addClick(e, handler) {
+  function addClick(e, handler) {
     e.style.pointerEvents = 'auto';
     e.elm_click_handler = handler;
     function trigger() {
-        e.elm_click_handler(Utils.Tuple0);
+      e.elm_click_handler(Utils.Tuple0);
     }
     e.elm_click_trigger = trigger;
     e.addEventListener('click', trigger);
-}
+  }
 
-function removeClick(e, handler) {
+  function removeClick(e, handler) {
     if (e.elm_click_trigger) {
-        e.removeEventListener('click', e.elm_click_trigger);
+      e.removeEventListener('click', e.elm_click_trigger);
     }
-}
+  }
 
-function addHover(e, handler) {
+  function addHover(e, handler) {
     e.style.pointerEvents = 'auto';
     e.elm_hover_handler = handler;
     e.elm_hover_count = 0;
 
     function over() {
-        if (e.elm_hover_count++ > 0) return;
-        e.elm_hover_handler(true);
+      if (e.elm_hover_count++ > 0) return;
+      e.elm_hover_handler(true);
     }
     function out(evt) {
-        if (e.contains(evt.toElement || evt.relatedTarget)) return;
-        e.elm_hover_count = 0;
-        e.elm_hover_handler(false);
+      if (e.contains(evt.toElement || evt.relatedTarget)) return;
+      e.elm_hover_count = 0;
+      e.elm_hover_handler(false);
     }
     e.elm_hover_over = over;
     e.elm_hover_out = out;
     e.addEventListener('mouseover', over);
     e.addEventListener('mouseout', out);
-}
+  }
 
-function removeHover(e) {
+  function removeHover(e) {
     if (e.elm_hover_over) {
-        e.removeEventListener('mouseover', e.elm_hover_over);
+      e.removeEventListener('mouseover', e.elm_hover_over);
     }
     if (e.elm_hover_out) {
-        e.removeEventListener('mouseout', e.elm_hover_out);
+      e.removeEventListener('mouseout', e.elm_hover_out);
     }
-}
+  }
 
-function image(props, img) {
+  function image(props, img) {
     switch (img._0.ctor) {
     case 'Plain':   return plainImage(img._3);
     case 'Fitted':  return fittedImage(props.width, props.height, img._3);
     case 'Cropped': return croppedImage(img,props.width,props.height,img._3);
     case 'Tiled':   return tiledImage(img._3);
     }
-}
+  }
 
-function plainImage(src) {
+  function plainImage(src) {
     var img = newElement('img');
     img.src = src;
     img.name = src;
     img.style.display = "block";
     return img;
-}
+  }
 
-function tiledImage(src) {
+  function tiledImage(src) {
     var div = newElement('div');
     div.style.backgroundImage = 'url(' + src + ')';
     return div;
-}
+  }
 
-function fittedImage(w, h, src) {
+  function fittedImage(w, h, src) {
     var div = newElement('div');
     div.style.background = 'url(' + src + ') no-repeat center';
     div.style.webkitBackgroundSize = 'cover';
@@ -8065,41 +8068,41 @@ function fittedImage(w, h, src) {
     div.style.OBackgroundSize = 'cover';
     div.style.backgroundSize = 'cover';
     return div;
-}
+  }
 
-function croppedImage(elem, w, h, src) {
+  function croppedImage(elem, w, h, src) {
     var pos = elem._0._0;
     var e = newElement('div');
     e.style.overflow = "hidden";
 
     var img = newElement('img');
     img.onload = function() {
-        var sw = w / elem._1, sh = h / elem._2;
-        img.style.width = ((this.width * sw)|0) + 'px';
-        img.style.height = ((this.height * sh)|0) + 'px';
-        img.style.marginLeft = ((- pos._0 * sw)|0) + 'px';
-        img.style.marginTop = ((- pos._1 * sh)|0) + 'px';
+      var sw = w / elem._1, sh = h / elem._2;
+      img.style.width = ((this.width * sw)|0) + 'px';
+      img.style.height = ((this.height * sh)|0) + 'px';
+      img.style.marginLeft = ((- pos._0 * sw)|0) + 'px';
+      img.style.marginTop = ((- pos._1 * sh)|0) + 'px';
     };
     img.src = src;
     img.name = src;
     e.appendChild(img);
     return e;
-}
+  }
 
-function goIn(e) { e.style.position = 'absolute'; return e; }
-function goDown(e) { return e }
-function goRight(e) { e.style.styleFloat = e.style.cssFloat = "left"; return e; }
-function flowWith(f, array) {
+  function goIn(e) { e.style.position = 'absolute'; return e; }
+  function goDown(e) { return e }
+  function goRight(e) { e.style.styleFloat = e.style.cssFloat = "left"; return e; }
+  function flowWith(f, array) {
     var container = newElement('div');
     if (f == goIn) container.style.pointerEvents = 'none';
 
     for (var i = array.length; i--; ) {
-        container.appendChild(f(render(array[i])));
+      container.appendChild(f(render(array[i])));
     }
     return container;
-}
+  }
 
-function flow(dir,elist) {
+  function flow(dir,elist) {
     var array = fromList(elist);
     switch(dir.ctor) {
     case "DDown":  array.reverse();
@@ -8109,18 +8112,18 @@ function flow(dir,elist) {
     case "DOut":   array.reverse();
     case "DIn":    return flowWith(goIn,array);
     }
-}
+  }
 
-function toPos(pos) {
+  function toPos(pos) {
     switch(pos.ctor) {
     case "Absolute": return  pos._0 + "px";
     case "Relative": return (pos._0 * 100) + "%";
     }
-}
+  }
 
-// must clear right, left, top, bottom, and transform
-// before calling this function
-function setPos(pos,elem,e) {
+  // must clear right, left, top, bottom, and transform
+  // before calling this function
+  function setPos(pos,elem,e) {
     var element = elem.element;
     var props = elem.props;
     var w = props.width + (element.adjustWidth ? element.adjustWidth : 0);
@@ -8141,9 +8144,9 @@ function setPos(pos,elem,e) {
     }
     if (transform !== '') addTransform(e.style, transform);
     return e;
-}
+  }
 
-function container(pos,elem) {
+  function container(pos,elem) {
     var e = render(elem);
     setPos(pos, elem, e);
     var div = newElement('div');
@@ -8151,9 +8154,9 @@ function container(pos,elem) {
     div.style.overflow = 'hidden';
     div.appendChild(e);
     return div;
-}
+  }
 
-function rawHtml(elem) {
+  function rawHtml(elem) {
     var html = elem.html;
     var args = elem.args;
     var guid = elem.guid;
@@ -8166,24 +8169,24 @@ function rawHtml(elem) {
     document.body.appendChild(div);
 
     for (var i = args.length; i--; ) {
-        var arg = args[i];
-        var span = document.getElementById('md-' + guid + '-' + i);
-        if (arg.isText) {
-            span.innerHTML = arg;
-        } else {
-            span.style.display = 'block';
-            span.style.width = arg.props.width + 'px';
-            span.style.height = arg.props.height + 'px';
-            span.appendChild(render(arg));
-        }
+      var arg = args[i];
+      var span = document.getElementById('md-' + guid + '-' + i);
+      if (arg.isText) {
+        span.innerHTML = arg;
+      } else {
+        span.style.display = 'block';
+        span.style.width = arg.props.width + 'px';
+        span.style.height = arg.props.height + 'px';
+        span.appendChild(render(arg));
+      }
     }
     document.body.removeChild(div);
     div.style.visibility = 'visible';
     return div;
-}
+  }
 
-function render(elem) { return setProps(elem, makeElement(elem)); }
-function makeElement(e) {
+  function render(elem) { return setProps(elem, makeElement(elem)); }
+  function makeElement(e) {
     var elem = e.element;
     switch(elem.ctor) {
     case 'Image':     return image(e.props, elem);
@@ -8193,103 +8196,105 @@ function makeElement(e) {
     case 'RawHtml':   return rawHtml(elem);
     case 'Custom':    return elem.render(elem.model);
     }
-}
+  }
 
-function update(node, curr, next) {
+  function update(node, curr, next)
+  {
     if (node.tagName === 'A') { node = node.firstChild; }
     if (curr.props.id === next.props.id) return updateProps(node, curr, next);
     if (curr.element.ctor !== next.element.ctor) {
-        node.parentNode.replaceChild(render(next),node);
-        return true;
+      node.parentNode.replaceChild(render(next),node);
+      return true;
     }
     var nextE = next.element, currE = curr.element;
     switch(nextE.ctor) {
     case "Spacer": break;
     case "RawHtml":
-        // only markdown blocks have guids, so this must be a text block
-        if (nextE.guid === null) {
-            if(currE.html.valueOf() !== nextE.html.valueOf()) {
-                node.innerHTML = nextE.html;
-            }
-            break;
-        }
-        if (nextE.guid !== currE.guid) {
-            node.parentNode.replaceChild(render(next),node);
-            return true;
-        }
-        var nargs = nextE.args;
-        var cargs = currE.args;
-        for (var i = nargs.length; i--; ) {
-            var narg = nargs[i];
-            var carg = cargs[i]
-            if (narg == carg) continue;
-            var span = document.getElementById('md-' + currE.guid + '-' + i);
-            if (narg.isElement) {
-                if (carg.isElement) {
-                    update(span, carg, narg);
-                } else {
-                    span.style.display = 'block';
-                    var e = render(narg);
-                    span.innerHTML = '';
-                    span.appendChild(e);
-                }
-            } else {
-                span.style.display = 'inline';
-                span.innerHTML = narg;
-            }
+      // only markdown blocks have guids, so this must be a text block
+      if (nextE.guid === null) {
+        if(currE.html.valueOf() !== nextE.html.valueOf()) {
+          node.innerHTML = nextE.html;
         }
         break;
-    case "Image":
-        if (nextE._0.ctor === 'Plain') {
-            if (nextE._3 !== currE._3) node.src = nextE._3;
-        } else if (!eq(nextE,currE) ||
-                   next.props.width !== curr.props.width ||
-                   next.props.height !== curr.props.height) {
-            node.parentNode.replaceChild(render(next),node);
-            return true;
-        }
-        break;
-    case "Flow":
-        var arr = fromList(nextE._1);
-        for (var i = arr.length; i--; ) { arr[i] = arr[i].element.ctor; }
-        if (nextE._0.ctor !== currE._0.ctor) {
-            node.parentNode.replaceChild(render(next),node);
-            return true;
-        }
-        var nexts = fromList(nextE._1);
-        var kids = node.childNodes;
-        if (nexts.length !== kids.length) {
-            node.parentNode.replaceChild(render(next),node);
-            return true;
-        }
-        var currs = fromList(currE._1);
-        var goDir = function(x) { return x; };
-        switch(nextE._0.ctor) {
-        case "DDown":  case "DUp":   goDir = goDown; break;
-        case "DRight": case "DLeft": goDir = goRight; break;
-        case "DOut":   case "DIn":   goDir = goIn; break;
-        }
-        for (var i = kids.length; i-- ;) {
-            update(kids[i],currs[i],nexts[i]);
-            goDir(kids[i]);
-        }
-        break;
-    case "Container":
-        update(node.firstChild, currE._1, nextE._1);
-        setPos(nextE._0, nextE._1, node.firstChild);
-        break;
-    case "Custom":
-        if (currE.type === nextE.type) {
-            var done = nextE.update(node, currE.model, nextE.model);
-            if (done) return;
+      }
+      if (nextE.guid !== currE.guid) {
+        node.parentNode.replaceChild(render(next),node);
+        return true;
+      }
+      var nargs = nextE.args;
+      var cargs = currE.args;
+      for (var i = nargs.length; i--; ) {
+        var narg = nargs[i];
+        var carg = cargs[i]
+        if (narg == carg) continue;
+        var span = document.getElementById('md-' + currE.guid + '-' + i);
+        if (narg.isElement) {
+          if (carg.isElement) {
+            update(span, carg, narg);
+          } else {
+            span.style.display = 'block';
+            var e = render(narg);
+            span.innerHTML = '';
+            span.appendChild(e);
+          }
         } else {
-            return node.parentNode.replaceChild(render(next), node);
+          span.style.display = 'inline';
+          span.innerHTML = narg;
         }
+      }
+      break;
+    case "Image":
+      if (nextE._0.ctor === 'Plain') {
+        if (nextE._3 !== currE._3) node.src = nextE._3;
+      } else if (!eq(nextE,currE) ||
+               next.props.width !== curr.props.width ||
+               next.props.height !== curr.props.height) {
+        node.parentNode.replaceChild(render(next),node);
+        return true;
+      }
+      break;
+    case "Flow":
+      var arr = fromList(nextE._1);
+      for (var i = arr.length; i--; ) { arr[i] = arr[i].element.ctor; }
+      if (nextE._0.ctor !== currE._0.ctor) {
+        node.parentNode.replaceChild(render(next),node);
+        return true;
+      }
+      var nexts = fromList(nextE._1);
+      var kids = node.childNodes;
+      if (nexts.length !== kids.length) {
+        node.parentNode.replaceChild(render(next),node);
+        return true;
+      }
+      var currs = fromList(currE._1);
+      var goDir = function(x) { return x; };
+      switch(nextE._0.ctor) {
+      case "DDown":  case "DUp":   goDir = goDown; break;
+      case "DRight": case "DLeft": goDir = goRight; break;
+      case "DOut":   case "DIn":   goDir = goIn; break;
+      }
+      for (var i = kids.length; i-- ;) {
+        update(kids[i],currs[i],nexts[i]);
+        goDir(kids[i]);
+      }
+      break;
+    case "Container":
+      update(node.firstChild, currE._1, nextE._1);
+      setPos(nextE._0, nextE._1, node.firstChild);
+      break;
+    case "Custom":
+      if (currE.type === nextE.type) {
+        var done = nextE.update(node, currE.model, nextE.model);
+        if (done) return;
+      } else {
+        return node.parentNode.replaceChild(render(next), node);
+      }
     }
     updateProps(node, curr, next);
-}
+  }
 
-function updateProps(node, curr, next) {
+  function updateProps(node, curr, next)
+  {
     var props = next.props;
     var currP = curr.props;
     var e = node;
@@ -8297,74 +8302,76 @@ function updateProps(node, curr, next) {
     var width = props.width - (element.adjustWidth || 0);
     var height = props.height - (element.adjustHeight || 0);
     if (width !== currP.width) {
-        e.style.width = (width|0) + 'px';
+      e.style.width = (width|0) + 'px';
     }
     if (height !== currP.height) {
-        e.style.height = (height|0) + 'px';
+      e.style.height = (height|0) + 'px';
     }
     if (props.opacity !== currP.opacity) {
-        e.style.opacity = props.opacity;
+      e.style.opacity = props.opacity;
     }
-    var nextColor = (props.color.ctor === 'Just' ?
-                     extract(props.color._0) : '');
+    var nextColor = (props.color.ctor === 'Just' ? extract(props.color._0) : '');
     if (e.style.backgroundColor !== nextColor) {
-        e.style.backgroundColor = (nextColor === '' ? 'transparent' : nextColor);
+      e.style.backgroundColor = (nextColor === '' ? 'transparent' : nextColor);
     }
     if (props.tag !== currP.tag) { e.id = props.tag; }
-    if (props.href !== currP.href) {
-        if (currP.href === '') {
-            var a = newElement('a');
-            a.href = props.href;
-            a.style.width = '100%';
-            a.style.height = '100%';
-            a.style.top = 0;
-            a.style.left = 0;
-            a.style.display = 'block';
-            a.style.position = 'absolute';
-            e.style.position = 'relative';
-            e.appendChild(a);
-        } else {
-            node.lastNode.href = props.href;
-        }
+    if (props.href !== currP.href)
+    {
+      if (currP.href === '')
+      {
+        var a = newElement('a');
+        a.href = props.href;
+        a.style.width = '100%';
+        a.style.height = '100%';
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.display = 'block';
+        a.style.position = 'absolute';
+        e.style.position = 'relative';
+        e.appendChild(a);
+      } else {
+        node.lastNode.href = props.href;
+      }
     }
 
     // update hover handlers
     if (props.hover.ctor === '_Tuple0') {
-        removeHover(e);
+      removeHover(e);
     } else if (e.elm_hover_handler) {
-        e.elm_hover_handler = props.hover;
+      e.elm_hover_handler = props.hover;
     } else {
-        addHover(e, props.hover);
+      addHover(e, props.hover);
     }
 
     // update click handlers
     if (props.click.ctor === '_Tuple0') {
-        removeClick(e);
+      removeClick(e);
     } else if (e.elm_click_handler) {
-        e.elm_click_handler = props.click;
+      e.elm_click_handler = props.click;
     } else {
-        addClick(e, props.click);
+      addClick(e, props.click);
     }
-}
+  }
 
-return { render:render, update:update };
-
+  return { render:render, update:update };
 };
-ElmRuntime.Render.Utils = function() {
+
+ElmRuntime.Render.Utils = function()
+{
   function newElement(elementType) {
-      var e = document.createElement(elementType);
-      e.style.padding = "0";
-      e.style.margin = "0";
-      return e;
+    var e = document.createElement(elementType);
+    e.style.padding = "0";
+    e.style.margin = "0";
+    return e;
   }
 
   function addTo(container, elem) {
-      container.appendChild(elem);
+    container.appendChild(elem);
   }
 
   function extract(c) {
-      if (c._3 === 1) { return 'rgb(' + c._0 + ', ' + c._1 + ', ' + c._2 + ')'; }
-      return 'rgba(' + c._0 + ', ' + c._1 + ', ' + c._2 + ', ' + c._3 + ')';
+    if (c._3 === 1) { return 'rgb(' + c._0 + ', ' + c._1 + ', ' + c._2 + ')'; }
+    return 'rgba(' + c._0 + ', ' + c._1 + ', ' + c._2 + ', ' + c._3 + ')';
   }
 
   function addTransform(style, trans) {
