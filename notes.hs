@@ -1,24 +1,15 @@
-data Learn = [Lots of advanced stuff on this site and IN its HTML/CSS/JS/SVG code]
-  https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html
-  https://css-tricks.com/
-  https://free.cofree.io/2020/09/01/type-errors/
-  http://www.jsfuck.com/
-  https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism
-  https://artagnon.com/articles/pl
-  https://www.google.com/search?client=firefox-b-1-d&q=html+window+clientWidth
-  https://www.google.com/search?client=firefox-b-1-d&q=html+event+cancelable
-  https://www.google.com/search?client=firefox-b-1-d&q=html+onload+function
-  https://www.google.com/search?client=firefox-b-1-d&q=html+bubbles
-  https://www.google.com/search?client=firefox-b-1-d&q=html+objec+navigator
-  https://www.google.com/search?client=firefox-b-1-d&q=javascript+eval+function
-  https://www.google.com/search?client=firefox-b-1-d&q=javascript+use+strict
-  https://www.google.com/search?client=firefox-b-1-d&q=html+can+i+set+abritrary+property+on+document+object
-  https://javascript.info/dom-attributes-and-properties
-  http://www.javascriptkit.com/dhtmltutors/customattributes.shtml
-  https://www.google.com/search?client=firefox-b-1-d&q=%3C%3Fphp
-  https://javascript.info/
-  https://www.google.com/search?client=firefox-b-1-d&q=htyml+textcontent
-  https://www.google.com/search?client=firefox-b-1-d&q=html+how+script+executed
+data Property
+  display
+  position
+  float
+  overflow
+
+data Layout
+  flow
+  table
+  flex
+  grid
+  ruby
 
 data TODO =
   WebSockets
