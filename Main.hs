@@ -82,6 +82,7 @@ arkHead title elmModule = do
     meta_ [charset_ "utf-8"]
     link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/fonts.css"]
     link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/bootstrap.min.css"]
+    link_ [rel_ "icon", type_ "image/png", href_ "assets/ark-logo-01.png"]
     script_ [type_ "text/javascript", src_ "js/elm-runtime.min.js"] ""
     script_ [type_ "text/javascript", src_ $ "js/" <> elmModule <> ".min.js"] ""
 
