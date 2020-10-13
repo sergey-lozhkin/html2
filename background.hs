@@ -17,6 +17,7 @@ main = do
       head_ $ do
         title_ "Background"
         meta_ [charset_ "utf-8"]
+        meta_ [name_ "viewport", content_ "width=device-width, initial-scale=1, shrink-to-fit=no"]
         style_ $
           "a:link{color:inherit;text-decoration:inherit;}" <>
           "a:visited{color:inherit;text-decoration:inherit;}" <>
