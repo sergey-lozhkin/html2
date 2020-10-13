@@ -184,6 +184,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Learn",
             "https://javascript.info/",
             "https://popper.js.org/",
+            "https://drafts.csswg.org/",
             e_ ]
         div_ $ do
           h4_ "Tools"
@@ -192,6 +193,26 @@ main = do
             "https://jquery.com/",
             "https://jsconsole.com/",
             "https://jsfiddle.net/",
+            "https://www.google.com/search?q=html+sass",
+            "https://chrisdone.com/posts/lucid2/",
+            "https://www.google.com/search?client=firefox-b-1-d&q=haskell+obelisk",
+            "https://www.google.com/search?client=firefox-b-1-d&q=haskell+reflex",
+            "https://dev.yorhel.nl/doc/funcweb",
+            "https://trycatchchris.co.uk/hackagecompare/comparePackage/blaze-html/hamlet/heist/lucid/mustache",
+            "https://jonreeve.com/2020/09/type-safe-blog/",
+            "https://jaspervdj.be/blaze/",
+            "https://hackage.haskell.org/package/blaze-from-html",
+            "https://hackage.haskell.org/package/svg-builder",
+            "https://ocsigen.org/tyxml/4.4.0/manual/intro",
+            "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
+            "https://hackage.haskell.org/package/lucid-svg",
+            "https://mmhaskell.com/blog/2020/3/16/lucid-another-html-option",
+            "https://mmhaskell.com/real-world",
+            "https://hackage.haskell.org/package/shakespeare",
+            "https://hackage.haskell.org/package/type-of-html-static",
+            "https://github.com/dbaynard/lucid-from-html",
+            "https://hackage.haskell.org/package/type-of-html",
+            "https://hackage.haskell.org/package/nice-html",
             e_ ]
         div_ $ do
           h4_ "Style"
@@ -202,6 +223,7 @@ main = do
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
             "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
+            "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
             e_ ]
         div_ $ do
           h4_ "Done"
