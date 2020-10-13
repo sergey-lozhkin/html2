@@ -11,7 +11,7 @@ import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 import Control.Monad (mapM_)
 
-zz = "" :: Text
+e_ = "" :: Text
 
 link :: Text -> Text -> Html ()
 link url text = div_ [style_ "padding: .1em"] $ a_ [href_ url] $ toHtml text
@@ -39,7 +39,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Queue"
           queuedLinks [
@@ -53,7 +53,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Learn"
           orderedLinks [
@@ -162,7 +162,7 @@ main = do
             "https://www.w3schools.com/jsref/event_onmousedown.asp",
             "https://www.w3schools.com/jsref/event_onmouseover.asp",
             "https://www.w3schools.com/jsref/obj_window.asp",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Sites"
           orderedLinks [
@@ -172,7 +172,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Learn",
             "https://javascript.info/",
             "https://popper.js.org/",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Tools"
           orderedLinks [
@@ -180,7 +180,7 @@ main = do
             "https://jquery.com/",
             "https://jsconsole.com/",
             "https://jsfiddle.net/",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Style"
           orderedLinks [
@@ -188,11 +188,11 @@ main = do
             "https://free.cofree.io/2020/09/01/type-errors/",
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
-            zz ]
+            e_ ]
         div_ $ do
           h3_ "Done"
           orderedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
-            zz ]
+            e_ ]
