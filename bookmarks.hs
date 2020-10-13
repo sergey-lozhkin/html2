@@ -31,11 +31,12 @@ main = do
         meta_ [charset_ "utf-8"]
         title_ "Bookmarks"
         style_ $
-          "body {font-size: 12pt; font-family: Helvetica; }"
+          "body { font-size: 12pt; font-family: Arial; line-height: 1.2; }"
       body_ $ do
         div_ $ do
           h3_ "Now"
           queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             zz ]
