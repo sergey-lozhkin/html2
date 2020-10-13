@@ -32,7 +32,7 @@ main = do
     html_ [lang_ "en"] $ do
       head_ $ do
         meta_ [charset_ "utf-8"]
-        title_ "Bookmarks"
+        title_ "Links"
         link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
         style_ $
           "html, body { " <>
