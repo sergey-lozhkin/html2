@@ -1,6 +1,9 @@
 data Learn =
   Lots of advanced stuff on this site and IN its HTML/CSS/JS/SVG code
   https://css-tricks.com/
+  https://free.cofree.io/2020/09/01/type-errors/
+  http://www.jsfuck.com/
+  https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism
 
 style_ =
     "white-space: nowrap;"
