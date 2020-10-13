@@ -235,6 +235,7 @@ main = do
             "https://github.com/unimonkiez/self-adjusting-interval",
             "https://chrispenner.ca/posts/traversal-systems",
             "https://www.youtube.com/watch?v=LZTWYdU4nKk",
+            "https://docs.gitlab.com/ee/user/project/pages/",
             e_ ]
         div_ $ do
           h4_ "Style"
