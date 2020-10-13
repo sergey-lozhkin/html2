@@ -221,6 +221,7 @@ main = do
             "https://www.google.com/search?q=haskell+reflex",
             "https://www.google.com/search?q=html+sass",
             "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
+            "https://www.reddit.com/r/haskell/comments/iz2o1r/explicitly_comprehensible_frp_elm_compared_to/",
             e_ ]
         div_ $ do
           h4_ "Style"
