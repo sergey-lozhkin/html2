@@ -35,13 +35,17 @@ main = do
         div_ $ do
           h3_ "Now"
           links [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
+            "https://www.google.com/search?q=html+anonymous+box",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
+            "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
             zz ]
         div_ $ do
           h3_ "Learn"
           links [
-            "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
+            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
             "http://www.simplehtmlguide.com/text.php",
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
@@ -51,11 +55,9 @@ main = do
             "https://css-tricks.com/using-flexbox/",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
             "https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot",
             "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
             "https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
@@ -168,5 +170,6 @@ main = do
         div_ $ do
           h3_ "Done"
           links [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
             zz ]
-          link2 "!!! Draft !!! " "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
