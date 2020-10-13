@@ -10,8 +10,14 @@ import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 import Control.Monad (mapM_)
 
+link :: Text -> Text -> Html ()
+link url text = div_ $ a_ [href_ url] $ toHtml text
+
+link2 :: Text -> Text -> Html ()
+link2 text url = link url $ text <> url
+
 links :: [Text] -> Html ()
-links = mapM_ (\url-> div_ $ a_ [href_ url] $ toHtml url)
+links = mapM_ (\url -> link url url)
 
 main :: IO ()
 main = do
@@ -24,9 +30,9 @@ main = do
       body_ $ do
         div_ $ do
           h3_ "Now"
+          link2 "Draft --- " "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           links [
-              "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
-            , "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
+              "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
             ]
         div_ $ do
           h3_ "Learn"
