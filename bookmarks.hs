@@ -41,6 +41,8 @@ main = do
         div_ $ do
           h3_ "Learn"
           links [
+            "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
+            "http://www.simplehtmlguide.com/text.php",
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
             "https://css-tricks.com/autoprefixer/",
@@ -140,6 +142,7 @@ main = do
         div_ $ do
           h3_ "Sites"
           links [
+            "http://www.simplehtmlguide.com/",
             "https://css-tricks.com/",
             "https://developer.mozilla.org/en-US/",
             "https://developer.mozilla.org/en-US/docs/Learn",
