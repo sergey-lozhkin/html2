@@ -30,6 +30,7 @@ main = do
       head_ $ do
         meta_ [charset_ "utf-8"]
         title_ "Bookmarks"
+        link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
         style_ $
           "body { font-size: 12pt; font-family: Arial; line-height: 1.5; }"
       body_ $ do
