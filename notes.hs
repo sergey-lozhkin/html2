@@ -20,6 +20,9 @@ data TODO =
   WebSockets
   PHP
 
+data Margin =
+  Margin collapse == "margin-trim" property, draft, not implemented
+
 style_ =
     "white-space: nowrap;"
 <>  "display: inline-block;"
