@@ -1,0 +1,77 @@
+#!/bin/bash
+
+cmd=${1:-build}
+
+case "$cmd" in
+  build)
+    export LC_ALL=en_US.utf8
+
+    (echo === ghc generate-html; ghc generate-html)
+    (echo === generate-html; cd ../html; ../ark/generate-html)
+
+    files="
+      ActivitiesHistory \
+      ActivitiesWorkshop \
+      ActorAlexLitovchenko \
+      ActorAlexLiznenkov \
+      ActorArtemMishin \
+      ActorDmitryKoltsov \
+      ActorIrinaBrodskaya \
+      ActorJuliaJarova \
+      ActorNataliaMandrychenko \
+      BoxOfficeInfo \
+      BoxOfficeTickets \
+      EventDecorator \
+      EventsCalendar \
+      EventsList \
+      Home \
+      Mission \
+      StaffAlexLitovchenko \
+      StaffAlexLiznenkov \
+      StaffDmitryKoltsov \
+      StaffIrinaVolkova \
+      StaffLauraMukhina \
+      StaffMariaSmirnova \
+      SupportUsDonations \
+      SupportUsSponsors \
+      SupportUsVolunteer \
+      TeamActors \
+      TeamStaff \
+      WorkshopGeneral \
+      WorkshopActors \
+      WorkshopActorsDiscipline \
+      WorkshopActorsRenunciation \
+      WorkshopActorsTriple \
+      WorkshopActorsEasiness \
+      WorkshopActorsFeeling \
+      WorkshopActorsPerception \
+      WorkshopActorsExpressiveness \
+      WorkshopActorsCharacter \
+      WorkshopActdirs \
+      WorkshopActdirsConditions \
+      WorkshopActdirsSpace \
+      WorkshopActdirsPsycho \
+      WorkshopActdirsSpirit \
+      WorkshopActdirsText \
+      WorkshopActdirsAnalysis \
+      WorkshopDirectors \
+      WorkshopDirectorsCreation \
+      WorkshopDirectorsExecution \
+      WorkshopDirectorsContext \
+      WorkshopDirectorsTimespace \
+      WorkshopDirectorsRhythm \
+      WorkshopDirectorsPlasticity \
+      WorkshopDirectorsCollaboration \
+      WorkshopMusic \
+      WorkshopDrama \
+      WorkshopDecorations \
+    "
+
+    for ef in $files
+    do
+      elm --make --only-js --build-dir ../html/js ${ef}.elm
+      hjsmin ../html/js/${ef}.js > ../html/js/${ef}.min.js
+      rm -f ../html/js/${ef}.js
+    done
+    ;;
+esac

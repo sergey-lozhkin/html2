@@ -1,0 +1,89 @@
+module Ark.Site where
+
+data TopBarItem = TopHome | TopActivities | TopEvents | TopTeam | TopBoxOffice | TopSupportUs
+
+-- data PageItem
+--   = PageHome              TopHome           Nothing
+--   | ActivitiesWorkshop    TopActivities     Just "workshops"
+--   | ActivitiesHistory     TopActivities     Just "history"
+--   |
+
+-- data SideGroup
+--   = SideGroup TopHome []
+--   | SideGroup TopActivities [ActivitiesWorkshop, ActivitiesHistory]
+--   | SideGroup TopEvents [EventsCalendar, EventsList]
+
+-- sideMenu config [
+--   -- ("workshops", "ActivitiesWorkshop.html", False),
+--   -- ("history",   "ActivitiesHistory.html",  True)
+--   ]
+-- sideMenu config [
+--   -- ("workshops", "ActivitiesWorkshop.html", True),
+--   -- ("history",   "ActivitiesHistory.html",  False)
+--   ]
+-- sideMenu config [
+--   ("general info", "BoxOfficeInfo.html",    True),
+--   ("buy tickets",  "BoxOfficeTickets.html", False)
+--   ]
+-- sideMenu config [
+--   ("general info", "BoxOfficeInfo.html",    False),
+--   ("buy tickets",  "BoxOfficeTickets.html", True)
+--   ]
+-- sideMenu config [
+--   -- ("calendar",                  "EventsCalendar.html", False),
+--   ("list",                      "EventsList.html",     False),
+--   ("с днём рожденья, папочка!", "EventDaddy.html",     True)
+--   ]
+-- sideMenu config [
+--   -- ("calendar",         "EventsCalendar.html", False),
+--   ("list",             "EventsList.html",     False),
+--   ("полоумный журден", "EventJurden.html",    True)
+--   ]
+-- sideMenu config [
+--   -- ("calendar",                 "EventsCalendar.html", False),
+--   ("list",                     "EventsList.html",     False),
+--   ("пришёл мужчина к женщине", "EventMan.html",       True)
+--   ]
+-- sideMenu config [
+--   -- ("calendar",                       "EventsCalendar.html", False),
+--   ("list",                           "EventsList.html",     False),
+--   ("последняя ночь последнего царя", "EventNight.html",     True)
+--   ]
+-- sideMenu config [
+--   -- ("calendar", "EventsCalendar.html", True),
+--   ("list",     "EventsList.html",     False)
+--   ]
+-- sideMenu config [
+--   -- ("calendar", "EventsCalendar.html", False),
+--   ("list",     "EventsList.html",     True)
+--   ]
+-- sideMenu config [
+--   ("board & staff", "TeamStaff.html",  False),
+--   ("actors",        "TeamActors.html", False),
+--   ("mission",       "Mission.html",    True)
+--   ]
+-- sideMenu config [
+--   ("make donations", "SupportUsDonations.html", True),
+--   -- ("sponsors",       "SupportUsSponsors.html",  False),
+--   ("volunteer",      "SupportUsVolunteer.html", False)
+--   ]
+-- sideMenu config [
+--   ("make donations", "SupportUsDonations.html", False),
+--   -- ("sponsors",       "SupportUsSponsors.html",  True),
+--   ("volunteer",      "SupportUsVolunteer.html", False)
+--   ]
+-- sideMenu config [
+--   ("make donations", "SupportUsDonations.html", False),
+--   -- ("sponsors",       "SupportUsSponsors.html",  False),
+--   ("volunteer",      "SupportUsVolunteer.html", True)
+--   ]
+-- sideMenu config [
+--   ("board & staff", "TeamStaff.html",  False),
+--   ("actors",        "TeamActors.html", True),
+--   ("mission",       "Mission.html",    False)
+--   ]
+-- sideMenu config [
+--   ("board & staff", "TeamStaff.html",  True),
+--   ("actors",        "TeamActors.html", False),
+--   ("mission",       "Mission.html",    False)
+--   ]
