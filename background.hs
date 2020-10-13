@@ -15,9 +15,10 @@ main = do
     doctype_
     html_ [lang_ "en"] $ do
       head_ $ do
-        title_ "Background"
         meta_ [charset_ "utf-8"]
+        -- meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=UTF-8"]
         meta_ [name_ "viewport", content_ "width=device-width, initial-scale=1, shrink-to-fit=no"]
+        title_ "Background"
         -- link_ [rel_ "icon", type_ "image/png", href_ "assets/avatar-500x500.png"]
         link_ [rel_ "icon", type_ "image/png", href_ "assets/icons-10.png"]
         style_ $
