@@ -42,7 +42,7 @@ main = do
             "line-height: 1.4285714285714286;" <>
           "}" <>
           ".item { margin-left: 2em; }" <>
-          "h4 { margin-bottom: 0; }"
+          "h4 { margin-bottom: 0; font-weight: 400; }"
       body_ $ do
         div_ $ do
           h4_ "Now"
