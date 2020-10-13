@@ -62,6 +62,7 @@ main = do
           notes [
             "How to put an html page into email",
             "How to open a link in new tab",
+            "Syntax highlighting",
             e_ ]
         div_ $ do
           h4_ "Queue"
