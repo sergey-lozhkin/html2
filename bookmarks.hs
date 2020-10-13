@@ -13,7 +13,7 @@ import Control.Monad (mapM_)
 zz = "" :: Text
 
 link :: Text -> Text -> Html ()
-link url text = div_ [style_ "padding: .2em"] $ a_ [href_ url] $ toHtml text
+link url text = div_ [style_ "padding: .1em"] $ a_ [href_ url] $ toHtml text
 
 link2 :: Text -> Text -> Html ()
 link2 text url = link url $ text <> url
