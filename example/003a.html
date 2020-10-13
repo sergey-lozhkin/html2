@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow -->
+<html lang="en">
+  <head>
+    <title>!!! Margins collapse !!!</title>
+    <meta name="viewport" width="device-width" content="target-densitydpi=device-dpi">
+    <style>
+      html, head, body {
+        margin: 0;
+        border-width: 0;
+        padding: 0;
+      }
+      div {
+        margin: 1rem;
+        border-width: 0;
+        padding: 0;
+      }
+      h1 {
+        margin: 0;
+        border-width: 0;
+        padding: 0;
+      }
+      p {
+        margin: 1rem; /* margins collapse vertically, the bigger wins */
+        border: .1px solid darkgray; /* ultra thin line */
+        padding: 1rem;
+        background: lightgray;
+        background-clip: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Basic document flow</h1>
+      <p>
+        I am a basic block level element. My adjacent block level elements sit on new lines below me.
+      </p>
+      <p>
+        By default we span 100% of the width of our parent element, and we are as tall as our child content.
+        Our total width and height is our content + padding + border width/height.
+      </p>
+      <p>
+        We are separated by our margins.
+        Because of margin collapsing, we are separated by the width of one of our margins, not both.
+      </p>
+    </div>
+  </body>
+</html>
