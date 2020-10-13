@@ -71,10 +71,10 @@ main = do
   generate                       "TeamStaff"                      "Team | Board & Staff"
 
 generate :: Text -> Text -> IO ()
-generate elmModule title = writeFile (unpack $ elmModule <> ".html") $ renderText $ ark (arkTitle title) elmModule
+generate elmModule title = writeFile (unpack $ "html/" <> elmModule <> ".html") $ renderText $ ark (arkTitle title) elmModule
 
 generate2 :: FilePath -> Text -> Text -> IO ()
-generate2 file elmModule title = writeFile (file <> ".html") $ renderText $ ark2 (arkTitle title) elmModule
+generate2 file elmModule title = writeFile ("html/" <> file <> ".html") $ renderText $ ark2 (arkTitle title) elmModule
 
 arkHead :: Html () -> Text -> Html ()
 arkHead title elmModule = do
