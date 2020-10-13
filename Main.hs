@@ -77,14 +77,14 @@ generate2 :: FilePath -> Text -> Text -> IO ()
 generate2 file elmModule title = writeFile (file <> ".html") $ renderText $ ark2 (arkTitle title) elmModule
 
 arkHead :: Html () -> Text -> Html ()
-arkHead title elmModuleS = do
+arkHead title elmModule = do
     title_ title
     meta_ [charset_ "UTF-8"]
     meta_ [httpEquiv_ "X-UA-Compatible", content_ "IE=edge"]
     link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/fonts.css"]
     link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/bootstrap.min.css"]
     script_ [type_ "text/javascript", src_ "js/elm-runtime.min.js"] ""
-    script_ [type_ "text/javascript", src_ $ "js/" <> elmModuleS <> ".min.js"] ""
+    script_ [type_ "text/javascript", src_ $ "js/" <> elmModule <> ".min.js"] ""
 
 arkStyle :: Text
 arkStyle =
@@ -97,9 +97,9 @@ arkStyle =
   -- "#all-caps{letter-spacing:0.5pt;}"
 
 arkBody :: Text -> Html ()
-arkBody elmModuleS = do
+arkBody elmModule = do
     noscript_ "Please, enable JavaScript"
-    script_ [type_ "text/javascript"] $ "Elm.fullscreen(Elm." <> elmModuleS <> ");"
+    script_ [type_ "text/javascript"] $ "Elm.fullscreen(Elm." <> elmModule <> ");"
 
 caArk :: Text
 caArk = "Ark"
@@ -109,18 +109,18 @@ arkTitle "" = toHtml caArk
 arkTitle t  = toHtml $ caArk <> " | " <> t
 
 ark :: Html () -> Text -> Html ()
-ark title elmModuleS = do
+ark title elmModule = do
   doctype_
   html_ [lang_ "en"] $ do
-    head_ $ arkHead title elmModuleS >> style_ arkStyle
-    body_ $ arkBody elmModuleS
+    head_ $ arkHead title elmModule >> style_ arkStyle
+    body_ $ arkBody elmModule
 
 ark2 :: Html () -> Text -> Html ()
-ark2 title elmModuleS = do
+ark2 title elmModule = do
   doctype_
   html_ [lang_ "en"] $ do
     head_ $ do
-      arkHead title elmModuleS
+      arkHead title elmModule
       style_ $
         arkStyle <>
         ".carousel{width:100%;height:100%;}" <>
@@ -129,6 +129,6 @@ ark2 title elmModuleS = do
         ".carousel-inner>.item{width:100%;height:100%;}" <>
         ".carousel-inner>.item>img{width:100%;height:100%;}"
     body_ $ do
-      arkBody elmModuleS
+      arkBody elmModule
       script_ [type_ "text/javascript", src_ "js/jquery.min.js"] ""
       script_ [type_ "text/javascript", src_ "js/bootstrap.min.js"] ""
