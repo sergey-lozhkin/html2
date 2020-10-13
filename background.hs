@@ -18,6 +18,7 @@ main = do
         title_ "Background"
         meta_ [charset_ "utf-8"]
         meta_ [name_ "viewport", content_ "width=device-width, initial-scale=1, shrink-to-fit=no"]
+        link_ [rel_ "icon", type_ "image/png", href_ "avatar-500x500.png"]
         style_ $
           "a:link{color:inherit;text-decoration:inherit;}" <>
           "a:visited{color:inherit;text-decoration:inherit;}" <>
