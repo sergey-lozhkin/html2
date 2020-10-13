@@ -60,8 +60,8 @@ main = do
         div_ $ do
           h4_ "Notes"
           notes [
-            "How to: html page in email",
-            "How to: open a link in new tab",
+            "How to put an html page into email",
+            "How to open a link in new tab",
             e_ ]
         div_ $ do
           h4_ "Queue"
@@ -226,8 +226,10 @@ main = do
             "https://www.google.com/search?q=haskell+obelisk",
             "https://www.google.com/search?q=haskell+reflex",
             "https://www.google.com/search?q=html+sass",
-            "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
             "https://www.reddit.com/r/haskell/comments/iz2o1r/explicitly_comprehensible_frp_elm_compared_to/",
+            "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
+            "https://www.reddit.com/r/haskell/comments/izz4uy/im_looking_for_the_simplest_easiest_and_most/",
+            "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
             e_ ]
         div_ $ do
           h4_ "Style"
@@ -238,7 +240,9 @@ main = do
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
             "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
             "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
+            "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
+            "https://ihp.digitallyinduced.com/",
             e_ ]
         div_ $ do
           h4_ "Done"
