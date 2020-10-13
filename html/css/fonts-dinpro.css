@@ -1,0 +1,125 @@
+@font-face{
+  font-family: 'PFDinDisplayPro-Reg';
+  src: url('PFDinDisplayPro-Reg.eot');
+  src: url('PFDinDisplayPro-Reg.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Reg.woff') format('woff'),
+       url('PFDinDisplayPro-Reg.ttf') format('truetype'),
+       url('PFDinDisplayPro-Reg.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Black';
+  src: url('PFDinDisplayPro-Black.eot');
+  src: url('PFDinDisplayPro-Black.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Black.woff') format('woff'),
+       url('PFDinDisplayPro-Black.ttf') format('truetype'),
+       url('PFDinDisplayPro-Black.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-BlackIt';
+  src: url('PFDinDisplayPro-BlackIt.eot');
+  src: url('PFDinDisplayPro-BlackIt.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-BlackIt.woff') format('woff'),
+       url('PFDinDisplayPro-BlackIt.ttf') format('truetype'),
+       url('PFDinDisplayPro-BlackIt.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Bold';
+  src: url('PFDinDisplayPro-Bold.eot');
+  src: url('PFDinDisplayPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Bold.woff') format('woff'),
+       url('PFDinDisplayPro-Bold.ttf') format('truetype'),
+       url('PFDinDisplayPro-Bold.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-BoldItal';
+  src: url('PFDinDisplayPro-BoldItal.eot');
+  src: url('PFDinDisplayPro-BoldItal.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-BoldItal.woff') format('woff'),
+       url('PFDinDisplayPro-BoldItal.ttf') format('truetype'),
+       url('PFDinDisplayPro-BoldItal.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Italic';
+  src: url('PFDinDisplayPro-Italic.eot');
+  src: url('PFDinDisplayPro-Italic.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Italic.woff') format('woff'),
+       url('PFDinDisplayPro-Italic.ttf') format('truetype'),
+       url('PFDinDisplayPro-Italic.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Light';
+  src: url('PFDinDisplayPro-Light.eot');
+  src: url('PFDinDisplayPro-Light.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Light.woff') format('woff'),
+       url('PFDinDisplayPro-Light.ttf') format('truetype'),
+       url('PFDinDisplayPro-Light.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-LightItal';
+  src: url('PFDinDisplayPro-LightItal.eot');
+  src: url('PFDinDisplayPro-LightItal.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-LightItal.woff') format('woff'),
+       url('PFDinDisplayPro-LightItal.ttf') format('truetype'),
+       url('PFDinDisplayPro-LightItal.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Med';
+  src: url('PFDinDisplayPro-Med.eot');
+  src: url('PFDinDisplayPro-Med.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Med.woff') format('woff'),
+       url('PFDinDisplayPro-Med.ttf') format('truetype'),
+       url('PFDinDisplayPro-Med.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-MedItal';
+  src: url('PFDinDisplayPro-MedItal.eot');
+  src: url('PFDinDisplayPro-MedItal.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-MedItal.woff') format('woff'),
+       url('PFDinDisplayPro-MedItal.ttf') format('truetype'),
+       url('PFDinDisplayPro-MedItal.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-Thin';
+  src: url('PFDinDisplayPro-Thin.eot');
+  src: url('PFDinDisplayPro-Thin.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-Thin.woff') format('woff'),
+       url('PFDinDisplayPro-Thin.ttf') format('truetype'),
+       url('PFDinDisplayPro-Thin.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-ThinItal';
+  src: url('PFDinDisplayPro-ThinItal.eot');
+  src: url('PFDinDisplayPro-ThinItal.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-ThinItal.woff') format('woff'),
+       url('PFDinDisplayPro-ThinItal.ttf') format('truetype'),
+       url('PFDinDisplayPro-ThinItal.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-XThin';
+  src: url('PFDinDisplayPro-XThin.eot');
+  src: url('PFDinDisplayPro-XThin.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-XThin.woff') format('woff'),
+       url('PFDinDisplayPro-XThin.ttf') format('truetype'),
+       url('PFDinDisplayPro-XThin.svg#webfont') format('svg');
+}
+
+@font-face{
+  font-family: 'PFDinDisplayPro-XThinIt';
+  src: url('PFDinDisplayPro-XThinIt.eot');
+  src: url('PFDinDisplayPro-XThinIt.eot?#iefix') format('embedded-opentype'),
+       url('PFDinDisplayPro-XThinIt.woff') format('woff'),
+       url('PFDinDisplayPro-XThinIt.ttf') format('truetype'),
+       url('PFDinDisplayPro-XThinIt.svg#webfont') format('svg');
+}

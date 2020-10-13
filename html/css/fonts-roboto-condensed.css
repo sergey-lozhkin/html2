@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Roboto Condensed Light';
+  /*font-style: normal;*/
+  /*font-weight: 300;*/
+  src: url(roboto-condensed-light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Condensed Regular';
+  /*font-style: normal;*/
+  /*font-weight: 400;*/
+  src: url(roboto-condensed-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Condensed Bold';
+  /*font-style: normal;*/
+  /*font-weight: 700;*/
+  src: url(roboto-condensed-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Condensed Light Italic';
+  /*font-style: italic;*/
+  /*font-weight: 300;*/
+  src: url(roboto-condensed-light-italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Condensed Regular Italic';
+  /*font-style: italic;*/
+  /*font-weight: 400;*/
+  src: url(roboto-condensed-regular-italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Condensed Bold Italic';
+  /*font-style: italic;*/
+  /*font-weight: 700;*/
+  src: url(roboto-condensed-bold-italic.woff) format('woff');
+}
