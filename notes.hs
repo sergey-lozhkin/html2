@@ -4,6 +4,7 @@ data Learn =
   https://free.cofree.io/2020/09/01/type-errors/
   http://www.jsfuck.com/
   https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism
+  https://artagnon.com/articles/pl
 
 style_ =
     "white-space: nowrap;"
