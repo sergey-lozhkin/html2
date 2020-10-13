@@ -36,38 +36,46 @@ main = do
           h3_ "Now"
           links [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
+            zz ]
+        div_ $ do
+          h3_ "Queue"
+          links [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
+            "https://www.google.com/search?q=html+position+property",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
             "https://www.google.com/search?q=html+anonymous+box",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
             "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
             zz ]
         div_ $ do
           h3_ "Learn"
           links [
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
-            "https://www.google.com/search?q=html+li+marker",
-            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
-            "http://www.simplehtmlguide.com/text.php",
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
+            "http://www.simplehtmlguide.com/text.php",
             "https://css-tricks.com/autoprefixer/",
             "https://css-tricks.com/dont-overthink-it-grids/",
             "https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/",
             "https://css-tricks.com/using-flexbox/",
+            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout",
+            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
+            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
             "https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot",
             "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
             "https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
@@ -109,11 +117,11 @@ main = do
             "https://www.google.com/search?q=html+how+script+executed",
             "https://www.google.com/search?q=html+how+to+get+physical+pixel+size",
             "https://www.google.com/search?q=html+inline+block",
+            "https://www.google.com/search?q=html+li+marker",
             "https://www.google.com/search?q=html+margin+collapse",
             "https://www.google.com/search?q=html+objec+navigator",
             "https://www.google.com/search?q=html+onload+function",
             "https://www.google.com/search?q=html+onmouseover",
-            "https://www.google.com/search?q=html+position+property",
             "https://www.google.com/search?q=html+property+overflow",
             "https://www.google.com/search?q=html+reset+styles",
             "https://www.google.com/search?q=html+unbreakable+block",
@@ -145,8 +153,6 @@ main = do
             "https://www.w3schools.com/jsref/event_onmousedown.asp",
             "https://www.w3schools.com/jsref/event_onmouseover.asp",
             "https://www.w3schools.com/jsref/obj_window.asp",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
             zz ]
         div_ $ do
           h3_ "Sites"
@@ -177,6 +183,6 @@ main = do
         div_ $ do
           h3_ "Done"
           links [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
             zz ]
