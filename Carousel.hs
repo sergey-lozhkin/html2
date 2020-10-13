@@ -45,7 +45,7 @@ main = do
           ".carousel .item{width:100%;height:100%;}" <>
           ".carousel-inner>.item{width:100%;height:100%;}" <>
           ".carousel-inner>.item>img{width:100%;height:100%;}"
-      body_ $ do
+      body_ [class_ "zero-border"] $ do
         noscript_ "Please, enable JavaScript"
         script_ [type_ "text/javascript", src_ "js/jquery.min.js"] nil
         script_ [type_ "text/javascript", src_ "js/bootstrap.min.js"] nil
