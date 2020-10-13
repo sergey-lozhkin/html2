@@ -5,8 +5,8 @@
     <title>Function: onload</title>
     <script>
       // <does-not-exec>
-      document.body.style.margin = "20rem";
-      alert ("head script");
+      // document.body.style.margin = "20rem";
+      // alert ("head script");
       // </does-not-exec>
 
       function onLoad1() {
@@ -21,8 +21,8 @@
       }
     </script>
   </head>
-  <body onload="onLoad1()" onunload="onUnload1()">
-    <h1 onunload="onUnload1()">Hello World!</h1>
+  <body onload="onLoad1()" onbeforeunload="onUnload1()">
+    <h1>Hello World!</h1>
   </body>
 </html>
 

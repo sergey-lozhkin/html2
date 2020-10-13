@@ -17,6 +17,10 @@ data Learn = [Lots of advanced stuff on this site and IN its HTML/CSS/JS/SVG cod
   https://www.google.com/search?client=firefox-b-1-d&q=%3C%3Fphp
   https://javascript.info/
 
+data TODO =
+  WebSockets
+  PHP
+
 style_ =
     "white-space: nowrap;"
 <>  "display: inline-block;"
