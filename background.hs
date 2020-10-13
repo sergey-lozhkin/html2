@@ -12,10 +12,11 @@ import Data.Text.Lazy.IO (writeFile)
 main :: IO ()
 main = do
   writeFile "html/background.html" $ renderText $ do
-    doctypehtml_ $ do
+    doctype_
+    html_ [lang_ "en"] $ do
       head_ $ do
         title_ "Background"
-        meta_ [charset_ "UTF-8"]
+        meta_ [charset_ "utf-8"]
         meta_ [httpEquiv_ "X-UA-Compatible", content_ "IE=edge"]
         style_ $
           "a:link{color:inherit;text-decoration:inherit;}" <>

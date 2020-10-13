@@ -16,7 +16,7 @@ main = do
     html_ [lang_ "en"] $ do
       head_ $ do
         title_ "Carousel"
-        meta_ [charset_ "UTF-8"]
+        meta_ [charset_ "utf-8"]
         meta_ [httpEquiv_ "X-UA-Compatible", content_ "IE=edge"]
         link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/fonts.css"]
         link_ [rel_ "stylesheet", type_ "text/css", charset_ "utf-8", href_ "css/bootstrap.min.css"]
