@@ -36,8 +36,10 @@ main = do
             <>  "padding:2em;"
             <>  "background:pink;"
             <>  "background-clip:padding-box;"
-            <>  "width:100%;"
+            <>  "max-width:1000px;"
+            <>  "min-width:500px;"
             <>  "height:100%;"
+            <>  "margin:auto auto;"
             ] $ do
             "Hola, Mundo!"
         -- div_ [class_ "nil", style_ "position: relative; overflow: hidden; width: 180px; height: 45px;"] $ do
