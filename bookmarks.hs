@@ -231,6 +231,8 @@ main = do
             "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
             "https://www.reddit.com/r/haskell/comments/izz4uy/im_looking_for_the_simplest_easiest_and_most/",
             "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
+            "https://github.com/unimonkiez/self-adjusting-interval",
+            "https://chrispenner.ca/posts/traversal-systems",
             e_ ]
         div_ $ do
           h4_ "Style"
