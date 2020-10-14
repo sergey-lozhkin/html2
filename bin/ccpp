@@ -2,23 +2,22 @@
 
 . ~/.bashrc
 
-GH="$HOME/projects/github/html-3a1cf746"
-TM="$HOME/tmp/gh"
+NOTES="$HOME/notes"
+SPECS="$HOME/notes/specification"
+GITHUB="$HOME/projects/github/html-3a1cf746"
 
 function rrss () {
-    local COMMIT="$1"
-    local COMMENT="$2"
-    echo
-    cyan "=== $COMMIT" === "$COMMENT ==="
-    read
-    bexec git co --detach "$COMMIT"
-    bexec mv "$GH/.git" "$TM"
-    bexec rsync -avHAX --delete . "$GH"
-    bexec mv "$TM/.git" "$GH"
-    (   cd "$GH"
-        bexec git add .
-        bexec git com -m "$COMMENT"
-    )
+  local COMMIT="$1"
+  local COMMENT="$2"
+  echo
+  cyan "---" "$COMMIT" "---" "$COMMENT" "---"
+  bexec git -C "$NOTES" co --detach "$COMMIT"
+  bexec git -C "$GITHUB" rm -rf $(git -C "$GITHUB" ls-files)
+  green -- git -C "$SPECS" ls-files -z \| rsync -avAX --delete --relative --from0 --files-from=- "$SPECS" "$GITHUB"
+  git -C "$SPECS" ls-files -z | rsync -avAX --delete --relative --from0 --files-from=- "$SPECS" "$GITHUB"
+  bexec git -C "$GITHUB" add --force .
+  bexec git -C "$GITHUB" com -m "$COMMENT"
+  read
 }
 
 rrss 69cf79a 'spec'
