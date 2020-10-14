@@ -236,6 +236,7 @@ main = do
             "https://chrispenner.ca/posts/traversal-systems",
             "https://www.youtube.com/watch?v=LZTWYdU4nKk",
             "https://docs.gitlab.com/ee/user/project/pages/",
+            "https://www.reddit.com/r/haskell/comments/j41wrx/servant_warptls_serve_different_content_depending/",
             e_ ]
         div_ $ do
           h4_ "Style"
