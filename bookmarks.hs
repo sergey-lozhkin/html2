@@ -37,7 +37,7 @@ main = do
         style_ $
           "html, body { " <>
             "font-size: 12pt;" <>
-            "font-family: Helvetica, Arial;" <>
+            "font-family: Avenir, Helvetica, Arial;" <>
             "font-weight: 300;" <>
             "line-height: 1.4285714285714286;" <>
           "}" <>
