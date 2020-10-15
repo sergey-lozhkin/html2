@@ -253,9 +253,9 @@ main = do
             e_ ]
         div_ $ do
           h4_ "Done"
-          orderedLinks [
+          queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             e_ ]
