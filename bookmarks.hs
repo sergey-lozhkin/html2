@@ -253,16 +253,18 @@ main = do
             "http://acko.net/blog/geeks-mops-and-lightsabers/",
             "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
             "https://artagnon.com/articles/pl",
+            "https://chrispenner.ca/posts/interview",
             "https://free.cofree.io/2020/09/01/type-errors/",
             "https://ihp.digitallyinduced.com/",
             "https://quuxplusone.github.io/blog/2020/10/12/grab-bag/",
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
             "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
+            "https://www.cis.upenn.edu/~plclub/blog/2020-10-09-hs-to-coq/",
             "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
             "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
+            "https://www.srid.ca/neuron-v1.html",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             "https://www.tweag.io/blog/2020-10-07-ghcide-fellowship-summary/",
-            "https://www.srid.ca/neuron-v1.html",
             e_ ]
         div_ $ do
           h4_ "Done"
