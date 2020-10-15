@@ -245,6 +245,7 @@ main = do
             "https://www.youtube.com/watch?v=LZTWYdU4nKk",
             "https://docs.gitlab.com/ee/user/project/pages/",
             "https://www.reddit.com/r/haskell/comments/j41wrx/servant_warptls_serve_different_content_depending/",
+            "https://www.reddit.com/r/haskell/comments/j7d3ge/elm_vs_react_vs_purescript/",
             e_ ]
         div_ $ do
           h4_ "Style"
