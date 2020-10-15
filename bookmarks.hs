@@ -49,11 +49,11 @@ main = do
           "}" <>
           ".item { margin-left: 2em; }" <>
           "h4 { margin-bottom: 0; font-weight: 400; }" <>
-          ":link{text-decoration:inherit;}" <>
-          ":visited{text-decoration:inherit;}" <>
-          ":hover{text-decoration:inherit;}" <>
-          ":active{text-decoration:inherit;}" <>
-          "*{outline-style:none;outline-width:0px;}"
+          ":link { text-decoration:inherit; }" <>
+          ":visited { text-decoration:inherit; }" <>
+          ":hover { text-decoration:inherit; }" <>
+          ":active { text-decoration:inherit; }" <>
+          "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         div_ $ do
           h4_ "Now"
