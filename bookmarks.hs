@@ -53,7 +53,6 @@ main = do
         div_ $ do
           h4_ "Now"
           queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             e_ ]
@@ -258,4 +257,5 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             e_ ]
