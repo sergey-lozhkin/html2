@@ -1,3 +1,6 @@
+data Nice Shadow
+  filter: drop-shadow(8px 12px 30px gray);
+
 <link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
 <link rel="shortcut icon" type="image/png" href="html/assets/avatar-500x500.png">
 
