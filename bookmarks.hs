@@ -80,6 +80,9 @@ main = do
         div_ $ do
           h4_ "Learn"
           orderedLinks [
+            "https://www.google.com/search?q=html+drop-shadow",
+            "https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/",
+            "https://www.google.com/search?q=html+box-shadow+vs+filter+drop-shadow",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/filter",
             "https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d",
             "http://html5doctor.com/html-5-reset-stylesheet/",
