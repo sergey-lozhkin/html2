@@ -58,6 +58,7 @@ main = do
         div_ $ do
           h4_ "Now"
           queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
             "https://css-tricks.com/using-flexbox/",
             e_ ]
