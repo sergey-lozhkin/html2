@@ -58,7 +58,6 @@ main = do
         div_ $ do
           h4_ "Now"
           queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             e_ ]
         div_ $ do
           h4_ "Flex"
@@ -71,11 +70,17 @@ main = do
             "https://www.w3schools.com/css/css3_flexbox.asp",
             e_ ]
         div_ $ do
+          h4_ "Positioning"
+          queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/float",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
+            e_ ]
+        div_ $ do
           h4_ "Queue"
           queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context",
             "https://www.google.com/search?q=html+position+property",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
             "https://www.google.com/search?q=html+anonymous+box",
@@ -279,4 +284,6 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
             e_ ]
