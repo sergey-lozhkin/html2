@@ -27,7 +27,6 @@
         /*font-weight: 400;*/
         /*font-style: italic;*/
       }
-      /* ::marker { content: "---"; }*/
       p {
         /* extend background to the box border */
         margin: 0 -1rem;
@@ -35,11 +34,6 @@
         background-color: lightblue;
         color: #222;
         font-weight: 400;
-        /*position: relative;*/
-        /*top: .5rem;*/
-        /*bottom: .5rem;*/
-        /*left: .5rem;*/
-        /*right: .5rem;*/
       }
       .absbottom {
         padding: 1rem;
@@ -58,30 +52,18 @@
         padding: 1rem;
       }
       .shadow {
-        /*filter: drop-shadow(8px 12px 30px gray);*/
         box-shadow: 4px 8px 2rem #aaa;
       }
     </style>
   </head>
   <body style="height: 100vh;">
     <div class="panel" style="height: 100%;">
-<!--       <div class="absbottom">
-        Absolute bottom
-      </div> -->
-      <div class="text" style="height: 100%;"><!-- <div class="text shadow"> -->
-        <!-- Anonymous <em>text</em> box -->
-        <!-- <p>Paragraph</p> -->
-        <!-- Anonymous <em>text</em> box -->
-        <!-- <div class="text"></div> -->
+      <div class="text" style="height: 100%;">
         <div style="display: flex;
                     justify-content: space-between;
                     align-items: end;
-                    height: 100%;
                     ">
-          <!-- <div class="shadow" style="padding: 1rem">One</div> -->
-          <!-- <div class="shadow" style="padding: 1rem">Two</div> -->
-          <!-- <div class="shadow" style="padding: 1rem">Three</div> -->
-          <div class="shadow" style="padding: 1rem">
+          <div class="shadow" style="padding: 1rem; height: 600px;">
             The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
             Line spacing is commonly measured as a percentage of font size.
             Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -94,7 +76,7 @@
             It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
           </div>
           <div style="margin: .5rem"></div>
-          <div class="shadow" style="padding: 1rem">
+          <div class="shadow" style="padding: 1rem; height: 600px;">
             The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
             Line spacing is commonly measured as a percentage of font size.
             Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -107,7 +89,7 @@
             It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
           </div>
           <div style="margin: .5rem"></div>
-          <div class="shadow" style="padding: 1rem">
+          <div class="shadow" style="padding: 1rem; height: 600px;">
             The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
             Line spacing is commonly measured as a percentage of font size.
             Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
