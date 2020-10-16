@@ -229,6 +229,7 @@ main = do
         div_ $ do
           h4_ "Tools"
           orderedLinks [
+            "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/",
             "http://hackage.haskell.org/package/libjwt-typed",
             "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
             "http://www.jsfuck.com/",
