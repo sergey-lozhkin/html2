@@ -58,16 +58,17 @@ main = do
         div_ $ do
           h4_ "Now"
           queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
+            "https://css-tricks.com/using-flexbox/",
             e_ ]
         div_ $ do
           h4_ "Flex"
           queuedLinks [
-            "https://css-tricks.com/using-flexbox/",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
             "https://jurosh.com/blog/css-float-table-flex-grid",
             "https://www.google.com/search?q=html+display+flex",
             "https://www.google.com/search?q=html+flexbox",
             "https://www.w3schools.com/css/css3_flexbox.asp",
+            "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
             e_ ]
         div_ $ do
           h4_ "Positioning"
