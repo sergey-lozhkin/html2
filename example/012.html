@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Flex Box</title>
+    <link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
+    <style>
+      html, body {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border-width: 0px;
+        background: #f0f0f0;
+        color: #222;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+        margin: 0px;
+        padding: 0px;
+        border-width: 0px;
+        background-clip: border-box;
+        line-height: 1.4285714285714286;
+        font-family: Avenir, Helvetica, Arial;
+        font-size: 12pt;
+        font-weight: 100;
+        /*font-weight: 400;*/
+        /*font-style: italic;*/
+      }
+      /* ::marker { content: "---"; }*/
+      p {
+        /* extend background to the box border */
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        background-color: lightblue;
+        color: #222;
+        font-weight: 400;
+        /*position: relative;*/
+        /*top: .5rem;*/
+        /*bottom: .5rem;*/
+        /*left: .5rem;*/
+        /*right: .5rem;*/
+      }
+      .absbottom {
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        height: auto;
+        width: 50%;
+        background-color: rebeccapurple;
+        color: #f0f0f0
+      }
+      .panel {
+        width: 50%;
+        float: left;
+      }
+      .text {
+        padding: 1rem;
+      }
+      .shadow {
+        /*filter: drop-shadow(8px 12px 30px gray);*/
+        box-shadow: 4px 8px 64px lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="absbottom">
+        Absolute bottom
+      </div>
+      <div class="text shadow">
+        Anonymous <em>text</em> box
+        <p>Paragraph</p>
+        Anonymous <em>text</em> box
+        <div class="text"></div>
+        <div>
+          The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+          Line spacing is commonly measured as a percentage of font size.
+          Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+          You should experiment to see what looks best with your text.
+          There are two main risks when it comes to line spacing: too little, and too much.
+          Most serious is having too little space between the lines.
+          Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+          This makes for poor readability and atrocious accessibility.
+          It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="absbottom">
+        Absolute bottom
+      </div>
+      <div class="text shadow">
+        Anonymous <em>text</em> box
+        <p>Paragraph</p>
+        Anonymous <em>text</em> box
+      </div>
+    </div>
+  </body>
+</html>

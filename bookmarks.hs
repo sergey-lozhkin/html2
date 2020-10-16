@@ -146,6 +146,7 @@ main = do
             "https://www.google.com/search?q=How+to+open+a+link+in+new+tab",
             "https://www.google.com/search?q=How+to+put+an+html+page+into+email",
             "https://www.google.com/search?q=css+tables+vs+css+grid",
+            "https://www.google.com/search?q=flexbox+svg+icon",
             "https://www.google.com/search?q=how+does+html+flow+work",
             "https://www.google.com/search?q=how+html+%3A%3Aafter+work",
             "https://www.google.com/search?q=how+to+put+hover+into+element%27s+style+attribute",
