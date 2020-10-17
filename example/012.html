@@ -14,6 +14,9 @@
         background: #f0f0f0;
         color: #222;
       }
+      body {
+        height: 100vh;
+      }
       *, *:before, *:after {
         box-sizing: inherit;
         margin: 0px;
@@ -28,18 +31,26 @@
       .shadow {
         box-shadow: 4px 8px 2rem #aaa;
       }
+      .fbox {
+        display: flex;
+        /*justify-content: space-around;*/
+        /*align-items: flex-start;*/
+        /*flex-direction: column;*/
+        /*align-content: space-between;*/
+        /*flex-wrap: wrap;*/
+        padding: 1rem;
+      }
+      .fitem {
+        padding: 1rem;
+      }
+      .fspacer {
+        margin: .5rem;
+      }
     </style>
   </head>
-  <body style="height: 100vh;">
-    <div style="display: flex;
-                /*justify-content: space-around;*/
-                /*align-items: flex-end;*/
-                /*flex-direction: column;*/
-                /*align-content: space-between;*/
-                /*flex-wrap: wrap;*/
-                padding: 1rem;
-                ">
-      <div class="shadow" style="padding: 1rem;">
+  <body>
+    <div class="fbox">
+      <div class="fitem shadow">
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
         Line spacing is commonly measured as a percentage of font size.
         Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -51,8 +62,8 @@
         This makes for poor readability and atrocious accessibility.
         It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
 -->          </div>
-      <div style="margin: .5rem"></div>
-      <div class="shadow" style="padding: 1rem;">
+      <div class="fspacer"></div>
+      <div class="fitem shadow">
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
         Line spacing is commonly measured as a percentage of font size.
         Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -64,8 +75,8 @@
         This makes for poor readability and atrocious accessibility.
         It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
 -->          </div>
-      <div style="margin: .5rem"></div>
-      <div class="shadow" style="padding: 1rem;">
+      <div class="fspacer"></div>
+      <div class="fitem shadow">
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
         Line spacing is commonly measured as a percentage of font size.
         Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
