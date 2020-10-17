@@ -78,6 +78,16 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
             e_ ]
         div_ $ do
+          h4_ "Grid"
+          queuedLinks [
+            "https://css-tricks.com/snippets/css/complete-guide-grid/",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout",
+            "https://developers.google.com/web/updates/2017/01/css-grid",
+            "https://gridbyexample.com/",
+            "https://www.google.com/search?q=css+tables+vs+css+grid",
+            e_ ]
+        div_ $ do
           h4_ "Positioning"
           queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
@@ -120,8 +130,6 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
@@ -136,9 +144,7 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content",
             "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr",
             "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM",
-            "https://developers.google.com/web/updates/2017/01/css-grid",
             "https://getbootstrap.com/docs/4.5/content/reboot/",
-            "https://gridbyexample.com/",
             "https://javascript.info/dom-attributes-and-properties",
             "https://medium.com/myplanet-musings/what-is-a-json-web-token-2193f383e963",
             "https://purecss.io/grids/",
@@ -152,7 +158,6 @@ main = do
             "https://www.google.com/search?q=%3C%3Fphp",
             "https://www.google.com/search?q=How+to+open+a+link+in+new+tab",
             "https://www.google.com/search?q=How+to+put+an+html+page+into+email",
-            "https://www.google.com/search?q=css+tables+vs+css+grid",
             "https://www.google.com/search?q=flexbox+svg+icon",
             "https://www.google.com/search?q=how+does+html+flow+work",
             "https://www.google.com/search?q=how+html+%3A%3Aafter+work",
