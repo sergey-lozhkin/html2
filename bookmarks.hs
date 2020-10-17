@@ -293,6 +293,7 @@ main = do
             "https://www.srid.ca/neuron-v1.html",
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             "https://www.tweag.io/blog/2020-10-07-ghcide-fellowship-summary/",
+            "https://propensive.com/",
             e_ ]
         div_ $ do
           h4_ "Done"
