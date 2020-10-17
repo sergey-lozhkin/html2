@@ -1,3 +1,6 @@
+data Flex
+  item.width with % is treated much better
+
 data Nice Shadow
   filter: drop-shadow(8px 12px 30px gray);
 
