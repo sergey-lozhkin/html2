@@ -296,6 +296,7 @@ main = do
             "https://propensive.com/",
             "https://en.wikipedia.org/wiki/KHTML",
             "http://allaboutscala.com/tutorials/chapter-8-beginner-tutorial-using-scala-collection-functions/scala-drop-function/",
+            "https://yoksel.github.io/flex-cheatsheet/#section-flex-wrap",
             e_ ]
         div_ $ do
           h4_ "Done"
