@@ -86,6 +86,8 @@ main = do
             "https://developers.google.com/web/updates/2017/01/css-grid",
             "https://gridbyexample.com/",
             "https://www.google.com/search?q=css+tables+vs+css+grid",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/grid",
+            "https://www.google.com/search?q=html+grid+layout",
             e_ ]
         div_ $ do
           h4_ "Positioning"
