@@ -294,6 +294,7 @@ main = do
             "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
             "https://www.tweag.io/blog/2020-10-07-ghcide-fellowship-summary/",
             "https://propensive.com/",
+            "https://en.wikipedia.org/wiki/KHTML",
             e_ ]
         div_ $ do
           h4_ "Done"
