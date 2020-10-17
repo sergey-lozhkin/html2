@@ -279,6 +279,7 @@ main = do
             "https://quuxplusone.github.io/blog/2020/10/12/grab-bag/",
             "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
             "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
+            "https://stackoverflow.com/questions/64392946/type-reuse-in-haskell",
             "https://www.cis.upenn.edu/~plclub/blog/2020-10-09-hs-to-coq/",
             "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
             "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
