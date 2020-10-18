@@ -58,6 +58,7 @@ main = do
         div_ $ do
           h4_ "Now"
           queuedLinks [
+            "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-self",
@@ -73,7 +74,6 @@ main = do
             "https://www.google.com/search?q=html+display+flex",
             "https://www.google.com/search?q=html+flexbox",
             "https://www.w3schools.com/css/css3_flexbox.asp",
-            "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
             "https://www.google.com/search?q=html+align-items+chrome",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
             "https://yoksel.github.io/flex-cheatsheet/",
