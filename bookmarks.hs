@@ -275,6 +275,10 @@ main = do
             "https://www.reddit.com/r/haskell/comments/j7d3ge/elm_vs_react_vs_purescript/",
             "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
             "https://www.youtube.com/watch?v=LZTWYdU4nKk",
+            "https://askubuntu.com/questions/1102594/how-do-i-set-up-the-simplest-http-local-server",
+            "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
+            "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
+            "https://www.google.com/search?q=simple+static+web+server+linux",
             e_ ]
         div_ $ do
           h4_ "Style"

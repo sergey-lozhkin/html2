@@ -1,6 +1,9 @@
 data Flex
   item.width with % is treated much better
 
+data Simple Static Server
+  python3 -m http.server 3333 --bind localhost
+
 data Nice Shadow
   filter: drop-shadow(8px 12px 30px gray);
 
