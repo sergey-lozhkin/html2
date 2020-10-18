@@ -76,6 +76,7 @@ main = do
             "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
             "https://www.google.com/search?q=html+align-items+chrome",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
+            "https://yoksel.github.io/flex-cheatsheet/",
             e_ ]
         div_ $ do
           h4_ "Grid"
