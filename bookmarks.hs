@@ -112,7 +112,7 @@ main = do
             e_ ]
         div_ $ do
           h4_ "Learn"
-          orderedLinks [
+          queuedLinks [
             "https://www.otsukare.info/2015/03/26/refresh-http-header",
             "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/",
             "http://html5doctor.com/html-5-reset-stylesheet/",
@@ -227,7 +227,7 @@ main = do
             e_ ]
         div_ $ do
           h4_ "Sites"
-          orderedLinks [
+          queuedLinks [
             "http://www.simplehtmlguide.com/",
             "https://css-tricks.com/",
             "https://developer.mozilla.org/en-US/",
@@ -238,7 +238,7 @@ main = do
             e_ ]
         div_ $ do
           h4_ "Tools"
-          orderedLinks [
+          queuedLinks [
             "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/",
             "http://hackage.haskell.org/package/libjwt-typed",
             "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
@@ -279,10 +279,11 @@ main = do
             "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
             "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
             "https://www.google.com/search?q=simple+static+web+server+linux",
+            "http://svgicons.sparkk.fr/",
             e_ ]
         div_ $ do
           h4_ "Style"
-          orderedLinks [
+          queuedLinks [
             "http://acko.net/blog/geeks-mops-and-lightsabers/",
             "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
             "https://artagnon.com/articles/pl",
