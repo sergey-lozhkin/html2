@@ -113,6 +113,8 @@ main = do
         div_ $ do
           h4_ "Learn"
           orderedLinks [
+            "https://www.otsukare.info/2015/03/26/refresh-http-header",
+            "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/",
             "http://html5doctor.com/html-5-reset-stylesheet/",
             "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
             "http://www.simplehtmlguide.com/text.php",
