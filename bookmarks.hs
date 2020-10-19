@@ -78,6 +78,7 @@ main = do
             "https://www.google.com/search?q=html+align-items+chrome",
             "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
             "https://yoksel.github.io/flex-cheatsheet/",
+            "https://css-tricks.com/almanac/properties/f/flex-wrap/",
             e_ ]
         div_ $ do
           h4_ "Grid"
