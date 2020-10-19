@@ -1,11 +1,13 @@
 data Flex
   item.width with % is treated much better
+  !!! Safari does not render right
 
 data Simple Static Server
   python3 -m http.server 3333 --bind localhost
 
-data Nice Shadow
+data Shadow
   filter: drop-shadow(8px 12px 30px gray);
+  .shadow { box-shadow: 4px 8px 1rem #aaa; }
 
 <link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
 <link rel="shortcut icon" type="image/png" href="html/assets/avatar-500x500.png">
