@@ -69,6 +69,13 @@ main = do
             "https://css-tricks.com/using-flexbox/",
             e_ ]
         div_ $ do
+          h4_ "Viewport"
+          queuedLinks [
+            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
+            "https://www.quirksmode.org/mobile/viewports2.html",
+            "https://www.google.com/search?q=html+meta+viewport",
+            e_ ]
+        div_ $ do
           h4_ "Flex"
           queuedLinks [
             "https://jurosh.com/blog/css-float-table-flex-grid",
@@ -133,7 +140,6 @@ main = do
             "https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/",
             "https://css-tricks.com/dont-overthink-it-grids/",
             "https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/",
-            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout",
             "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
@@ -215,7 +221,6 @@ main = do
             "https://www.paulirish.com/2012/box-sizing-border-box-ftw/",
             "https://www.pixelstech.net/article/1537002042-The-danger-of-target=_blank-and-opener",
             "https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html",
-            "https://www.quirksmode.org/mobile/viewports2.html",
             "https://www.reddit.com/r/programming/comments/j0n20w/the_danger_of_target_blank_and_opener/",
             "https://www.ternstyle.us/blog/float-vs-inline-block",
             "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html",
