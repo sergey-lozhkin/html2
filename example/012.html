@@ -11,7 +11,7 @@
         margin: 0px;
         padding: 0px;
         border-width: 0px;
-        background: #f0f0f0;
+        background: #c0c0c0;
         color: #222;
       }
       body { height: 100vh; }
@@ -26,10 +26,12 @@
         font-size: 12pt;
         font-weight: 300;
       }
-      .shadow { box-shadow: 4px 8px 1rem #aaa; }
+      .shadow {
+        /*box-shadow: 4px 8px 1rem #aaa; */
+      }
       .box {
         display: flex;
-        /*justify-content: space-around;*/
+        justify-content: flex-end;
         align-items: flex-start;
         /*flex-direction: column;*/
         /*align-content: space-between;*/
@@ -39,19 +41,27 @@
       }
       .item   {
         padding: 1rem;
-        background: #fcfcfc;
+        /*background: #fcfcfc;*/
       }
       .spacer {
         margin: .5rem;
-        /*display: none;*/
+        display: none;
       }
-      .thin   { width:   30%; }
-      .normal { width:   60%; }
-      .thick  { width:   120%; }
+      .thin {
+        width: 30%;
+        background: #e4e4e4;
+      }
+      .normal {
+        width: 60%;
+        background: #f0f0f0;
+      }
+      .thick {
+        width: 120%;
+        background: #fcfcfc;
+      }
     </style>
   </head>
   <body>
-    <!-- content: "⦁"; -->
     <div class="box">
       <div class="item thin shadow">
         The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
