@@ -11,3 +11,6 @@ html/Carousel.html:: Carousel.hs
 
 bookmarks.html:: bookmarks.hs
 	runhaskell $^
+
+serve::
+	python3 -m http.server 3333
