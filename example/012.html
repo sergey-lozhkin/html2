@@ -14,7 +14,9 @@
         background: #c0c0c0;
         color: #222;
       }
-      body { height: 100vh; }
+      body {
+        min-height: 100vh;
+      }
       *, *:before, *:after {
         box-sizing: inherit;
         margin: 0px;
@@ -30,6 +32,7 @@
       .boxdown {
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
         height: 100%;
         width: 100%;
       }
@@ -47,6 +50,7 @@
         padding: 1rem;
         flex-shrink: 1;
         flex-grow: 1;
+        /*overflow: scroll;*/
       }
       .bottom {
         padding: 1rem;
