@@ -98,6 +98,15 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
             e_ ]
         div_ $ do
+          h4_ "SVG"
+          queuedLinks [
+            "https://www.google.com/search?q=flexbox+svg+icon",
+            "https://hackage.haskell.org/package/lucid-svg",
+            "https://hackage.haskell.org/package/svg-builder",
+            "http://svgicons.sparkk.fr/",
+            "https://www.sitepoint.com/css-with-svg/",
+            e_ ]
+        div_ $ do
           h4_ "Queue"
           queuedLinks [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context",
@@ -163,7 +172,6 @@ main = do
             "https://www.google.com/search?q=%3C%3Fphp",
             "https://www.google.com/search?q=How+to+open+a+link+in+new+tab",
             "https://www.google.com/search?q=How+to+put+an+html+page+into+email",
-            "https://www.google.com/search?q=flexbox+svg+icon",
             "https://www.google.com/search?q=how+does+html+flow+work",
             "https://www.google.com/search?q=how+html+%3A%3Aafter+work",
             "https://www.google.com/search?q=how+to+put+hover+into+element%27s+style+attribute",
@@ -250,10 +258,8 @@ main = do
             "https://github.com/dbaynard/lucid-from-html",
             "https://github.com/unimonkiez/self-adjusting-interval",
             "https://hackage.haskell.org/package/blaze-from-html",
-            "https://hackage.haskell.org/package/lucid-svg",
             "https://hackage.haskell.org/package/nice-html",
             "https://hackage.haskell.org/package/shakespeare",
-            "https://hackage.haskell.org/package/svg-builder",
             "https://hackage.haskell.org/package/type-of-html",
             "https://hackage.haskell.org/package/type-of-html-static",
             "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
@@ -279,7 +285,6 @@ main = do
             "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
             "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
             "https://www.google.com/search?q=simple+static+web+server+linux",
-            "http://svgicons.sparkk.fr/",
             e_ ]
         div_ $ do
           h4_ "Style"
