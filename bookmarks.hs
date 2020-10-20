@@ -292,6 +292,7 @@ main = do
             "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
             "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
             "https://www.google.com/search?q=simple+static+web+server+linux",
+            "https://nginx.org/en/docs/",
             e_ ]
         div_ $ do
           h4_ "Style"
