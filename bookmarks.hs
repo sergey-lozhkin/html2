@@ -49,7 +49,11 @@ main = do
             "line-height: inherit;" <>
           "}" <>
           ".item { margin-left: 1rem; }" <>
-          "h4 { margin-bottom: 0; font-weight: 400; }" <>
+          "h4 {" <>
+            "margin-bottom: 0;" <>
+            "font-weight: 400;" <>
+            "border-top: 0.5px solid gray;" <>
+          "}" <>
           ":link { text-decoration:inherit; }" <>
           ":visited { text-decoration:inherit; }" <>
           ":hover { text-decoration:inherit; }" <>
