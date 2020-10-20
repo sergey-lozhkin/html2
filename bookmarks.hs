@@ -317,6 +317,7 @@ main = do
             "https://en.wikipedia.org/wiki/KHTML",
             "http://allaboutscala.com/tutorials/chapter-8-beginner-tutorial-using-scala-collection-functions/scala-drop-function/",
             "https://yoksel.github.io/flex-cheatsheet/#section-flex-wrap",
+            "https://quuxplusone.github.io/blog/2020/10/18/scott-kim-gardner-ambigrams/",
             e_ ]
         div_ $ do
           h4_ "Done"
