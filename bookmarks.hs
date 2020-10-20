@@ -48,7 +48,7 @@ main = do
             "font-weight: inherit;" <>
             "line-height: inherit;" <>
           "}" <>
-          ".item { margin-left: 2em; }" <>
+          ".item { margin-left: 1rem; }" <>
           "h4 { margin-bottom: 0; font-weight: 400; }" <>
           ":link { text-decoration:inherit; }" <>
           ":visited { text-decoration:inherit; }" <>
