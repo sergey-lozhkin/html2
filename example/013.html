@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Flex Box</title>
+    <title>Static Header/Footer</title>
     <link rel="icon" type="image/svg+xml" href="icon1.svg">
     <style>
       html, body {
@@ -13,9 +13,6 @@
         border-width: 0px;
         background: #c0c0c0;
         color: #222;
-      }
-      body {
-        min-height: 100vh;
       }
       *, *:before, *:after {
         box-sizing: inherit;
@@ -31,7 +28,6 @@
       .boxdown {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
         height: 100%;
         width: 100%;
       }
@@ -42,11 +38,25 @@
         padding: 1rem;
         flex: 1 1 auto;
       }
-      .bottom {
-        padding: 1rem;
+      .top {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: auto;
+        width: 100%;
+        padding: .5rem 1rem;
         background-color: #606060;
         color: #f0f0f0;
-        flex: 0 0 auto;
+      }
+      .bottom {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: auto;
+        width: 100%;
+        padding: .5rem 1rem;
+        background-color: #606060;
+        color: #f0f0f0;
       }
       .item   {
         padding: 1rem;
@@ -66,31 +76,18 @@
     </style>
     <script>
       function fixHeight () {
-        var down = document.getElementById ("idown");
-        var box = document.getElementById ("ibox");
-        var bottom = document.getElementById ("ibottom");
-        var thin =  document.getElementById ("ithin");
-        thin.innerHTML
-          = down.getBoundingClientRect().height + "<br>"
-          + box.getBoundingClientRect().height + "<br>"
-          + bottom.getBoundingClientRect().height + "<br>"
-          + (box.getBoundingClientRect().height + bottom.getBoundingClientRect().height) + "<br>"
-          + window.innerHeight + "<br>"
-          + "The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable. "
-          + "Line spacing is commonly measured as a percentage of font size. "
-          + "Conventional wisdom is that line spacing of 130%-150% is ideal for readability."
-          ;
-        // var h = window.innerHeight - bottom.getBoundingClientRect().height;
-        // box.style.height = h + "px";
-        // box.style.minHeight = h + "px";
-        // box.style.maxHeight = h + "px";
+        document.body.style.paddingTop = document.getElementById("top").getBoundingClientRect().height + "px";
+        document.body.style.paddingBottom = document.getElementById("bottom").getBoundingClientRect().height + "px";
       }
     </script>
   </head>
   <body onload="fixHeight()" onresize="fixHeight()">
-    <div class="boxdown" id="idown">
-      <div class="box" id="ibox">
-        <div class="item thin" id="ithin">
+    <div class="top" id="top">
+      Static Header
+    </div>
+    <div class="boxdown">
+      <div class="box">
+        <div class="item thin">
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
           Line spacing is commonly measured as a percentage of font size.
           Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
@@ -120,9 +117,9 @@
           It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
         </div>
       </div>
-      <div class="bottom" id="ibottom">
-        Absolute Bottom
-      </div>
+    </div>
+    <div class="bottom" id="bottom">
+      Static Footer
     </div>
   </body>
 </html>

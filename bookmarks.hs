@@ -57,7 +57,7 @@ main = do
           "}" <>
           ".section {" <>
             "padding: 0 0 2rem 0;" <>
-            "border-top: 0.2px solid rgb(175,175,175);" <>
+            "border-top: 0.5px solid rgb(175,175,175);" <>
           "}" <>
           ".header {" <>
             "font-size: 14pt;" <>
