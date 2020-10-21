@@ -59,12 +59,12 @@ main = do
           "}" <>
           ".section {" <>
             "padding: 0 0 2rem 0;" <>
+            "border-top: 0.2px solid rgb(175,175,175);" <>
           "}" <>
           ".header {" <>
             "font-size: 14pt;" <>
             "font-weight: 400;" <>
-            "border-top: 0.2px solid rgb(175,175,175);" <>
-            "padding: 1rem 2rem;" <>
+            "padding: 1em 2rem;" <>
           "}" <>
           ".block {" <>
           "}" <>
