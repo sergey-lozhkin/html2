@@ -250,6 +250,10 @@ main = do
           "https://www.w3schools.com/jsref/event_onmousedown.asp",
           "https://www.w3schools.com/jsref/event_onmouseover.asp",
           "https://www.w3schools.com/jsref/obj_window.asp",
+          "https://stackoverflow.com/questions/8865458/how-do-i-vertically-center-text-with-css",
+          "https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html",
+          "https://www.htmlhelp.com/reference/css/text/vertical-align.html",
+          "https://www.google.com/search?q=html+text+alignment+vertical",
           e_ ]
         section "Sites" [
           "http://www.simplehtmlguide.com/",
