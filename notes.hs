@@ -1,6 +1,5 @@
 data Flex
   item.width with % is treated much better
-  !!! Safari does not render right
 
 data Simple Static Server
   python3 -m http.server 3333 --bind localhost
