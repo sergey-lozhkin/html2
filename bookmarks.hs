@@ -18,7 +18,7 @@ section tt links =
     block links
 
 header :: Text -> Html ()
-header = h4_ [class_ "header"] . toHtml
+header = div_ [class_ "header"] . toHtml
 
 block :: [Text] -> Html ()
 block = div_ [class_ "block"] . mapM_ (\url -> item url url)
@@ -43,31 +43,38 @@ main = do
             "font-size: 12pt;" <>
             "font-family: Avenir, Helvetica, Arial;" <>
             "font-weight: 300;" <>
-            "line-height: 1.4285714285714286;" <>
+            "line-height: 1.5;" <>
+            "padding: 0rem;" <>
+            "background: #fcfcfc;" <>
           "}" <>
           "*, *:before, *:after {" <>
             "font-size: inherit;" <>
             "font-family: inherit;" <>
             "font-weight: inherit;" <>
             "line-height: inherit;" <>
-            "margin: 0;" <>
+            "margin: 0px;" <>
+            "padding: 0px;" <>
+            "border-width: 0px;" <>
+            "background: inherit;" <>
           "}" <>
-          ".item {" <>
-            "padding-left: 1rem;" <>
-            "overflow: hidden;" <>
+          ".section {" <>
+            "padding: 0 0 2rem 0;" <>
           "}" <>
-          ".item:hover {" <>
-            "background: lightgray;" <>
-          "}" <>
-          "h4 {" <>
+          ".header {" <>
+            "font-size: 14pt;" <>
             "font-weight: 400;" <>
-            "border-bottom: 0.5px solid gray;" <>
-            "padding: .5rem 1rem;" <>
-            "background: #e4e4e4;" <>
+            "border-top: 0.2px solid rgb(175,175,175);" <>
+            "padding: 1rem 2rem;" <>
           "}" <>
           ".block {" <>
-            "padding: 1rem 0;" <>
-            "margin-bottom: 1rem;" <>
+          "}" <>
+          ".item {" <>
+            "padding-left: 2rem;" <>
+            "overflow: hidden;" <>
+            "white-space: nowrap;" <>
+          "}" <>
+          ".item:hover {" <>
+            "background: #f0f0f0;" <>
           "}" <>
           "a:link { text-decoration:inherit; }" <>
           "a:visited { text-decoration:inherit; }" <>
@@ -114,6 +121,7 @@ main = do
           "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
           "https://developer.mozilla.org/en-US/docs/Web/CSS/float",
           "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
+          "https://www.google.com/search?q=html+max-height",
           e_ ]
         section "SVG" [
           "https://www.google.com/search?q=flexbox+svg+icon",
