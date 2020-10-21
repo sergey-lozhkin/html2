@@ -11,54 +11,79 @@
         margin: 0px;
         padding: 0px;
         border-width: 0px;
-        background: #f0f0f0;
+        background: #fcfcfc;
         color: #222;
-      }
-      body {
-        min-height: 100vh;
-        padding: 1rem;
+        font-size: 12pt;
+        font-family: Avenir, Helvetica, Arial;
+        font-weight: 300;
+        line-height: 1.5;
       }
       *, *:before, *:after {
         box-sizing: inherit;
+        background-clip: border-box;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
         margin: 0px;
         padding: 0px;
         border-width: 0px;
-        background-clip: border-box;
-        line-height: 1.4285714285714286;
-        font-family: Avenir, Helvetica, Arial;
-        font-size: 12pt;
-        font-weight: 300;
+        background: inherit;
       }
-      h5 {
-        /*margin-top: 1rem;*/
-        border-top: 0.5px solid gray;
+      .section {
+        padding: 0 0 2rem 0;
       }
+      .header {
+        font-size: 14pt;
+        font-weight: 400;
+        border-top: 0.2px solid rgb(175,175,175);
+        padding: 1rem 2rem;
+      }
+      .block {
+      }
+      .item {
+        padding-left: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .item:hover {
+        background: #f0f0f0;
+      }
+      a:link { text-decoration:inherit; }
+      a:visited { text-decoration:inherit; }
+      a:hover { text-decoration:inherit; }
+      a:active { text-decoration:inherit; }
+      * { outline-style:none; outline-width:0px; }
     </style>
   </head>
   <body>
-    <h5>Links</h5>
-    <div style="padding: 0.5rem 1rem">
-      <div><a href="bookmarks.html">Bookmarks</a></div>
-      <div><a href="html/">Ark/CA</a></div>
-      <div><a href="html/background.html">Background</a></div>
-      <div><a href="html/Carousel.html">Carousel</a></div>
+    <div class="section">
+      <div class="header">Links</div>
+      <div class="block">
+        <a href="bookmarks.html"><div class="item">Bookmarks</div></a>
+        <a href="html/"><div class="item">Ark/CA</div></a>
+      </div>
     </div>
-    <h5>Examples</h5>
-    <div style="padding: 0.5rem 1rem">
-      <div><a href="example/000.html">000</a></div>
-      <div><a href="example/001.html">001</a></div>
-      <div><a href="example/002.html">002</a></div>
-      <div><a href="example/003.html">003 Margins collapse</a></div>
-      <div><a href="example/003a.html">003a Margins collapse</a></div>
-      <div><a href="example/004.html">004Events, clicks</a></div>
-      <div><a href="example/005.html">005 Animation</a></div>
-      <div><a href="example/006.html">006 Event onload</a></div>
-      <div><a href="example/007.html">007 Toggle</a></div>
-      <div><a href="example/008.html">008 Event onload</a></div>
-      <div><a href="example/009.html">009 Animation (bottom)</a></div>
-      <div><a href="example/010.html">010 Tilted Pictures</a></div>
-      <div><a href="example/011.html">011 Positinging, Shadows</a></div>
-      <div><a href="example/012.html">012 Flex Box</a></div>
+    <div class="section">
+      <div class="header">Examples</div>
+      <div class="block">
+        <a href="html/background.html"><div class="item">Background</div></a>
+        <a href="html/Carousel.html"><div class="item">Carousel</div></a>
+        <a href="example/000.html"><div class="item">000</div></a>
+        <a href="example/001.html"><div class="item">001</div></a>
+        <a href="example/002.html"><div class="item">002</div></a>
+        <a href="example/003.html"><div class="item">003 Margins collapse</div></a>
+        <a href="example/003a.html"><div class="item">003a Margins collapse</div></a>
+        <a href="example/004.html"><div class="item">004 Events, clicks</div></a>
+        <a href="example/005.html"><div class="item">005 Animation</div></a>
+        <a href="example/006.html"><div class="item">006 Event onload</div></a>
+        <a href="example/007.html"><div class="item">007 Toggle</div></a>
+        <a href="example/008.html"><div class="item">008 Event onload</div></a>
+        <a href="example/009.html"><div class="item">009 Animation (bottom)</div></a>
+        <a href="example/010.html"><div class="item">010 Tilted Pictures</div></a>
+        <a href="example/011.html"><div class="item">011 Positinging, Shadows</div></a>
+        <a href="example/012.html"><div class="item">012 Flex Box</div></a>
+      </div>
     </div>
   </body>
 </html>
