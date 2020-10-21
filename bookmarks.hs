@@ -118,6 +118,7 @@ main = do
           "https://www.google.com/search?q=html+grid+layout",
           e_ ]
         section "Positioning" [
+          "https://css-tricks.com/couple-takes-sticky-footer/",
           "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
           "https://developer.mozilla.org/en-US/docs/Web/CSS/float",
           "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
