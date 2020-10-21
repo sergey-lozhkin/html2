@@ -11,19 +11,22 @@ import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 import Control.Monad (mapM_)
 
+section :: Text -> [Text] -> Html ()
+section tt links =
+  div_ [class_ "section"] $ do
+    header tt
+    block links
+
+header :: Text -> Html ()
+header = h4_ [class_ "header"] . toHtml
+
+block :: [Text] -> Html ()
+block = div_ [class_ "block"] . mapM_ (\url -> item url url)
+
+item :: Text -> Text -> Html ()
+item url text = a_ [href_ url] $ div_ [class_ "item"] $ toHtml text
+
 e_ = "" :: Text
-
-link :: Text -> Text -> Html ()
-link url text = div_ [class_ "item"] $ a_ [href_ url] $ toHtml text
-
-queuedLinks :: [Text] -> Html ()
-queuedLinks = mapM_ (\url -> link url url)
-
-orderedLinks :: [Text] -> Html ()
-orderedLinks = mapM_ (\url -> link url url) . sort
-
-notes :: [Text] -> Html ()
-notes = mapM_ (div_ [class_ "item"] . toHtml)
 
 main :: IO ()
 main = do
@@ -47,291 +50,279 @@ main = do
             "font-family: inherit;" <>
             "font-weight: inherit;" <>
             "line-height: inherit;" <>
+            "margin: 0;" <>
           "}" <>
-          ".item { margin-left: 1rem; }" <>
+          ".item {" <>
+            "padding-left: 1rem;" <>
+            "overflow: hidden;" <>
+          "}" <>
+          ".item:hover {" <>
+            "background: lightgray;" <>
+          "}" <>
           "h4 {" <>
-            "margin-bottom: 0;" <>
             "font-weight: 400;" <>
-            "border-top: 0.5px solid gray;" <>
+            "border-bottom: 0.5px solid gray;" <>
+            "padding: .5rem 1rem;" <>
+            "background: #e4e4e4;" <>
           "}" <>
-          ":link { text-decoration:inherit; }" <>
-          ":visited { text-decoration:inherit; }" <>
-          ":hover { text-decoration:inherit; }" <>
-          ":active { text-decoration:inherit; }" <>
+          ".block {" <>
+            "padding: 1rem 0;" <>
+            "margin-bottom: 1rem;" <>
+          "}" <>
+          "a:link { text-decoration:inherit; }" <>
+          "a:visited { text-decoration:inherit; }" <>
+          "a:hover { text-decoration:inherit; }" <>
+          "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        div_ $ do
-          h4_ "Now"
-          queuedLinks [
-            "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/align-self",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/align-content",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
-            "https://css-tricks.com/using-flexbox/",
-            e_ ]
-        div_ $ do
-          h4_ "Viewport"
-          queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
-            "https://www.quirksmode.org/mobile/viewports2.html",
-            "https://www.google.com/search?q=html+meta+viewport",
-            e_ ]
-        div_ $ do
-          h4_ "Flex"
-          queuedLinks [
-            "https://jurosh.com/blog/css-float-table-flex-grid",
-            "https://www.google.com/search?q=html+display+flex",
-            "https://www.google.com/search?q=html+flexbox",
-            "https://www.w3schools.com/css/css3_flexbox.asp",
-            "https://www.google.com/search?q=html+align-items+chrome",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
-            "https://yoksel.github.io/flex-cheatsheet/",
-            "https://css-tricks.com/almanac/properties/f/flex-wrap/",
-            e_ ]
-        div_ $ do
-          h4_ "Grid"
-          queuedLinks [
-            "https://css-tricks.com/snippets/css/complete-guide-grid/",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout",
-            "https://developers.google.com/web/updates/2017/01/css-grid",
-            "https://gridbyexample.com/",
-            "https://www.google.com/search?q=css+tables+vs+css+grid",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/grid",
-            "https://www.google.com/search?q=html+grid+layout",
-            e_ ]
-        div_ $ do
-          h4_ "Positioning"
-          queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/float",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
-            e_ ]
-        div_ $ do
-          h4_ "SVG"
-          queuedLinks [
-            "https://www.google.com/search?q=flexbox+svg+icon",
-            "https://hackage.haskell.org/package/lucid-svg",
-            "https://hackage.haskell.org/package/svg-builder",
-            "http://svgicons.sparkk.fr/",
-            "https://www.sitepoint.com/css-with-svg/",
-            e_ ]
-        div_ $ do
-          h4_ "Queue"
-          queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context",
-            "https://www.google.com/search?q=html+position+property",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
-            "https://www.google.com/search?q=html+anonymous+box",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
-            "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode",
-            e_ ]
-        div_ $ do
-          h4_ "Learn"
-          queuedLinks [
-            "https://www.otsukare.info/2015/03/26/refresh-http-header",
-            "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/",
-            "http://html5doctor.com/html-5-reset-stylesheet/",
-            "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
-            "http://www.simplehtmlguide.com/text.php",
-            "https://css-tricks.com/autoprefixer/",
-            "https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/",
-            "https://css-tricks.com/dont-overthink-it-grids/",
-            "https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
-            "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
-            "https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot",
-            "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
-            "https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
-            "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/filter",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
-            "https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context",
-            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content",
-            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr",
-            "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM",
-            "https://getbootstrap.com/docs/4.5/content/reboot/",
-            "https://javascript.info/dom-attributes-and-properties",
-            "https://medium.com/myplanet-musings/what-is-a-json-web-token-2193f383e963",
-            "https://purecss.io/grids/",
-            "https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d",
-            "https://specifishity.com/",
-            "https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css",
-            "https://stackoverflow.com/questions/23352182/responsive-thumbnail-grid-equal-spacing/23352245#23352245",
-            "https://stackoverflow.com/questions/2359443/making-a-piece-of-text-non-breaking",
-            "https://stackoverflow.com/questions/5293280/css-pseudo-classes-with-inline-styles",
-            "https://www.aurigait.com/blog/Displaying-Uneven-Height-Elements-in-Grids",
-            "https://www.google.com/search?q=%3C%3Fphp",
-            "https://www.google.com/search?q=How+to+open+a+link+in+new+tab",
-            "https://www.google.com/search?q=How+to+put+an+html+page+into+email",
-            "https://www.google.com/search?q=how+does+html+flow+work",
-            "https://www.google.com/search?q=how+html+%3A%3Aafter+work",
-            "https://www.google.com/search?q=how+to+put+hover+into+element%27s+style+attribute",
-            "https://www.google.com/search?q=html+%40media+query",
-            "https://www.google.com/search?q=html+Syntax+highlighting",
-            "https://www.google.com/search?q=html+animation+types",
-            "https://www.google.com/search?q=html+box-shadow",
-            "https://www.google.com/search?q=html+box-shadow+vs+filter+drop-shadow",
-            "https://www.google.com/search?q=html+bubbles",
-            "https://www.google.com/search?q=html+can+i+set+abritrary+property+on+document+object",
-            "https://www.google.com/search?q=html+clearfix+hack",
-            "https://www.google.com/search?q=html+content+tag",
-            "https://www.google.com/search?q=html+css+animatable",
-            "https://www.google.com/search?q=html+display+property",
-            "https://www.google.com/search?q=html+drop-shadow",
-            "https://www.google.com/search?q=html+event+cancelable",
-            "https://www.google.com/search?q=html+float",
-            "https://www.google.com/search?q=html+float+vs+inline-block",
-            "https://www.google.com/search?q=html+float+vs+table",
-            "https://www.google.com/search?q=html+fluid+layout",
-            "https://www.google.com/search?q=html+how+script+executed",
-            "https://www.google.com/search?q=html+how+to+get+physical+pixel+size",
-            "https://www.google.com/search?q=html+inline+block",
-            "https://www.google.com/search?q=html+li+marker",
-            "https://www.google.com/search?q=html+margin+collapse",
-            "https://www.google.com/search?q=html+objec+navigator",
-            "https://www.google.com/search?q=html+onload+function",
-            "https://www.google.com/search?q=html+onmouseover",
-            "https://www.google.com/search?q=html+position+sticky",
-            "https://www.google.com/search?q=html+property+overflow",
-            "https://www.google.com/search?q=html+reset+styles",
-            "https://www.google.com/search?q=html+unbreakable+block",
-            "https://www.google.com/search?q=html+window+clientWidth",
-            "https://www.google.com/search?q=html+window+devicePixelRatio",
-            "https://www.google.com/search?q=htyml+textcontent",
-            "https://www.google.com/search?q=javascript+eval+function",
-            "https://www.google.com/search?q=javascript+object+window",
-            "https://www.google.com/search?q=javascript+use+strict",
-            "https://www.paulirish.com/2012/box-sizing-border-box-ftw/",
-            "https://www.pixelstech.net/article/1537002042-The-danger-of-target=_blank-and-opener",
-            "https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html",
-            "https://www.reddit.com/r/programming/comments/j0n20w/the_danger_of_target_blank_and_opener/",
-            "https://www.ternstyle.us/blog/float-vs-inline-block",
-            "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html",
-            "https://www.w3.org/TR/view-mode/",
-            "https://www.w3schools.com/css/css3_box-sizing.asp",
-            "https://www.w3schools.com/css/css_float.asp",
-            "https://www.w3schools.com/css/css_float_examples.asp",
-            "https://www.w3schools.com/css/css_inline-block.asp",
-            "https://www.w3schools.com/cssref/css3_pr_box-shadow.asp",
-            "https://www.w3schools.com/cssref/css3_pr_box-sizing.asp",
-            "https://www.w3schools.com/cssref/css_animatable.asp",
-            "https://www.w3schools.com/cssref/pr_class_clear.asp",
-            "https://www.w3schools.com/cssref/pr_class_float.asp",
-            "https://www.w3schools.com/cssref/sel_after.asp",
-            "https://www.w3schools.com/howto/howto_css_clearfix.asp",
-            "https://www.w3schools.com/jsref/event_onmousedown.asp",
-            "https://www.w3schools.com/jsref/event_onmouseover.asp",
-            "https://www.w3schools.com/jsref/obj_window.asp",
-            e_ ]
-        div_ $ do
-          h4_ "Sites"
-          queuedLinks [
-            "http://www.simplehtmlguide.com/",
-            "https://css-tricks.com/",
-            "https://developer.mozilla.org/en-US/",
-            "https://developer.mozilla.org/en-US/docs/Learn",
-            "https://drafts.csswg.org/",
-            "https://javascript.info/",
-            "https://popper.js.org/",
-            e_ ]
-        div_ $ do
-          h4_ "Tools"
-          queuedLinks [
-            "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/",
-            "http://hackage.haskell.org/package/libjwt-typed",
-            "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
-            "http://www.jsfuck.com/",
-            "https://chrisdone.com/posts/lucid2/",
-            "https://chrispenner.ca/posts/traversal-systems",
-            "https://dev.yorhel.nl/doc/funcweb",
-            "https://docs.gitlab.com/ee/user/project/pages/",
-            "https://github.com/dbaynard/lucid-from-html",
-            "https://github.com/unimonkiez/self-adjusting-interval",
-            "https://hackage.haskell.org/package/blaze-from-html",
-            "https://hackage.haskell.org/package/nice-html",
-            "https://hackage.haskell.org/package/shakespeare",
-            "https://hackage.haskell.org/package/type-of-html",
-            "https://hackage.haskell.org/package/type-of-html-static",
-            "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
-            "https://jaspervdj.be/blaze/",
-            "https://jonreeve.com/2020/09/type-safe-blog/",
-            "https://jquery.com/",
-            "https://jsconsole.com/",
-            "https://jsfiddle.net/",
-            "https://mmhaskell.com/blog/2020/3/16/lucid-another-html-option",
-            "https://mmhaskell.com/real-world",
-            "https://ocsigen.org/tyxml/4.4.0/manual/intro",
-            "https://trycatchchris.co.uk/hackagecompare/comparePackage/blaze-html/hamlet/heist/lucid/mustache",
-            "https://www.google.com/search?q=haskell+obelisk",
-            "https://www.google.com/search?q=haskell+reflex",
-            "https://www.google.com/search?q=html+sass",
-            "https://www.reddit.com/r/haskell/comments/iz2o1r/explicitly_comprehensible_frp_elm_compared_to/",
-            "https://www.reddit.com/r/haskell/comments/izz4uy/im_looking_for_the_simplest_easiest_and_most/",
-            "https://www.reddit.com/r/haskell/comments/j41wrx/servant_warptls_serve_different_content_depending/",
-            "https://www.reddit.com/r/haskell/comments/j7d3ge/elm_vs_react_vs_purescript/",
-            "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
-            "https://www.youtube.com/watch?v=LZTWYdU4nKk",
-            "https://askubuntu.com/questions/1102594/how-do-i-set-up-the-simplest-http-local-server",
-            "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
-            "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
-            "https://www.google.com/search?q=simple+static+web+server+linux",
-            "https://nginx.org/en/docs/",
-            e_ ]
-        div_ $ do
-          h4_ "Style"
-          queuedLinks [
-            "http://acko.net/blog/geeks-mops-and-lightsabers/",
-            "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
-            "https://artagnon.com/articles/pl",
-            "https://chrispenner.ca/posts/interview",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
-            "https://free.cofree.io/2020/09/01/type-errors/",
-            "https://ihp.digitallyinduced.com/",
-            "https://quuxplusone.github.io/blog/2020/10/12/grab-bag/",
-            "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
-            "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
-            "https://stackoverflow.com/questions/64392946/type-reuse-in-haskell",
-            "https://www.cis.upenn.edu/~plclub/blog/2020-10-09-hs-to-coq/",
-            "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
-            "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
-            "https://www.srid.ca/neuron-v1.html",
-            "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
-            "https://www.tweag.io/blog/2020-10-07-ghcide-fellowship-summary/",
-            "https://propensive.com/",
-            "https://en.wikipedia.org/wiki/KHTML",
-            "http://allaboutscala.com/tutorials/chapter-8-beginner-tutorial-using-scala-collection-functions/scala-drop-function/",
-            "https://yoksel.github.io/flex-cheatsheet/#section-flex-wrap",
-            "https://quuxplusone.github.io/blog/2020/10/18/scott-kim-gardner-ambigrams/",
-            e_ ]
-        div_ $ do
-          h4_ "Done"
-          queuedLinks [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
-            e_ ]
+        section "Now" [
+          "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/align-self",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/align-content",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout",
+          "https://css-tricks.com/using-flexbox/",
+          e_ ]
+        section "Viewport" [
+          "https://developer.mozilla.org/en-US/docs/Glossary/viewport",
+          "https://www.quirksmode.org/mobile/viewports2.html",
+          "https://www.google.com/search?q=html+meta+viewport",
+          e_ ]
+        section "Flex" [
+          "https://jurosh.com/blog/css-float-table-flex-grid",
+          "https://www.google.com/search?q=html+display+flex",
+          "https://www.google.com/search?q=html+flexbox",
+          "https://www.w3schools.com/css/css3_flexbox.asp",
+          "https://www.google.com/search?q=html+align-items+chrome",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
+          "https://yoksel.github.io/flex-cheatsheet/",
+          "https://css-tricks.com/almanac/properties/f/flex-wrap/",
+          e_ ]
+        section "Grid" [
+          "https://css-tricks.com/snippets/css/complete-guide-grid/",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout",
+          "https://developers.google.com/web/updates/2017/01/css-grid",
+          "https://gridbyexample.com/",
+          "https://www.google.com/search?q=css+tables+vs+css+grid",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/grid",
+          "https://www.google.com/search?q=html+grid+layout",
+          e_ ]
+        section "Positioning" [
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/left",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/float",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
+          e_ ]
+        section "SVG" [
+          "https://www.google.com/search?q=flexbox+svg+icon",
+          "https://hackage.haskell.org/package/lucid-svg",
+          "https://hackage.haskell.org/package/svg-builder",
+          "http://svgicons.sparkk.fr/",
+          "https://www.sitepoint.com/css-with-svg/",
+          e_ ]
+        section "Queue" [
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context",
+          "https://www.google.com/search?q=html+position+property",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/display",
+          "https://www.google.com/search?q=html+anonymous+box",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing",
+          "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode",
+          e_ ]
+        section "Learn" [
+          "https://www.otsukare.info/2015/03/26/refresh-http-header",
+          "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/",
+          "http://html5doctor.com/html-5-reset-stylesheet/",
+          "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml",
+          "http://www.simplehtmlguide.com/text.php",
+          "https://css-tricks.com/autoprefixer/",
+          "https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/",
+          "https://css-tricks.com/dont-overthink-it-grids/",
+          "https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/",
+          "https://developer.mozilla.org/en-US/docs/Learn/CSS",
+          "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout",
+          "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats",
+          "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow",
+          "https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot",
+          "https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
+          "https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+          "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/filter",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/white-space",
+          "https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context",
+          "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content",
+          "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr",
+          "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM",
+          "https://getbootstrap.com/docs/4.5/content/reboot/",
+          "https://javascript.info/dom-attributes-and-properties",
+          "https://medium.com/myplanet-musings/what-is-a-json-web-token-2193f383e963",
+          "https://purecss.io/grids/",
+          "https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d",
+          "https://specifishity.com/",
+          "https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css",
+          "https://stackoverflow.com/questions/23352182/responsive-thumbnail-grid-equal-spacing/23352245#23352245",
+          "https://stackoverflow.com/questions/2359443/making-a-piece-of-text-non-breaking",
+          "https://stackoverflow.com/questions/5293280/css-pseudo-classes-with-inline-styles",
+          "https://www.aurigait.com/blog/Displaying-Uneven-Height-Elements-in-Grids",
+          "https://www.google.com/search?q=%3C%3Fphp",
+          "https://www.google.com/search?q=How+to+open+a+link+in+new+tab",
+          "https://www.google.com/search?q=How+to+put+an+html+page+into+email",
+          "https://www.google.com/search?q=how+does+html+flow+work",
+          "https://www.google.com/search?q=how+html+%3A%3Aafter+work",
+          "https://www.google.com/search?q=how+to+put+hover+into+element%27s+style+attribute",
+          "https://www.google.com/search?q=html+%40media+query",
+          "https://www.google.com/search?q=html+Syntax+highlighting",
+          "https://www.google.com/search?q=html+animation+types",
+          "https://www.google.com/search?q=html+box-shadow",
+          "https://www.google.com/search?q=html+box-shadow+vs+filter+drop-shadow",
+          "https://www.google.com/search?q=html+bubbles",
+          "https://www.google.com/search?q=html+can+i+set+abritrary+property+on+document+object",
+          "https://www.google.com/search?q=html+clearfix+hack",
+          "https://www.google.com/search?q=html+content+tag",
+          "https://www.google.com/search?q=html+css+animatable",
+          "https://www.google.com/search?q=html+display+property",
+          "https://www.google.com/search?q=html+drop-shadow",
+          "https://www.google.com/search?q=html+event+cancelable",
+          "https://www.google.com/search?q=html+float",
+          "https://www.google.com/search?q=html+float+vs+inline-block",
+          "https://www.google.com/search?q=html+float+vs+table",
+          "https://www.google.com/search?q=html+fluid+layout",
+          "https://www.google.com/search?q=html+how+script+executed",
+          "https://www.google.com/search?q=html+how+to+get+physical+pixel+size",
+          "https://www.google.com/search?q=html+inline+block",
+          "https://www.google.com/search?q=html+li+marker",
+          "https://www.google.com/search?q=html+margin+collapse",
+          "https://www.google.com/search?q=html+objec+navigator",
+          "https://www.google.com/search?q=html+onload+function",
+          "https://www.google.com/search?q=html+onmouseover",
+          "https://www.google.com/search?q=html+position+sticky",
+          "https://www.google.com/search?q=html+property+overflow",
+          "https://www.google.com/search?q=html+reset+styles",
+          "https://www.google.com/search?q=html+unbreakable+block",
+          "https://www.google.com/search?q=html+window+clientWidth",
+          "https://www.google.com/search?q=html+window+devicePixelRatio",
+          "https://www.google.com/search?q=htyml+textcontent",
+          "https://www.google.com/search?q=javascript+eval+function",
+          "https://www.google.com/search?q=javascript+object+window",
+          "https://www.google.com/search?q=javascript+use+strict",
+          "https://www.paulirish.com/2012/box-sizing-border-box-ftw/",
+          "https://www.pixelstech.net/article/1537002042-The-danger-of-target=_blank-and-opener",
+          "https://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html",
+          "https://www.reddit.com/r/programming/comments/j0n20w/the_danger_of_target_blank_and_opener/",
+          "https://www.ternstyle.us/blog/float-vs-inline-block",
+          "https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html",
+          "https://www.w3.org/TR/view-mode/",
+          "https://www.w3schools.com/css/css3_box-sizing.asp",
+          "https://www.w3schools.com/css/css_float.asp",
+          "https://www.w3schools.com/css/css_float_examples.asp",
+          "https://www.w3schools.com/css/css_inline-block.asp",
+          "https://www.w3schools.com/cssref/css3_pr_box-shadow.asp",
+          "https://www.w3schools.com/cssref/css3_pr_box-sizing.asp",
+          "https://www.w3schools.com/cssref/css_animatable.asp",
+          "https://www.w3schools.com/cssref/pr_class_clear.asp",
+          "https://www.w3schools.com/cssref/pr_class_float.asp",
+          "https://www.w3schools.com/cssref/sel_after.asp",
+          "https://www.w3schools.com/howto/howto_css_clearfix.asp",
+          "https://www.w3schools.com/jsref/event_onmousedown.asp",
+          "https://www.w3schools.com/jsref/event_onmouseover.asp",
+          "https://www.w3schools.com/jsref/obj_window.asp",
+          e_ ]
+        section "Sites" [
+          "http://www.simplehtmlguide.com/",
+          "https://css-tricks.com/",
+          "https://developer.mozilla.org/en-US/",
+          "https://developer.mozilla.org/en-US/docs/Learn",
+          "https://drafts.csswg.org/",
+          "https://javascript.info/",
+          "https://popper.js.org/",
+          e_ ]
+        section "Tools" [
+          "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/",
+          "http://hackage.haskell.org/package/libjwt-typed",
+          "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
+          "http://www.jsfuck.com/",
+          "https://chrisdone.com/posts/lucid2/",
+          "https://chrispenner.ca/posts/traversal-systems",
+          "https://dev.yorhel.nl/doc/funcweb",
+          "https://docs.gitlab.com/ee/user/project/pages/",
+          "https://github.com/dbaynard/lucid-from-html",
+          "https://github.com/unimonkiez/self-adjusting-interval",
+          "https://hackage.haskell.org/package/blaze-from-html",
+          "https://hackage.haskell.org/package/nice-html",
+          "https://hackage.haskell.org/package/shakespeare",
+          "https://hackage.haskell.org/package/type-of-html",
+          "https://hackage.haskell.org/package/type-of-html-static",
+          "https://haskell-explained.gitlab.io/blog/posts/2020/09/26/http-apis-with-webgear/index.html",
+          "https://jaspervdj.be/blaze/",
+          "https://jonreeve.com/2020/09/type-safe-blog/",
+          "https://jquery.com/",
+          "https://jsconsole.com/",
+          "https://jsfiddle.net/",
+          "https://mmhaskell.com/blog/2020/3/16/lucid-another-html-option",
+          "https://mmhaskell.com/real-world",
+          "https://ocsigen.org/tyxml/4.4.0/manual/intro",
+          "https://trycatchchris.co.uk/hackagecompare/comparePackage/blaze-html/hamlet/heist/lucid/mustache",
+          "https://www.google.com/search?q=haskell+obelisk",
+          "https://www.google.com/search?q=haskell+reflex",
+          "https://www.google.com/search?q=html+sass",
+          "https://www.reddit.com/r/haskell/comments/iz2o1r/explicitly_comprehensible_frp_elm_compared_to/",
+          "https://www.reddit.com/r/haskell/comments/izz4uy/im_looking_for_the_simplest_easiest_and_most/",
+          "https://www.reddit.com/r/haskell/comments/j41wrx/servant_warptls_serve_different_content_depending/",
+          "https://www.reddit.com/r/haskell/comments/j7d3ge/elm_vs_react_vs_purescript/",
+          "https://www.tweag.io/blog/2020-10-09-asterius-cloudflare-worker/",
+          "https://www.youtube.com/watch?v=LZTWYdU4nKk",
+          "https://askubuntu.com/questions/1102594/how-do-i-set-up-the-simplest-http-local-server",
+          "https://unix.stackexchange.com/questions/32182/simple-command-line-http-server",
+          "https://www.pcsuggest.com/best-lightweight-web-server-linux/",
+          "https://www.google.com/search?q=simple+static+web+server+linux",
+          "https://nginx.org/en/docs/",
+          e_ ]
+        section "Style" [
+          "http://acko.net/blog/geeks-mops-and-lightsabers/",
+          "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html",
+          "https://artagnon.com/articles/pl",
+          "https://chrispenner.ca/posts/interview",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
+          "https://free.cofree.io/2020/09/01/type-errors/",
+          "https://ihp.digitallyinduced.com/",
+          "https://quuxplusone.github.io/blog/2020/10/12/grab-bag/",
+          "https://sanj.ink/posts/2020-06-13-contravariant-functors-are-weird.html",
+          "https://stackoverflow.com/questions/19867491/double-every-other-element-of-list-from-right-in-haskell",
+          "https://stackoverflow.com/questions/64392946/type-reuse-in-haskell",
+          "https://www.cis.upenn.edu/~plclub/blog/2020-10-09-hs-to-coq/",
+          "https://www.reddit.com/r/haskell/comments/iv10oy/best_practices_to_distribute_a_package_cross/",
+          "https://www.reddit.com/r/haskell/comments/iznptr/servant_is_it_possible_to_decode_multiple_headers/",
+          "https://www.srid.ca/neuron-v1.html",
+          "https://www.ted.com/talks/john_biewen_the_lie_that_invented_racism",
+          "https://www.tweag.io/blog/2020-10-07-ghcide-fellowship-summary/",
+          "https://propensive.com/",
+          "https://en.wikipedia.org/wiki/KHTML",
+          "http://allaboutscala.com/tutorials/chapter-8-beginner-tutorial-using-scala-collection-functions/scala-drop-function/",
+          "https://yoksel.github.io/flex-cheatsheet/#section-flex-wrap",
+          "https://quuxplusone.github.io/blog/2020/10/18/scott-kim-gardner-ambigrams/",
+          e_ ]
+        section "Done" [
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/position",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom",
+          "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning",
+          e_ ]
