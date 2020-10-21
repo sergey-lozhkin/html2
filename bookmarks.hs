@@ -117,10 +117,12 @@ main = do
           ]
         section "Positioning"
           [ "https://css-tricks.com/couple-takes-sticky-footer/"
+          , "https://www.cssstickyfooter.com/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"
           , "https://www.google.com/search?q=html+max-height"
+          , "https://codepen.io/cbracco/pen/zekgx"
           ]
         section "SVG"
           [ "https://www.google.com/search?q=flexbox+svg+icon"
@@ -130,7 +132,8 @@ main = do
           , "https://www.sitepoint.com/css-with-svg/"
           ]
         section "Queue"
-          [ "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"
+          [ "https://css-tricks.com/guides/"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"
           , "https://www.google.com/search?q=html+position+property"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/display#Description"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/display"
