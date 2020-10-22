@@ -69,7 +69,7 @@ main = do
           ".header { display: block; }" <>
           ".header::-webkit-details-marker { display: none; }" <>
           ".block {" <>
-            "padding: 0 0 2rem 0;" <>
+            "padding: 0 0 1rem 0;" <>
           "}" <>
           ".item {" <>
             "padding-left: 2rem;" <>
