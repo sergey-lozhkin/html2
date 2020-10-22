@@ -333,6 +333,7 @@ main = do
           , "https://yoksel.github.io/flex-cheatsheet/#section-flex-wrap"
           , "https://quuxplusone.github.io/blog/2020/10/18/scott-kim-gardner-ambigrams/"
           , "https://www.bestcasinosites.net/gambling/new/"
+          , "https://meyerweb.com/"
           ]
         section "Done"
           [ "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
