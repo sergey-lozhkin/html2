@@ -66,9 +66,8 @@ main = do
           ".header:hover {" <>
             "background: #f0f0f0;" <>
           "}" <>
-          ".header::marker {" <>
-            "content: '';" <>
-          "}" <>
+          ".header { list-style-type: none; }" <>
+          ".header::-webkit-details-marker { display: none; }" <>
           ".block {" <>
             "padding: 0 0 2rem 0;" <>
           "}" <>

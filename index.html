@@ -41,10 +41,8 @@
       .header:hover {
         background: #f0f0f0;
       }
-      .header::marker {
-        content: '';
-        /* how to style the summary::marker ??? */
-      }
+      .header                         { list-style-type: none; } /* mozilla way to hide the marker */
+      .header::-webkit-details-marker { display:         none; } /* webkit/blink way to hide the marker */
       .block {
         padding: 0 0 2rem 0;
       }
