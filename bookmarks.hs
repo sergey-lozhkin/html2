@@ -129,6 +129,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"
           , "https://www.google.com/search?q=html+max-height"
           , "https://codepen.io/cbracco/pen/zekgx"
+          , "https://www.internetingishard.com/html-and-css/advanced-positioning/"
           ]
         section "SVG"
           [ "https://www.google.com/search?q=flexbox+svg+icon"
