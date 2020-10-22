@@ -13,12 +13,12 @@ import Control.Monad (mapM_)
 
 section :: Text -> [Text] -> Html ()
 section tt links =
-  div_ [class_ "section"] $ do
+  details_ [class_ "section"] $ do
     header tt
     block links
 
 header :: Text -> Html ()
-header = div_ [class_ "header"] . toHtml
+header = summary_ [class_ "header"] . toHtml
 
 block :: [Text] -> Html ()
 block = div_ [class_ "block"] . mapM_ (\url -> item url url)
@@ -56,7 +56,6 @@ main = do
             "background: inherit;" <>
           "}" <>
           ".section {" <>
-            "padding: 0 0 2rem 0;" <>
             "border-top: 0.5px solid rgb(175,175,175);" <>
           "}" <>
           ".header {" <>
@@ -64,7 +63,11 @@ main = do
             "font-weight: 400;" <>
             "padding: 1em 2rem;" <>
           "}" <>
+          ".header:hover {" <>
+            "background: #f0f0f0;" <>
+          "}" <>
           ".block {" <>
+            "padding: 0 0 2rem 0;" <>
           "}" <>
           ".item {" <>
             "padding-left: 2rem;" <>
