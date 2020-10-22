@@ -17,6 +17,12 @@ section tt links =
     header tt
     block links
 
+openSection :: Text -> [Text] -> Html ()
+openSection tt links =
+  details_ [class_ "section", open_ ""] $ do
+    header tt
+    block links
+
 header :: Text -> Html ()
 header = summary_ [class_ "header"] . toHtml
 
@@ -85,7 +91,7 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        section "Now"
+        openSection "Now"
           [ "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
