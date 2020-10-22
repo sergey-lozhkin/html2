@@ -31,7 +31,6 @@
         background: inherit;
       }
       .section {
-        padding: 0 0 2rem 0;
         border-top: 0.5px solid rgb(175,175,175);
       }
       .header {
@@ -39,7 +38,15 @@
         font-weight: 400;
         padding: 1em 2rem;
       }
+      .header:hover {
+        background: #f0f0f0;
+      }
+      .header ::marker {
+        display: none;
+        /* how to style the summary::marker ??? */
+      }
       .block {
+        padding: 0 0 2rem 0;
       }
       .item {
         padding-left: 2rem;
@@ -57,15 +64,15 @@
     </style>
   </head>
   <body>
-    <div class="section">
-      <div class="header">Links</div>
+    <details class="section">
+      <summary class="header">Links</summary>
       <div class="block">
         <a href="bookmarks.html"><div class="item">Bookmarks</div></a>
         <a href="html/"><div class="item">Ark/CA</div></a>
       </div>
-    </div>
-    <div class="section">
-      <div class="header">Examples</div>
+    </details>
+    <details class="section">
+      <summary class="header">Examples</summary>
       <div class="block">
         <a href="html/background.html"><div class="item">Background</div></a>
         <a href="html/Carousel.html"><div class="item">Carousel</div></a>
@@ -85,6 +92,6 @@
         <a href="example/012.html"><div class="item">012 Flex Box</div></a>
         <a href="example/013.html"><div class="item">013 "Static" Footer, no Flex</div></a>
       </div>
-    </div>
+    </details>
   </body>
 </html>

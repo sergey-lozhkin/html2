@@ -258,6 +258,10 @@ main = do
           , "https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html"
           , "https://www.htmlhelp.com/reference/css/text/vertical-align.html"
           , "https://www.google.com/search?q=html+text+alignment+vertical"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=toggle+accordion"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+element+toggle"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+details"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+how+to+style+summary+%3A%3Amarker"
           ]
         section "Sites"
           [ "http://www.simplehtmlguide.com/"
