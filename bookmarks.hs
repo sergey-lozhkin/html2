@@ -66,7 +66,7 @@ main = do
           ".header:hover {" <>
             "background: #f0f0f0;" <>
           "}" <>
-          ".header { list-style-type: none; }" <>
+          ".header { display: block; }" <>
           ".header::-webkit-details-marker { display: none; }" <>
           ".block {" <>
             "padding: 0 0 2rem 0;" <>

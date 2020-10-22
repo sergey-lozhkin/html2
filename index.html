@@ -41,8 +41,8 @@
       .header:hover {
         background: #f0f0f0;
       }
-      .header                         { list-style-type: none; } /* mozilla way to hide the marker */
-      .header::-webkit-details-marker { display:         none; } /* webkit/blink way to hide the marker */
+      .header                         { display: block; } /* hiding marker: mozilla      */
+      .header::-webkit-details-marker { display: none;  } /* hiding marker: webkit/blink */
       .block {
         padding: 0 0 2rem 0;
       }
