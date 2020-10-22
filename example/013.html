@@ -78,8 +78,9 @@
     </style>
     <script>
       function fixHeight () {
-        document.body.style.paddingTop = document.getElementById("top").getBoundingClientRect().height + "px";
-        document.body.style.paddingBottom = document.getElementById("bottom").getBoundingClientRect().height + "px";
+        var box = document.getElementById("boxdown");
+        box.style.paddingTop = document.getElementById("top").getBoundingClientRect().height + "px";
+        box.style.paddingBottom = document.getElementById("bottom").getBoundingClientRect().height + "px";
       }
     </script>
   </head>
@@ -87,7 +88,7 @@
     <div class="top" id="top">
       Static Header
     </div>
-    <div class="boxdown">
+    <div id="boxdown" class="boxdown">
       <div class="box">
         <div class="item thin">
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.

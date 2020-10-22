@@ -148,6 +148,8 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode"
+          , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
+          , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
           ]
         section "Learn"
           [ "https://www.google.com/search?q=html+css+function+calc"
