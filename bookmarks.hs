@@ -94,6 +94,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"
           , "https://css-tricks.com/using-flexbox/"
+          , "https://www.otsukare.info/2016/04/19/summary-details"
           ]
         section "Viewport"
           [ "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
