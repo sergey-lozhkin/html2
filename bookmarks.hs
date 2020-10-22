@@ -144,7 +144,9 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode"
           ]
         section "Learn"
-          [ "https://www.otsukare.info/2015/03/26/refresh-http-header"
+          [ "https://www.google.com/search?q=html+css+function+calc"
+          , "https://css-tricks.com/a-complete-guide-to-calc-in-css/"
+          , "https://www.otsukare.info/2015/03/26/refresh-http-header"
           , "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/"
           , "http://html5doctor.com/html-5-reset-stylesheet/"
           , "http://www.javascriptkit.com/dhtmltutors/customattributes.shtml"
