@@ -15,10 +15,9 @@
         color: #222;
       }
       body {
-        /*position: fixed;*/
-        /*width: 100vw;*/
-        /*height: 50vh;*/
-        /*overflow: auto;*/
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
       }
       *, *:before, *:after {
         box-sizing: inherit;
@@ -26,31 +25,25 @@
         padding: 0px;
         border-width: 0px;
         background-clip: border-box;
-        line-height: 1.4285714285714286;
+        line-height: 1.5;
         font-family: Avenir, Helvetica, Arial;
         font-size: 12pt;
         font-weight: 300;
       }
-      .boxdown {
+      .panel {
         position: fixed;
         overflow: auto;
         top: 0px;
         width: 100%;
-        height: 60%;
-        /*display: flex;*/
-        /*justify-content: stretch;*/
-        /*align-content: stretch;*/
-        /*align-items: stretch;*/
-        /*flex-direction: column;*/
+        height: 80%;
       }
       .top {
         position: fixed;
         overflow: auto;
         top: 0px;
         left: 0px;
-        /*right: 0px;*/
         width: 100%;
-        height: 40%;
+        max-height: 20%;
         background: #c0c0c0;
         color: #f0f0f0;
       }
@@ -59,13 +52,13 @@
         overflow: auto;
         bottom: 0px;
         left: 0px;
-        /*right: 0px;*/
         width: 100%;
-        height: 40%;
+        max-height: 20%;
         background: #a0a0a0;
         color: #f0f0f0;
       }
       .box {
+        min-height: 100%;
         display: flex;
         justify-content: stretch;
         align-content: stretch;
@@ -106,14 +99,13 @@
     </style>
     <script>
       function fixHeight () {
-        // var box = document.getElementById("boxdown");
-        // box.style.paddingTop = document.getElementById("top").getBoundingClientRect().height + "px";
-        // box.style.paddingBottom = document.getElementById("bottom").getBoundingClientRect().height + "px";
+        boxes.panel.style.bottom = boxes.bottom.getBoundingClientRect().height + "px";
+        boxes.panel.style.height = (document.body.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
       }
     </script>
   </head>
   <body onload="fixHeight()" onresize="fixHeight()">
-    <div id="boxdown" class="boxdown">
+    <div id="panel" class="panel">
       <div class="box">
         <div class="item thin">
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
@@ -212,5 +204,10 @@
         </div>
       </div>
     </div>
+    <script>
+      var boxes = Object();
+      boxes.panel = document.getElementById("panel");
+      boxes.bottom = document.getElementById("bottom");
+    </script>
   </body>
 </html>
