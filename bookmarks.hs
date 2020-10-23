@@ -92,8 +92,8 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        openSection "Now"
-          [ "https://html.spec.whatwg.org/"
+        openSection "Now" [
+            "https://html.spec.whatwg.org/"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
@@ -106,8 +106,9 @@ main = do
           , "https://html.spec.whatwg.org/#the-details-element"
           , "https://html5doctor.com/the-details-and-summary-elements/"
           ]
-        openSection "Queue"
-          [ "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills"
+        openSection "Queue" [
+            "https://spec.whatwg.org/"
+          , "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills"
           , "https://css-tricks.com/guides/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"
           , "https://www.google.com/search?q=html+position+property"
@@ -121,13 +122,13 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
           ]
-        section "Viewport"
-          [ "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
+        section "Viewport" [
+            "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
           , "https://www.quirksmode.org/mobile/viewports2.html"
           , "https://www.google.com/search?q=html+meta+viewport"
           ]
-        section "Flex"
-          [ "https://jurosh.com/blog/css-float-table-flex-grid"
+        section "Flex" [
+            "https://jurosh.com/blog/css-float-table-flex-grid"
           , "https://www.google.com/search?q=html+display+flex"
           , "https://www.google.com/search?q=html+flexbox"
           , "https://www.w3schools.com/css/css3_flexbox.asp"
@@ -136,8 +137,8 @@ main = do
           , "https://yoksel.github.io/flex-cheatsheet/"
           , "https://css-tricks.com/almanac/properties/f/flex-wrap/"
           ]
-        section "Grid"
-          [ "https://css-tricks.com/snippets/css/complete-guide-grid/"
+        section "Grid" [
+            "https://css-tricks.com/snippets/css/complete-guide-grid/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout"
           , "https://developers.google.com/web/updates/2017/01/css-grid"
@@ -146,8 +147,8 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"
           , "https://www.google.com/search?q=html+grid+layout"
           ]
-        section "Positioning"
-          [ "https://css-tricks.com/couple-takes-sticky-footer/"
+        section "Positioning" [
+            "https://css-tricks.com/couple-takes-sticky-footer/"
           , "https://www.cssstickyfooter.com/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
@@ -156,15 +157,15 @@ main = do
           , "https://codepen.io/cbracco/pen/zekgx"
           , "https://www.internetingishard.com/html-and-css/advanced-positioning/"
           ]
-        section "SVG"
-          [ "https://www.google.com/search?q=flexbox+svg+icon"
+        section "SVG" [
+            "https://www.google.com/search?q=flexbox+svg+icon"
           , "https://hackage.haskell.org/package/lucid-svg"
           , "https://hackage.haskell.org/package/svg-builder"
           , "http://svgicons.sparkk.fr/"
           , "https://www.sitepoint.com/css-with-svg/"
           ]
-        section "Learn"
-          [ "https://www.google.com/search?q=html+css+function+calc"
+        section "Learn" [
+            "https://www.google.com/search?q=html+css+function+calc"
           , "https://css-tricks.com/a-complete-guide-to-calc-in-css/"
           , "https://www.otsukare.info/2015/03/26/refresh-http-header"
           , "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/"
@@ -283,8 +284,8 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+details"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+how+to+style+summary+%3A%3Amarker"
           ]
-        section "Sites"
-          [ "http://www.simplehtmlguide.com/"
+        section "Sites" [
+            "http://www.simplehtmlguide.com/"
           , "https://css-tricks.com/"
           , "https://developer.mozilla.org/en-US/"
           , "https://developer.mozilla.org/en-US/docs/Learn"
@@ -294,8 +295,8 @@ main = do
           , "https://jsbin.com/"
           , "https://html.spec.whatwg.org/"
           ]
-        section "Tools"
-          [ "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
+        section "Tools" [
+            "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
           , "http://hackage.haskell.org/package/libjwt-typed"
           , "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html"
           , "http://www.jsfuck.com/"
@@ -335,8 +336,8 @@ main = do
           , "https://www.google.com/search?q=simple+static+web+server+linux"
           , "https://nginx.org/en/docs/"
           ]
-        section "Style"
-          [ "http://acko.net/blog/geeks-mops-and-lightsabers/"
+        section "Style" [
+            "http://acko.net/blog/geeks-mops-and-lightsabers/"
           , "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html"
           , "https://artagnon.com/articles/pl"
           , "https://chrispenner.ca/posts/interview"
@@ -363,8 +364,8 @@ main = do
           , "https://output.jsbin.com/egefop/8"
           , "https://jsbin.com/egefop/11/edit?html,output"
           ]
-        section "Done"
-          [ "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
+        section "Done" [
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
