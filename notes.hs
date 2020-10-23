@@ -1,5 +1,6 @@
 data Overflow
   overflow = hidden | visible | scroll | auto
+  Set overflow on fixed panes, not on content
 
 data Fixed
   When dealing with position:fixed elements all children of body should be fixed.
@@ -17,6 +18,12 @@ data Simple Static Server
 data Shadow
   filter: drop-shadow(8px 12px 30px gray);
   .shadow { box-shadow: 4px 8px 1rem #aaa; }
+
+data Firefox
+  Loses bottom padding in fixed scrollable bottom element
+
+data Safari
+  Safari flex implementation is buggy
 
 <link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
 <link rel="shortcut icon" type="image/png" href="html/assets/avatar-500x500.png">
