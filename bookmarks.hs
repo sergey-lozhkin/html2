@@ -279,10 +279,10 @@ main = do
           , "https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html"
           , "https://www.htmlhelp.com/reference/css/text/vertical-align.html"
           , "https://www.google.com/search?q=html+text+alignment+vertical"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=toggle+accordion"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+element+toggle"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+details"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+how+to+style+summary+%3A%3Amarker"
+          , "https://www.google.com/search?q=toggle+accordion"
+          , "https://www.google.com/search?q=html+element+toggle"
+          , "https://www.google.com/search?q=html+details"
+          , "https://www.google.com/search?q=html+how+to+style+summary+%3A%3Amarker"
           ]
         section "Sites" [
             "http://www.simplehtmlguide.com/"
@@ -335,6 +335,8 @@ main = do
           , "https://www.pcsuggest.com/best-lightweight-web-server-linux/"
           , "https://www.google.com/search?q=simple+static+web+server+linux"
           , "https://nginx.org/en/docs/"
+          , "https://emscripten.org/"
+          , "https://www.google.com/search?q=emscripten"
           ]
         section "Style" [
             "http://acko.net/blog/geeks-mops-and-lightsabers/"
