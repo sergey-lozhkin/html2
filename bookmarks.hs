@@ -67,6 +67,7 @@ main = do
           ".header {" <>
             "font-size: 14pt;" <>
             "font-weight: 400;" <>
+            "font-variant: small-caps;" <>
             "padding: 1em 2rem;" <>
           "}" <>
           ".header:hover {" <>
