@@ -93,7 +93,8 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         openSection "Now"
-          [ "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          [ "https://html.spec.whatwg.org/"
+          , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-self"
