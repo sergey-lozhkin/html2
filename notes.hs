@@ -1,3 +1,8 @@
+data Fixed
+  When dealing with position:fixed elements all children of body should be fixed.
+  This way they are controllable, scrollable, and completely normal.
+  The body should not contain any other children.
+
 font-variant: small-caps;
 
 data Flex
