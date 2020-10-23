@@ -1,3 +1,6 @@
+data Overflow
+  overflow = hidden | visible | scroll | auto
+
 data Fixed
   When dealing with position:fixed elements all children of body should be fixed.
   This way they are controllable, scrollable, and completely normal.
