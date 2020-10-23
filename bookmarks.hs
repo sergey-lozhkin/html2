@@ -108,7 +108,7 @@ main = do
             "https://css-tricks.com/couple-takes-sticky-footer/"
           , "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
           , "https://css-tricks.com/absolute-positioning-inside-relative-positioning/"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+position+relative+and+absolute"
+          , "https://www.google.com/search?q=html+position+relative+and+absolute"
           , "https://www.cssstickyfooter.com/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
@@ -120,6 +120,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
           , "https://www.google.com/search?q=html+position+property"
+          , "https://css-tricks.com/almanac/properties/p/position/"
           ]
         section "Queue" [
             "https://spec.whatwg.org/"
@@ -152,6 +153,12 @@ main = do
           , "https://yoksel.github.io/flex-cheatsheet/"
           , "https://css-tricks.com/almanac/properties/f/flex-wrap/"
           , "https://css-tricks.com/old-flexbox-and-new-flexbox/"
+          , "https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/"
+          , "https://philipwalton.github.io/solved-by-flexbox/"
+          , "https://www.sitepoint.com/community/t/display-flex-and-flex-wrap-wrap-breaking-layout-in-safari-only/334479"
+          , "https://github.com/philipwalton/flexbugs"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
+          , "https://www.google.com/search?q=safari+fixed+flex+container"
           ]
         section "Grid" [
             "https://css-tricks.com/snippets/css/complete-guide-grid/"
@@ -289,6 +296,7 @@ main = do
           , "https://www.google.com/search?q=html+element+toggle"
           , "https://www.google.com/search?q=html+details"
           , "https://www.google.com/search?q=html+how+to+style+summary+%3A%3Amarker"
+          , "https://frankforce.com/dissecting-a-dweet-9-city-sunset/"
           ]
         section "Sites" [
             "http://www.simplehtmlguide.com/"
