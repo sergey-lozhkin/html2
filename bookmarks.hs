@@ -356,6 +356,7 @@ main = do
           , "https://www.bestcasinosites.net/gambling/new/"
           , "https://meyerweb.com/"
           , "https://output.jsbin.com/egefop/8"
+          , "https://jsbin.com/egefop/11/edit?html,output"
           ]
         section "Done"
           [ "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
