@@ -23,7 +23,7 @@ data Firefox
   Loses bottom padding in fixed scrollable bottom element
 
 data Safari
-  Safari flex implementation is buggy
+  Safari flex implementation is buggy: flex in fixed element is clipped, scroll not working
 
 <link rel="icon" type="image/png" href="html/assets/avatar-500x500.png">
 <link rel="shortcut icon" type="image/png" href="html/assets/avatar-500x500.png">
