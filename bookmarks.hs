@@ -287,6 +287,7 @@ main = do
           , "https://drafts.csswg.org/"
           , "https://javascript.info/"
           , "https://popper.js.org/"
+          , "https://jsbin.com/"
           ]
         section "Tools"
           [ "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
