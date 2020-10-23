@@ -9,16 +9,10 @@ import Lucid.Base
 import Data.List (sort)
 import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
-import Control.Monad (mapM_)
+import Control.Monad (mapM_, join)
 
 section :: Text -> [Text] -> Html ()
 section tt links =
-  details_ [class_ "section"] $ do
-    header tt
-    block links
-
-openSection :: Text -> [Text] -> Html ()
-openSection tt links =
   details_ [class_ "section", open_ ""] $ do
     header tt
     block links
@@ -27,10 +21,10 @@ header :: Text -> Html ()
 header = summary_ [class_ "header"] . toHtml
 
 block :: [Text] -> Html ()
-block = div_ [class_ "block"] . mapM_ (\url -> item url url)
+block = div_ [class_ "block"] . mapM_ (join item)
 
 item :: Text -> Text -> Html ()
-item url text = a_ [href_ url] $ div_ [class_ "item"] $ toHtml text
+item url text = a_ [class_ "item", href_ url] $ toHtml text
 
 main :: IO ()
 main = do
@@ -67,8 +61,8 @@ main = do
           ".header {" <>
             "font-size: 14pt;" <>
             "font-weight: 400;" <>
-            -- "font-variant: small-caps;" <>
             "padding: 1em 2rem;" <>
+            "cursor: pointer;" <>
           "}" <>
           ".header:hover {" <>
             "background: #f0f0f0;" <>
@@ -79,6 +73,7 @@ main = do
             "padding: 0 0 1rem 0;" <>
           "}" <>
           ".item {" <>
+            "display: block;" <>
             "padding-left: 2rem;" <>
             "overflow: hidden;" <>
             "white-space: nowrap;" <>
@@ -92,8 +87,11 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        openSection "Now" [
-            "https://html.spec.whatwg.org/"
+        section "Current" [
+            "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
+          ]
+        section "Now" [
+            "https://html.spec.whatwg.org/multipage"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
@@ -106,7 +104,24 @@ main = do
           , "https://html.spec.whatwg.org/#the-details-element"
           , "https://html5doctor.com/the-details-and-summary-elements/"
           ]
-        openSection "Queue" [
+        section "Positioning" [
+            "https://css-tricks.com/couple-takes-sticky-footer/"
+          , "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
+          , "https://css-tricks.com/absolute-positioning-inside-relative-positioning/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+position+relative+and+absolute"
+          , "https://www.cssstickyfooter.com/"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"
+          , "https://www.google.com/search?q=html+max-height"
+          , "https://codepen.io/cbracco/pen/zekgx"
+          , "https://www.internetingishard.com/html-and-css/advanced-positioning/"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
+          , "https://www.google.com/search?q=html+position+property"
+          ]
+        section "Queue" [
             "https://spec.whatwg.org/"
           , "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills"
           , "https://css-tricks.com/guides/"
@@ -136,6 +151,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
           , "https://yoksel.github.io/flex-cheatsheet/"
           , "https://css-tricks.com/almanac/properties/f/flex-wrap/"
+          , "https://css-tricks.com/old-flexbox-and-new-flexbox/"
           ]
         section "Grid" [
             "https://css-tricks.com/snippets/css/complete-guide-grid/"
@@ -146,16 +162,6 @@ main = do
           , "https://www.google.com/search?q=css+tables+vs+css+grid"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"
           , "https://www.google.com/search?q=html+grid+layout"
-          ]
-        section "Positioning" [
-            "https://css-tricks.com/couple-takes-sticky-footer/"
-          , "https://www.cssstickyfooter.com/"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"
-          , "https://www.google.com/search?q=html+max-height"
-          , "https://codepen.io/cbracco/pen/zekgx"
-          , "https://www.internetingishard.com/html-and-css/advanced-positioning/"
           ]
         section "SVG" [
             "https://www.google.com/search?q=flexbox+svg+icon"
@@ -370,8 +376,5 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"
-          , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning"
           ]

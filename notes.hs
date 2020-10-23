@@ -1,3 +1,5 @@
+font-variant: small-caps;
+
 data Flex
   item.width with % is treated much better
 
