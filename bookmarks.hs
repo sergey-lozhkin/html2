@@ -300,6 +300,7 @@ main = do
           , "https://www.google.com/search?q=html+how+to+style+summary+%3A%3Amarker"
           , "https://frankforce.com/dissecting-a-dweet-9-city-sunset/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+floating+point+numbers"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+fullscreen"
           ]
         section "Sites" [
             "http://www.simplehtmlguide.com/"
