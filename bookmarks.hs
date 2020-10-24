@@ -142,6 +142,8 @@ main = do
             "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
           , "https://www.quirksmode.org/mobile/viewports2.html"
           , "https://www.google.com/search?q=html+meta+viewport"
+          , "https://css-tricks.com/the-trick-to-viewport-units-on-mobile/"
+          , "https://www.google.com/search?q=html+mobile+browsers+don%27t+call+on+resize"
           ]
         section "Flex" [
             "https://jurosh.com/blog/css-float-table-flex-grid"
@@ -297,6 +299,7 @@ main = do
           , "https://www.google.com/search?q=html+details"
           , "https://www.google.com/search?q=html+how+to+style+summary+%3A%3Amarker"
           , "https://frankforce.com/dissecting-a-dweet-9-city-sunset/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+floating+point+numbers"
           ]
         section "Sites" [
             "http://www.simplehtmlguide.com/"
@@ -380,6 +383,7 @@ main = do
           , "https://output.jsbin.com/egefop/8"
           , "https://jsbin.com/egefop/11/edit?html,output"
           , "https://www.brightpattern.com/"
+          , "https://www.7urtle.com/javascript-applicative-functor-monads"
           ]
         section "Done" [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
