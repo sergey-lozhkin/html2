@@ -35,7 +35,7 @@
         overflow: auto;
         top: 0px;
         width: 100%;
-        height: 80%;
+        min-height: 80%;
       }
       .top {
         position: fixed;
@@ -100,7 +100,16 @@
     <script>
       function fixHeight () {
         boxes.panel.style.bottom = boxes.bottom.getBoundingClientRect().height + "px";
-        boxes.panel.style.height = (document.body.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
+
+        // boxes.panel.style.height = (document.body.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
+        // boxes.panel.style.height = (window.innerHeight - boxes.bottom.getBoundingClientRect().height) + "px";
+        // boxes.panel.style.height = (document.documentElement.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
+
+        // nums = document.getElementById("nums");
+        // nums.innerHTML
+        //   = document.body.getBoundingClientRect().height + "<br>"
+        //   + window.innerHeight + "<br>"
+        //   + document.documentElement.getBoundingClientRect().height + "";
       }
     </script>
   </head>
@@ -111,6 +120,7 @@
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
           Line spacing is commonly measured as a percentage of font size.
           Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          <!-- <p id="nums"></p> -->
         </div>
         <div class="item normal">
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
@@ -205,7 +215,7 @@
       </div>
     </div>
     <script>
-      var boxes = Object();
+      var boxes = new Object();
       boxes.panel = document.getElementById("panel");
       boxes.bottom = document.getElementById("bottom");
     </script>
