@@ -105,11 +105,12 @@
         // boxes.panel.style.height = (window.innerHeight - boxes.bottom.getBoundingClientRect().height) + "px";
         // boxes.panel.style.height = (document.documentElement.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
 
-        // nums = document.getElementById("nums");
-        // nums.innerHTML
-        //   = document.body.getBoundingClientRect().height + "<br>"
-        //   + window.innerHeight + "<br>"
-        //   + document.documentElement.getBoundingClientRect().height + "";
+        nums = document.getElementById("nums");
+        nums.innerHTML = "<br>"
+          + document.body.getBoundingClientRect().height + "<br>"
+          + window.innerHeight + "<br>"
+          + document.documentElement.getBoundingClientRect().height + "<br>"
+          + document.documentElement.clientHeight + "<br>";
       }
     </script>
   </head>
@@ -120,7 +121,7 @@
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
           Line spacing is commonly measured as a percentage of font size.
           Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
-          <!-- <p id="nums"></p> -->
+          <p id="nums"></p>
         </div>
         <div class="item normal">
           The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
