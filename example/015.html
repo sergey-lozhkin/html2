@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Static Header/Footer</title>
+    <link rel="icon" type="image/svg+xml" href="icon1.svg">
+    <style>
+      html, body {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border-width: 0px;
+        background: #c0c0c0;
+        color: #222;
+      }
+      body {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+        margin: 0px;
+        padding: 0px;
+        border-width: 0px;
+        background-clip: border-box;
+        line-height: 1.5;
+        font-family: Avenir, Helvetica, Arial;
+        font-size: 12pt;
+        font-weight: 300;
+      }
+      .panel {
+        position: fixed;
+        overflow: auto;
+        top: 0px; left: 0px; right: 0px;
+        /*width: 100%;*/
+        min-height: 80%;
+      }
+      .top {
+        position: fixed;
+        overflow: auto;
+        top: 0px; left: 0px; right: 0px;
+        /*width: 100%;*/
+        max-height: 20%;
+        background: #c0c0c0;
+        color: #f0f0f0;
+      }
+      .bottom {
+        position: fixed;
+        overflow: auto;
+        bottom: 0px; left: 0px; right: 0px;
+        /*width: 100%;*/
+        max-height: 20%;
+        background: #a0a0a0;
+        color: #f0f0f0;
+      }
+      .box {
+        min-height: 100%;
+        display: flex;
+        justify-content: stretch;
+        align-content: stretch;
+        align-items: stretch;
+        padding: 1rem;
+        flex: 1 1 auto;
+      }
+      .thin {
+        width: 30%;
+        background: #e4e4e4;
+      }
+      .normal {
+        width: 60%;
+        background: #f0f0f0;
+      }
+      .thick {
+        width: 120%;
+        background: #fcfcfc;
+      }
+      .item   {
+        padding: 1rem;
+      }
+      .par1 {
+        background: #9966cc;
+        color: #f0f0f0;
+        padding: 1rem;
+      }
+      .par2 {
+        background: #6699cc;
+        color: #f0f0f0;
+        padding: 1rem;
+      }
+      .par3 {
+        background: #cc9966;
+        color: #f0f0f0;
+        padding: 1rem;
+      }
+    </style>
+    <script>
+      function fixHeight () {
+        boxes.panel.style.bottom = boxes.bottom.getBoundingClientRect().height + "px";
+
+        // boxes.panel.style.height = (document.body.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
+        // boxes.panel.style.height = (window.innerHeight - boxes.bottom.getBoundingClientRect().height) + "px";
+        // boxes.panel.style.height = (document.documentElement.getBoundingClientRect().height - boxes.bottom.getBoundingClientRect().height) + "px";
+
+        nums = document.getElementById("nums");
+        nums.innerHTML = "<br>"
+          + document.body.getBoundingClientRect().height + "<br>"
+          + window.innerHeight + "<br>"
+          // + document.documentElement.getBoundingClientRect().height + "<br>"
+          + document.documentElement.clientHeight + "<br>";
+      }
+    </script>
+  </head>
+  <body onload="fixHeight()" onresize="fixHeight()">
+    <div id="panel" class="panel">
+      <div class="box">
+        <div class="item thin">
+          The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+          Line spacing is commonly measured as a percentage of font size.
+          Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          <p id="nums"></p>
+        </div>
+        <!-- <div class="item normal"> -->
+          <!-- The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable. -->
+          <!-- Line spacing is commonly measured as a percentage of font size. -->
+          <!-- Conventional wisdom is that line spacing of 130%-150% is ideal for readability. -->
+          <!-- In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot. -->
+          <!-- You should experiment to see what looks best with your text. -->
+          <!-- There are two main risks when it comes to line spacing: too little, and too much. -->
+          <!-- Most serious is having too little space between the lines. -->
+          <!-- Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines. -->
+          <!-- This makes for poor readability and atrocious accessibility. -->
+          <!-- It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable. -->
+        <!-- </div> -->
+        <div class="item thick">
+          <div class="par1">
+            The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+            Line spacing is commonly measured as a percentage of font size.
+            Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+            In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+            You should experiment to see what looks best with your text.
+            There are two main risks when it comes to line spacing: too little, and too much.
+            Most serious is having too little space between the lines.
+            Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+            This makes for poor readability and atrocious accessibility.
+            It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+          </div>
+          <div class="par2">
+            The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+            Line spacing is commonly measured as a percentage of font size.
+            Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+            In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+            You should experiment to see what looks best with your text.
+            There are two main risks when it comes to line spacing: too little, and too much.
+            Most serious is having too little space between the lines.
+            Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+            This makes for poor readability and atrocious accessibility.
+            It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+          </div>
+          <div class="par3">
+            The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+            Line spacing is commonly measured as a percentage of font size.
+            Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+            In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+            You should experiment to see what looks best with your text.
+            There are two main risks when it comes to line spacing: too little, and too much.
+            Most serious is having too little space between the lines.
+            Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+            This makes for poor readability and atrocious accessibility.
+            It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom" id="bottom">
+      <div class="box">
+        <div class="par1">
+          The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+          Line spacing is commonly measured as a percentage of font size.
+          Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+          You should experiment to see what looks best with your text.
+          There are two main risks when it comes to line spacing: too little, and too much.
+          Most serious is having too little space between the lines.
+          Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+          This makes for poor readability and atrocious accessibility.
+          It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+        </div>
+        <div class="par2">
+          The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+          Line spacing is commonly measured as a percentage of font size.
+          Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+          You should experiment to see what looks best with your text.
+          There are two main risks when it comes to line spacing: too little, and too much.
+          Most serious is having too little space between the lines.
+          Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+          This makes for poor readability and atrocious accessibility.
+          It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+        </div>
+        <div class="par3">
+          The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
+          Line spacing is commonly measured as a percentage of font size.
+          Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
+          In fact, anything from about 120% up to 200% is acceptable, but 140% tends to be the most quoted sweet spot.
+          You should experiment to see what looks best with your text.
+          There are two main risks when it comes to line spacing: too little, and too much.
+          Most serious is having too little space between the lines.
+          Setting line spacing at 100% means that letters on adjacent lines can touch, because there’s no additional space between the lines.
+          This makes for poor readability and atrocious accessibility.
+          It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable.
+        </div>
+      </div>
+    </div>
+    <script>
+      var boxes = new Object();
+      boxes.panel = document.getElementById("panel");
+      boxes.bottom = document.getElementById("bottom");
+    </script>
+  </body>
+</html>
