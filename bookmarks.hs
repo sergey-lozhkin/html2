@@ -385,6 +385,8 @@ main = do
           , "https://jsbin.com/egefop/11/edit?html,output"
           , "https://www.brightpattern.com/"
           , "https://www.7urtle.com/javascript-applicative-functor-monads"
+          , "https://folio.procreate.art/showcase"
+          , "https://apps.apple.com/us/app/procreate-pocket/id916366645"
           ]
         section "Done" [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
