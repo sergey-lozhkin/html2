@@ -332,6 +332,8 @@ main = do
           , "https://css-tricks.com/how-to-think-like-a-front-end-developer/"
           , "https://css-tricks.com/a-primer-on-the-different-types-of-browser-storage/"
           , "https://css-tricks.com/css-in-3d-learning-to-think-in-cubes-instead-of-boxes/"
+          , "https://css-tricks.com/creating-css-shapes-with-emoji/"
+          , "https://css-tricks.com/core-web-vital-tooling/"
           ]
         -- "Learn" ]
         section [ "Sites"
