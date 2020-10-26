@@ -98,6 +98,7 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content"
           ]
+        -- "Current" ]
         section [ "Now"
           , "https://html.spec.whatwg.org/multipage"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
@@ -111,6 +112,7 @@ main = do
           , "https://html.spec.whatwg.org/#the-details-element"
           , "https://html5doctor.com/the-details-and-summary-elements/"
           ]
+        -- "Now" ]
         section [ "Layout"
           , "https://www.w3schools.com/css/css3_multiple_columns.asp"
           , "https://css-tricks.com/couple-takes-sticky-footer/"
@@ -137,6 +139,7 @@ main = do
           , "https://css-tricks.com/all-about-floats/"
           , "https://css-tricks.com/examples/OverflowExample/"
           ]
+        -- "Layout" ]
         section [ "Queue"
           , "https://spec.whatwg.org/"
           , "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills"
@@ -153,6 +156,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
           ]
+        -- "Queue" ]
         section [ "Viewport"
           , "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
           , "https://www.quirksmode.org/mobile/viewports2.html"
@@ -160,6 +164,7 @@ main = do
           , "https://css-tricks.com/the-trick-to-viewport-units-on-mobile/"
           , "https://www.google.com/search?q=html+mobile+browsers+don%27t+call+on+resize"
           ]
+        -- "Viewport" ]
         section [ "Flex"
           , "https://jurosh.com/blog/css-float-table-flex-grid"
           , "https://www.google.com/search?q=html+display+flex"
@@ -177,6 +182,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
           , "https://www.google.com/search?q=safari+fixed+flex+container"
           ]
+        -- "Flex" ]
         section [ "Grid"
           , "https://css-tricks.com/snippets/css/complete-guide-grid/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
@@ -187,6 +193,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"
           , "https://www.google.com/search?q=html+grid+layout"
           ]
+        -- "Grid" ]
         section [ "SVG"
           , "https://www.google.com/search?q=flexbox+svg+icon"
           , "https://hackage.haskell.org/package/lucid-svg"
@@ -194,6 +201,7 @@ main = do
           , "http://svgicons.sparkk.fr/"
           , "https://www.sitepoint.com/css-with-svg/"
           ]
+        -- "SVG" ]
         section [ "Learn"
           , "https://www.google.com/search?q=html+css+function+calc"
           , "https://css-tricks.com/a-complete-guide-to-calc-in-css/"
@@ -321,7 +329,10 @@ main = do
           , "https://codepen.io/chriscoyier/pen/gzBsA"
           , "https://stackoverflow.com/questions/4967521/javascript-scrollbar-recommendations"
           , "https://robertheaton.com/2014/03/27/how-does-https-actually-work/"
+          , "https://css-tricks.com/how-to-think-like-a-front-end-developer/"
+          , "https://css-tricks.com/a-primer-on-the-different-types-of-browser-storage/"
           ]
+        -- "Learn" ]
         section [ "Sites"
           , "http://www.simplehtmlguide.com/"
           , "https://css-tricks.com/"
@@ -334,6 +345,7 @@ main = do
           , "https://html.spec.whatwg.org/"
           , "https://webcompat.com/"
           ]
+        -- "Sites" ]
         section [ "Tools"
           , "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
           , "http://hackage.haskell.org/package/libjwt-typed"
@@ -382,7 +394,9 @@ main = do
           , "https://meta.stackexchange.com/questions/353983/goodbye-prettify-hello-highlight-js-swapping-out-our-syntax-highlighter"
           , "https://stackoverflow.com/questions/1647724/color-syntax-highlighting-within-an-html-code-tag"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+syntax+highlighting"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=haml"
           ]
+        -- "Tools" ]
         section [ "Style"
           , "https://www.google.com/search?q=html+reset+styles"
           , "http://acko.net/blog/geeks-mops-and-lightsabers/"
@@ -418,6 +432,7 @@ main = do
           , "https://cs.stackexchange.com/"
           , "https://webcompat.com/"
           ]
+        -- "Style" ]
         section [ "Done"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
@@ -425,3 +440,4 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"
           , "https://css-tricks.com/the-css-overflow-property/"
           ]
+        -- "Done" ]
