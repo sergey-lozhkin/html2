@@ -113,6 +113,7 @@ main = do
           , "https://html5doctor.com/the-details-and-summary-elements/"
           ]
         section [ "Layout"
+          , "https://www.w3schools.com/css/css3_multiple_columns.asp"
           , "https://css-tricks.com/couple-takes-sticky-footer/"
           , "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
           , "https://css-tricks.com/absolute-positioning-inside-relative-positioning/"
@@ -133,6 +134,7 @@ main = do
           , "https://www.google.com/search?q=html+position+property"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+multi+column+document"
           ]
         section [ "Queue"
           , "https://spec.whatwg.org/"
@@ -313,6 +315,7 @@ main = do
           , "https://frankforce.com/dissecting-a-dweet-9-city-sunset/"
           , "https://www.google.com/search?q=javascript+floating+point+numbers"
           , "https://www.google.com/search?q=html+fullscreen"
+          , "https://support.mozilla.org/en-US/kb/turn-picture-picture-mode"
           ]
         section [ "Sites"
           , "http://www.simplehtmlguide.com/"
