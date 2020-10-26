@@ -1,3 +1,15 @@
+main::after {
+  content: "";
+  display: block;
+  padding-bottom: 1em;
+}
+
+@-moz-document url-prefix() {
+  .container > :last-child {
+    margin-bottom: 50px;
+  }
+}
+
 data Overflow
   overflow = hidden | visible | scroll | auto
   Set overflow on fixed panes, not on content

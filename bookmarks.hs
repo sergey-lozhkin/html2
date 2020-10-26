@@ -88,14 +88,13 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         section [ "Current"
-          , "https://css-tricks.com/the-css-overflow-property/"
+          , "https://stackoverflow.com/questions/48687129/padding-bottom-not-working-in-firefox-ie11"
           , "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+body+position+fixed"
           , "https://css-tricks.com/almanac/properties/p/position/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
           , "https://www.google.com/search?client=firefox-b-1-d&q=firefox+does+not+respect+padding-bottom"
-          , "https://stackoverflow.com/questions/48687129/padding-bottom-not-working-in-firefox-ie11"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content"
           ]
@@ -135,6 +134,8 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+multi+column+document"
+          , "https://css-tricks.com/all-about-floats/"
+          , "https://css-tricks.com/examples/OverflowExample/"
           ]
         section [ "Queue"
           , "https://spec.whatwg.org/"
@@ -316,6 +317,9 @@ main = do
           , "https://www.google.com/search?q=javascript+floating+point+numbers"
           , "https://www.google.com/search?q=html+fullscreen"
           , "https://support.mozilla.org/en-US/kb/turn-picture-picture-mode"
+          , "https://css-tricks.com/custom-scrollbars-in-webkit/"
+          , "https://codepen.io/chriscoyier/pen/gzBsA"
+          , "https://stackoverflow.com/questions/4967521/javascript-scrollbar-recommendations"
           ]
         section [ "Sites"
           , "http://www.simplehtmlguide.com/"
@@ -327,6 +331,7 @@ main = do
           , "https://popper.js.org/"
           , "https://jsbin.com/"
           , "https://html.spec.whatwg.org/"
+          , "https://webcompat.com/"
           ]
         section [ "Tools"
           , "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
@@ -404,10 +409,12 @@ main = do
           , "https://folio.procreate.art/showcase"
           , "https://apps.apple.com/us/app/procreate-pocket/id916366645"
           , "https://cs.stackexchange.com/"
+          , "https://webcompat.com/"
           ]
         section [ "Done"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"
+          , "https://css-tricks.com/the-css-overflow-property/"
           ]
