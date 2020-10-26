@@ -320,6 +320,7 @@ main = do
           , "https://css-tricks.com/custom-scrollbars-in-webkit/"
           , "https://codepen.io/chriscoyier/pen/gzBsA"
           , "https://stackoverflow.com/questions/4967521/javascript-scrollbar-recommendations"
+          , "https://robertheaton.com/2014/03/27/how-does-https-actually-work/"
           ]
         section [ "Sites"
           , "http://www.simplehtmlguide.com/"
@@ -375,6 +376,12 @@ main = do
           , "https://nginx.org/en/docs/"
           , "https://emscripten.org/"
           , "https://www.google.com/search?q=emscripten"
+          , "https://highlightjs.org/"
+          , "https://prismjs.com/"
+          , "https://github.com/googlearchive/code-prettify"
+          , "https://meta.stackexchange.com/questions/353983/goodbye-prettify-hello-highlight-js-swapping-out-our-syntax-highlighter"
+          , "https://stackoverflow.com/questions/1647724/color-syntax-highlighting-within-an-html-code-tag"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+syntax+highlighting"
           ]
         section [ "Style"
           , "https://www.google.com/search?q=html+reset+styles"
