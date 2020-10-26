@@ -388,6 +388,7 @@ main = do
           , "https://www.7urtle.com/javascript-applicative-functor-monads"
           , "https://folio.procreate.art/showcase"
           , "https://apps.apple.com/us/app/procreate-pocket/id916366645"
+          , "https://cs.stackexchange.com/"
           ]
         section "Done" [
             "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
