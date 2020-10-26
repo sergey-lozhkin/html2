@@ -11,6 +11,7 @@ data Fixed
 font-variant: small-caps;
 
 data Flex
+  Use flex even for simple sequence of <div>, easier sizing/positioning
   item.width with % is treated much better
 
 data Simple Static Server

@@ -299,8 +299,8 @@ main = do
           , "https://www.google.com/search?q=html+details"
           , "https://www.google.com/search?q=html+how+to+style+summary+%3A%3Amarker"
           , "https://frankforce.com/dissecting-a-dweet-9-city-sunset/"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+floating+point+numbers"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+fullscreen"
+          , "https://www.google.com/search?q=javascript+floating+point+numbers"
+          , "https://www.google.com/search?q=html+fullscreen"
           ]
         section "Sites" [
             "http://www.simplehtmlguide.com/"
@@ -357,7 +357,8 @@ main = do
           , "https://www.google.com/search?q=emscripten"
           ]
         section "Style" [
-            "http://acko.net/blog/geeks-mops-and-lightsabers/"
+            "https://www.google.com/search?q=html+reset+styles"
+          , "http://acko.net/blog/geeks-mops-and-lightsabers/"
           , "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html"
           , "https://artagnon.com/articles/pl"
           , "https://chrispenner.ca/posts/interview"
