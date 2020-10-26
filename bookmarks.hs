@@ -11,10 +11,10 @@ import Data.Text (Text, unpack)
 import Data.Text.Lazy.IO (writeFile)
 import Control.Monad (mapM_, join)
 
-section :: Text -> [Text] -> Html ()
-section tt links =
+section :: [Text] -> Html ()
+section (title:links) =
   details_ [class_ "section", open_ ""] $ do
-    header tt
+    header title
     block links
 
 header :: Text -> Html ()
@@ -87,12 +87,19 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        section "Current" [
-            "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
-          ]
-        section "Now" [
-            "https://html.spec.whatwg.org/multipage"
+        section [ "Current"
+          , "https://css-tricks.com/the-css-overflow-property/"
+          , "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+body+position+fixed"
+          , "https://css-tricks.com/almanac/properties/p/position/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=firefox+does+not+respect+padding-bottom"
+          , "https://stackoverflow.com/questions/48687129/padding-bottom-not-working-in-firefox-ie11"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
+          ]
+        section [ "Now"
+          , "https://html.spec.whatwg.org/multipage"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-self"
@@ -104,10 +111,13 @@ main = do
           , "https://html.spec.whatwg.org/#the-details-element"
           , "https://html5doctor.com/the-details-and-summary-elements/"
           ]
-        section "Positioning" [
-            "https://css-tricks.com/couple-takes-sticky-footer/"
+        section [ "Layout"
+          , "https://css-tricks.com/couple-takes-sticky-footer/"
           , "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
           , "https://css-tricks.com/absolute-positioning-inside-relative-positioning/"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks"
           , "https://www.google.com/search?q=html+position+relative+and+absolute"
           , "https://www.cssstickyfooter.com/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
@@ -120,10 +130,11 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
           , "https://www.google.com/search?q=html+position+property"
-          , "https://css-tricks.com/almanac/properties/p/position/"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
           ]
-        section "Queue" [
-            "https://spec.whatwg.org/"
+        section [ "Queue"
+          , "https://spec.whatwg.org/"
           , "https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills"
           , "https://css-tricks.com/guides/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"
@@ -138,15 +149,15 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
           ]
-        section "Viewport" [
-            "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
+        section [ "Viewport"
+          , "https://developer.mozilla.org/en-US/docs/Glossary/viewport"
           , "https://www.quirksmode.org/mobile/viewports2.html"
           , "https://www.google.com/search?q=html+meta+viewport"
           , "https://css-tricks.com/the-trick-to-viewport-units-on-mobile/"
           , "https://www.google.com/search?q=html+mobile+browsers+don%27t+call+on+resize"
           ]
-        section "Flex" [
-            "https://jurosh.com/blog/css-float-table-flex-grid"
+        section [ "Flex"
+          , "https://jurosh.com/blog/css-float-table-flex-grid"
           , "https://www.google.com/search?q=html+display+flex"
           , "https://www.google.com/search?q=html+flexbox"
           , "https://www.w3schools.com/css/css3_flexbox.asp"
@@ -162,8 +173,8 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
           , "https://www.google.com/search?q=safari+fixed+flex+container"
           ]
-        section "Grid" [
-            "https://css-tricks.com/snippets/css/complete-guide-grid/"
+        section [ "Grid"
+          , "https://css-tricks.com/snippets/css/complete-guide-grid/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout"
           , "https://developers.google.com/web/updates/2017/01/css-grid"
@@ -172,15 +183,15 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"
           , "https://www.google.com/search?q=html+grid+layout"
           ]
-        section "SVG" [
-            "https://www.google.com/search?q=flexbox+svg+icon"
+        section [ "SVG"
+          , "https://www.google.com/search?q=flexbox+svg+icon"
           , "https://hackage.haskell.org/package/lucid-svg"
           , "https://hackage.haskell.org/package/svg-builder"
           , "http://svgicons.sparkk.fr/"
           , "https://www.sitepoint.com/css-with-svg/"
           ]
-        section "Learn" [
-            "https://www.google.com/search?q=html+css+function+calc"
+        section [ "Learn"
+          , "https://www.google.com/search?q=html+css+function+calc"
           , "https://css-tricks.com/a-complete-guide-to-calc-in-css/"
           , "https://www.otsukare.info/2015/03/26/refresh-http-header"
           , "https://shoehornwithteeth.com/ramblings/2016/12/redirecting-github-pages-after-renaming-a-repository/"
@@ -302,8 +313,8 @@ main = do
           , "https://www.google.com/search?q=javascript+floating+point+numbers"
           , "https://www.google.com/search?q=html+fullscreen"
           ]
-        section "Sites" [
-            "http://www.simplehtmlguide.com/"
+        section [ "Sites"
+          , "http://www.simplehtmlguide.com/"
           , "https://css-tricks.com/"
           , "https://developer.mozilla.org/en-US/"
           , "https://developer.mozilla.org/en-US/docs/Learn"
@@ -313,8 +324,8 @@ main = do
           , "https://jsbin.com/"
           , "https://html.spec.whatwg.org/"
           ]
-        section "Tools" [
-            "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
+        section [ "Tools"
+          , "https://www.reddit.com/r/webdev/comments/jc56v7/chrome_87_beta_webauthn_in_devtools_pantiltzoom/"
           , "http://hackage.haskell.org/package/libjwt-typed"
           , "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html"
           , "http://www.jsfuck.com/"
@@ -356,8 +367,8 @@ main = do
           , "https://emscripten.org/"
           , "https://www.google.com/search?q=emscripten"
           ]
-        section "Style" [
-            "https://www.google.com/search?q=html+reset+styles"
+        section [ "Style"
+          , "https://www.google.com/search?q=html+reset+styles"
           , "http://acko.net/blog/geeks-mops-and-lightsabers/"
           , "http://jeffreyrosenbluth.github.io/2016/02/13/lucid.html"
           , "https://artagnon.com/articles/pl"
@@ -390,8 +401,8 @@ main = do
           , "https://apps.apple.com/us/app/procreate-pocket/id916366645"
           , "https://cs.stackexchange.com/"
           ]
-        section "Done" [
-            "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
+        section [ "Done"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"
