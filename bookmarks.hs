@@ -336,6 +336,7 @@ main = do
           , "https://css-tricks.com/creating-css-shapes-with-emoji/"
           , "https://css-tricks.com/core-web-vital-tooling/"
           , "https://stackoverflow.com/questions/14834198/table-scroll-with-html-and-css"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+hyphen"
           ]
         -- "Learn" ]
         section [ "Sites"

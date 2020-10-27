@@ -30,6 +30,8 @@
         font-family: Avenir, Helvetica, Arial;
         font-size: 12pt;
         font-weight: 300;
+        -webkit-hyphens: auto;
+        hyphens: auto;
       }
       .panel {
         display: flex;
@@ -90,14 +92,14 @@
         background: #fcfcfc;
       }
       .item   {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
       }
       .columns {
         column-gap: 1.5rem;
         /*column-rule-style: solid;*/
         /*column-rule-width: 0.5px;*/
         column-count: 4;
-        column-width: 24em;
+        column-width: 18em;
       }
       .par1 {
         background: #9966cc;
@@ -173,7 +175,7 @@
             <!-- This makes for poor readability and atrocious accessibility. -->
             <!-- It should be avoided at all costs. Setting spacing much below 100% will render it completely unreadable. -->
           <!-- </div> -->
-          <div class="item thick">
+          <div class="thick">
             <div class="par1 columns">
               The importance of line spacing for UX design comes from the power it has to render a block of text more or less readable.
               Line spacing is commonly measured as a percentage of font size.
