@@ -92,6 +92,7 @@ main = do
           , "https://www.google.com/search?q=html+max-height"
           , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
           , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+scrollheight"
           ]
         -- "Height" ]
         (`with` [open_ ""]) $ section [ "Current"
