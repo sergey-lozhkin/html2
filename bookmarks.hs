@@ -88,14 +88,12 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Current"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
           , "https://css-tricks.com/almanac/properties/p/position/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+body+position+fixed"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
           , "https://stackoverflow.com/questions/48687129/padding-bottom-not-working-in-firefox-ie11"
           , "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
-          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content"
           ]
         -- "Current" ]
         section [ "Now"
@@ -133,7 +131,6 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_Block"
           , "https://www.google.com/search?q=html+position+property"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout"
-          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+multi+column+document"
           , "https://css-tricks.com/all-about-floats/"
           , "https://css-tricks.com/examples/OverflowExample/"
@@ -338,6 +335,7 @@ main = do
           , "https://css-tricks.com/css-in-3d-learning-to-think-in-cubes-instead-of-boxes/"
           , "https://css-tricks.com/creating-css-shapes-with-emoji/"
           , "https://css-tricks.com/core-web-vital-tooling/"
+          , "https://stackoverflow.com/questions/14834198/table-scroll-with-html-and-css"
           ]
         -- "Learn" ]
         section [ "Sites"
@@ -440,7 +438,7 @@ main = do
           , "https://cs.stackexchange.com/"
           , "https://webcompat.com/"
           , "http://view.emails.patelco.org/?qs=c71575fd6daf3d01782eab69657ef0953227391696ee690b66e409446b457ddc89cf3ce90b26987f0ee8ba231c8b8b73aa9f8ce1bd7ed5b38c1a47372dd90e480d3563cf9a54e5bd343560bf4cb6fbc1"
-          , "https://chenhuijing.com/blog/flexbox-and-padding/#%F0%9F%92%BB"
+          , "https://chenhuijing.com/blog/flexbox-and-padding/"
           ]
         -- "Style" ]
         section [ "Done"
@@ -451,5 +449,9 @@ main = do
           , "https://css-tricks.com/the-css-overflow-property/"
           , "https://chenhuijing.com/blog/flexbox-and-padding/#%F0%9F%92%BB"
           , "https://www.google.com/search?client=firefox-b-1-d&q=firefox+does+not+respect+padding-bottom"
+          , "https://www.w3schools.com/css/css_overflow.asp"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
+          , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
           ]
         -- "Done" ]
