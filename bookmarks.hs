@@ -13,7 +13,7 @@ import Control.Monad (mapM_, join)
 
 section :: [Text] -> Html ()
 section (title:links) =
-  details_ [class_ "section", open_ ""] $ do
+  details_ [class_ "section"] $ do
     header title
     block links
 
@@ -87,7 +87,7 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        section [ "Current"
+        (`with` [open_ ""]) $ section [ "Current"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
           , "https://css-tricks.com/almanac/properties/p/position/"
