@@ -435,6 +435,7 @@ main = do
           , "https://apps.apple.com/us/app/procreate-pocket/id916366645"
           , "https://cs.stackexchange.com/"
           , "https://webcompat.com/"
+          , "http://view.emails.patelco.org/?qs=c71575fd6daf3d01782eab69657ef0953227391696ee690b66e409446b457ddc89cf3ce90b26987f0ee8ba231c8b8b73aa9f8ce1bd7ed5b38c1a47372dd90e480d3563cf9a54e5bd343560bf4cb6fbc1"
           ]
         -- "Style" ]
         section [ "Done"
