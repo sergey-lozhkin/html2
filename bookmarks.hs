@@ -87,8 +87,14 @@ main = do
           "a:active { text-decoration:inherit; }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        (`with` [open_ ""]) $ section [ "Current"
+        (`with` [open_ ""]) $ section [ "Height"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
+          , "https://www.google.com/search?q=html+max-height"
+          , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
+          ]
+        -- "Height" ]
+        (`with` [open_ ""]) $ section [ "Current"
           , "https://css-tricks.com/almanac/properties/p/position/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+body+position+fixed"
           , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
@@ -96,7 +102,7 @@ main = do
           , "https://html.spec.whatwg.org/multipage/introduction.html#structure-of-this-specification"
           ]
         -- "Current" ]
-        section [ "Now"
+        (`with` [open_ ""]) $ section [ "Now"
           , "https://html.spec.whatwg.org/multipage"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
@@ -123,7 +129,6 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/left"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/float"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"
-          , "https://www.google.com/search?q=html+max-height"
           , "https://codepen.io/cbracco/pen/zekgx"
           , "https://www.internetingishard.com/html-and-css/advanced-positioning/"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/position"
@@ -134,8 +139,6 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+multi+column+document"
           , "https://css-tricks.com/all-about-floats/"
           , "https://css-tricks.com/examples/OverflowExample/"
-          , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
-          , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
           , "https://css-tricks.com/almanac/properties/s/scrollbar-color/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+scrollbar-color"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+scrollbar-width"
