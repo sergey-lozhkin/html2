@@ -138,6 +138,8 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+multi+column+document"
           , "https://css-tricks.com/all-about-floats/"
           , "https://css-tricks.com/examples/OverflowExample/"
+          , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
           ]
         -- "Layout" ]
         section [ "Queue"
