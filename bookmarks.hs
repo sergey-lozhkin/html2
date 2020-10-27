@@ -398,6 +398,7 @@ main = do
           , "https://stackoverflow.com/questions/1647724/color-syntax-highlighting-within-an-html-code-tag"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+syntax+highlighting"
           , "https://www.google.com/search?client=firefox-b-1-d&q=haml"
+          , "https://www.purescript.org/"
           ]
         -- "Tools" ]
         section [ "Style"
