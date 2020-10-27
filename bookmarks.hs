@@ -156,6 +156,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode"
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
           , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
+          , "http://book.webtypography.net/"
           ]
         -- "Queue" ]
         section [ "Viewport"
@@ -337,6 +338,8 @@ main = do
           , "https://css-tricks.com/core-web-vital-tooling/"
           , "https://stackoverflow.com/questions/14834198/table-scroll-with-html-and-css"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+hyphen"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=html+hyphens"
+          , "https://medium.com/clear-left-thinking/all-you-need-to-know-about-hyphenation-in-css-2baee2d89179"
           ]
         -- "Learn" ]
         section [ "Sites"
@@ -402,6 +405,8 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+syntax+highlighting"
           , "https://www.google.com/search?client=firefox-b-1-d&q=haml"
           , "https://www.purescript.org/"
+          , "https://stackoverflow.com/questions/16886258/which-javascript-library-should-i-use-for-client-side-hyphenation"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=Hyphenator.js"
           ]
         -- "Tools" ]
         section [ "Style"
@@ -454,5 +459,7 @@ main = do
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflow_Tasks"
           , "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+overflow+model"
+          , "https://css-tricks.com/almanac/properties/h/hyphenate/"
+          , "https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens"
           ]
         -- "Done" ]

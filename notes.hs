@@ -10,6 +10,14 @@ main::after {
   }
 }
 
+data Hyphens
+  None
+  Manual with markers
+  Auto with optional markers
+  Markers
+    "&shy;" == soft hyphen: point of break and the hyphen
+    <wbr> == point of break, no hyphen
+
 data Overflow
   overflow = hidden | visible | scroll | auto
   Set overflow on fixed panes, not on content
