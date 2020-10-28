@@ -344,6 +344,7 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+hyphen"
           , "https://www.google.com/search?client=firefox-b-1-d&q=html+hyphens"
           , "https://medium.com/clear-left-thinking/all-you-need-to-know-about-hyphenation-in-css-2baee2d89179"
+          , "https://css-tricks.com/anima-4-0-go-straight-from-design-to-react-in-the-design-handoff/"
           ]
         -- "Learn" ]
         section [ "Sites"
