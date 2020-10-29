@@ -88,19 +88,22 @@ main = do
           "a:focus { background: rgb(229,248,226); }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
-        (`with` [open_ ""]) $ section [ "Tutorials"
-          , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
-          , "https://github.com/ramitsurana/awesome-kubernetes"
-          , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
+        (`with` [open_ ""]) $ section [ "Now"
+          , "https://www.youtube.com/watch?v=WwBdNXt6wO4"
           , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
-          , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
           , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
+          , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
+          , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
+          , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
+          ]
+        -- "Now" ]
+        (`with` [open_ ""]) $ section [ "Tutorials"
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
-          , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
           , "https://www.stavros.io/posts/kubernetes-101/"
+          , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
+          , "https://github.com/ramitsurana/awesome-kubernetes"
           , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
-
           , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
           , "https://kubernetes.io/docs/concepts/workloads/pods/"
           , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
