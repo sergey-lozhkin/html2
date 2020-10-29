@@ -91,8 +91,6 @@ main = do
         (`with` [open_ ""]) $ section [ "Tutorials"
           , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
           , "https://github.com/ramitsurana/awesome-kubernetes"
-          , "https://github.com/takama/k8sdemo"
-          , "https://initialcommit.com/blog/kubernetes-explained"
           , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
           , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
@@ -241,6 +239,8 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+real-time"
           , "https://www.google.com/search?client=firefox-b-1-d&q=k3s"
           , "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+flannel"
+          , "https://github.com/takama/k8sdemo"
           ]
         -- "Links" ]
         section [ "News"
@@ -275,5 +275,6 @@ main = do
           , "https://dev.to/danlebrero/kubernetes-explained-the-theme-park-analogy-auto-scaling-taints-and-affinities-2ced"
           , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-statefulsets-persistent-volumes-and-headless-services-5do9"
           , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
+          , "https://initialcommit.com/blog/kubernetes-explained"
           ]
         -- "Done" ]
