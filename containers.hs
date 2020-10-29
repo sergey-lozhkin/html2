@@ -88,7 +88,7 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Tutorials"
-          , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-the-theme-park-analogy-3d99"
+          , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-statefulsets-persistent-volumes-and-headless-services-5do9"
           , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
           , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
           , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
@@ -104,13 +104,26 @@ main = do
           , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
           , "https://www.reddit.com/r/programming/comments/b4e2q1/maybe_you_dont_need_kubernetes/"
           , "https://www.stavros.io/posts/kubernetes-101/"
+
+          , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+          , "https://kubernetes.io/docs/concepts/workloads/pods/"
+          , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
+          , "https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/"
+          , "https://www.noqcks.io/notes/2018/02/03/understanding-kubernetes-resources/"
+          , "https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/"
+          , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/"
+          , "https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools"
+          , "https://kubernetes.io/docs/concepts/architecture/nodes/"
+          , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture"
+          , "https://kubernetes.io/docs/concepts/services-networking/service/"
+          , "https://kubernetes.io/docs/concepts/services-networking/ingress/"
+          , "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/"
+          , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+          , "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/"
+          , "https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/"
           ]
         -- "Tutorials" ]
-        (`with` [open_ ""]) $ section [ "Now"
-          , "https://www.infoq.com/news/2016/05/apprenda-commercial-kubernetes/"
-          ]
-        -- "Now" ]
-        (`with` [open_ ""]) $ section [ "Links"
+        section [ "Links"
           , "http://alexander.holbreich.org/kube-aws/"
           , "http://blog.holdenkarau.com/2018/09/introducing-kubeflow-system-for_8.html"
           , "http://code.haleby.se/2017/03/10/deploying-a-haskell-web-service-to-kubernetes/"
@@ -219,17 +232,23 @@ main = do
           , "https://www.zdnet.com/article/coreos-shows-openstack-can-be-run-as-a-container-with-kubernetes/"
           ]
         -- "Links" ]
-        (`with` [open_ ""]) $ section [ "News"
+        section [ "News"
+          , "https://www.infoq.com/news/2016/05/apprenda-commercial-kubernetes/"
           ]
         -- "News" ]
-        (`with` [open_ ""]) $ section [ "Components"
+        section [ "Components"
           , "https://etcd.io/"
           , "https://github.com/etcd-io/etcd"
+          , "https://cloud.google.com/kubernetes-engine/"
+          , "https://doc.traefik.io/traefik/"
           ]
         -- "Components" ]
         section [ "Sites"
+          , "https://cromleylabs.com/"
           ]
         -- "Sites" ]
         section [ "Done"
+          , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-the-theme-park-analogy-3d99"
+          , "https://dev.to/danlebrero/kubernetes-explained-the-theme-park-analogy-auto-scaling-taints-and-affinities-2ced"
           ]
         -- "Done" ]
