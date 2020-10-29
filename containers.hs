@@ -89,7 +89,6 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Now"
-          , "https://www.youtube.com/watch?v=WwBdNXt6wO4"
           , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
           , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
@@ -244,6 +243,7 @@ main = do
           , "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"
           , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+flannel"
           , "https://github.com/takama/k8sdemo"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=hackage+kubernetes"
           ]
         -- "Links" ]
         section [ "News"
@@ -279,5 +279,6 @@ main = do
           , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-statefulsets-persistent-volumes-and-headless-services-5do9"
           , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
           , "https://initialcommit.com/blog/kubernetes-explained"
+          , "https://www.youtube.com/watch?v=WwBdNXt6wO4"
           ]
         -- "Done" ]
