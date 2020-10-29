@@ -85,12 +85,10 @@ main = do
           "a:visited { text-decoration:inherit; }" <>
           "a:hover { text-decoration:inherit; }" <>
           "a:active { text-decoration:inherit; }" <>
+          "a:focus { background: rgb(229,248,226); }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Tutorials"
-          , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-statefulsets-persistent-volumes-and-headless-services-5do9"
-          , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
-          , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
           , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
           , "https://github.com/ramitsurana/awesome-kubernetes"
           , "https://github.com/takama/k8sdemo"
@@ -102,8 +100,8 @@ main = do
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
           , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
-          , "https://www.reddit.com/r/programming/comments/b4e2q1/maybe_you_dont_need_kubernetes/"
           , "https://www.stavros.io/posts/kubernetes-101/"
+          , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
 
           , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
           , "https://kubernetes.io/docs/concepts/workloads/pods/"
@@ -121,6 +119,15 @@ main = do
           , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
           , "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/"
           , "https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/"
+          , "https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes"
+          , "https://kubernetes.io/docs/concepts/storage/persistent-volumes/"
+          , "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
+          , "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/"
+          , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/"
+          , "https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/"
+          , "https://kubernetes.io/docs/reference/access-authn-authz/authorization/"
+          , "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"
+          , "https://kubernetes.io/docs/concepts/services-networking/network-policies/"
           ]
         -- "Tutorials" ]
         section [ "Links"
@@ -230,10 +237,15 @@ main = do
           , "https://www.youtube.com/watch?v=iruaCgeG7qs"
           , "https://www.zdnet.com/article/beyond-kubernetes-istio-network-service-mesh/"
           , "https://www.zdnet.com/article/coreos-shows-openstack-can-be-run-as-a-container-with-kubernetes/"
+          , "https://jvns.ca/blog/2017/06/04/learning-about-kubernetes/"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+real-time"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=k3s"
+          , "https://www.reddit.com/r/kubernetes/comments/b476va/maybe_you_dont_need_kubernetes/"
           ]
         -- "Links" ]
         section [ "News"
           , "https://www.infoq.com/news/2016/05/apprenda-commercial-kubernetes/"
+          , "https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/"
           ]
         -- "News" ]
         section [ "Components"
@@ -241,14 +253,27 @@ main = do
           , "https://github.com/etcd-io/etcd"
           , "https://cloud.google.com/kubernetes-engine/"
           , "https://doc.traefik.io/traefik/"
+          , "https://www.nomadproject.io/"
+          , "https://helm.sh/"
+          , "https://www.consul.io/"
+          , "https://www.vaultproject.io/"
+          , "https://grafana.com/oss/loki/"
+          , "https://github.com/fabiolb/fabio"
+          , "https://github.com/kubernetes/kops"
+          , "https://rancher.com/"
+          , "https://k3s.io/"
           ]
         -- "Components" ]
         section [ "Sites"
           , "https://cromleylabs.com/"
+          , "https://cloud.google.com/kubernetes-engine/"
+          , "https://aws.amazon.com/eks/?whats-new-cards"
           ]
         -- "Sites" ]
         section [ "Done"
           , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-the-theme-park-analogy-3d99"
           , "https://dev.to/danlebrero/kubernetes-explained-the-theme-park-analogy-auto-scaling-taints-and-affinities-2ced"
+          , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-statefulsets-persistent-volumes-and-headless-services-5do9"
+          , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
           ]
         -- "Done" ]

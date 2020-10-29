@@ -85,6 +85,7 @@ main = do
           "a:visited { text-decoration:inherit; }" <>
           "a:hover { text-decoration:inherit; }" <>
           "a:active { text-decoration:inherit; }" <>
+          "a:focus { background: rgb(229,248,226); }" <>
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Height"
@@ -452,6 +453,8 @@ main = do
           , "https://webcompat.com/"
           , "http://view.emails.patelco.org/?qs=c71575fd6daf3d01782eab69657ef0953227391696ee690b66e409446b457ddc89cf3ce90b26987f0ee8ba231c8b8b73aa9f8ce1bd7ed5b38c1a47372dd90e480d3563cf9a54e5bd343560bf4cb6fbc1"
           , "https://chenhuijing.com/blog/flexbox-and-padding/"
+          , "https://www.vaultproject.io/"
+          , "https://rancher.com/"
           ]
         -- "Style" ]
         section [ "Done"
