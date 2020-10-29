@@ -89,11 +89,11 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Now"
-          , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
           , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
           , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
           , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
+          , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
           ]
         -- "Now" ]
         (`with` [open_ ""]) $ section [ "Tutorials"
@@ -128,6 +128,7 @@ main = do
           , "https://kubernetes.io/docs/reference/access-authn-authz/authorization/"
           , "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"
           , "https://kubernetes.io/docs/concepts/services-networking/network-policies/"
+          , "https://kubernetes.io/docs/reference/kubectl/overview/"
           ]
         -- "Tutorials" ]
         section [ "Links"
@@ -192,7 +193,6 @@ main = do
           , "https://sematext.com/blog//rancheros-monitoring-and-logging-support/"
           , "https://softwareengineeringdaily.com/2016/05/19/googles-microservices-kubernetes-grpc-sandeep-dinesh/"
           , "https://stackshare.io/posts/companies-using-kubernetes-in-production-2018"
-          , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
           , "https://techcrunch.com/2016/10/26/coreos-launches-its-openstack-on-kubernetes-project-as-a-technical-preview/"
           , "https://techcrunch.com/2016/11/17/kubernetes-founders-launch-heptio-with-8-5m-in-funding-to-help-bring-containers-to-the-enterprise/"
           , "https://thenewstack.io/kontena-offers-kubernetes-alternative-promises-easier-deploy/"
@@ -244,6 +244,9 @@ main = do
           , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+flannel"
           , "https://github.com/takama/k8sdemo"
           , "https://www.google.com/search?client=firefox-b-1-d&q=hackage+kubernetes"
+          , "https://kubernetes.io/blog/2016/03/five-days-of-kubernetes-12/"
+          , "https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/"
+          , "https://kubernetes.io/blog/2016/06/container-design-patterns/"
           ]
         -- "Links" ]
         section [ "News"
@@ -265,6 +268,7 @@ main = do
           , "https://github.com/kubernetes/kops"
           , "https://rancher.com/"
           , "https://k3s.io/"
+          , "https://github.com/kubernetes/kubernetes"
           ]
         -- "Components" ]
         section [ "Sites"
@@ -280,5 +284,6 @@ main = do
           , "https://endler.dev/2019/maybe-you-dont-need-kubernetes/"
           , "https://initialcommit.com/blog/kubernetes-explained"
           , "https://www.youtube.com/watch?v=WwBdNXt6wO4"
+          , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           ]
         -- "Done" ]

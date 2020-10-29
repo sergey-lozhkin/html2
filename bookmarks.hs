@@ -455,6 +455,7 @@ main = do
           , "https://chenhuijing.com/blog/flexbox-and-padding/"
           , "https://www.vaultproject.io/"
           , "https://rancher.com/"
+          , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           ]
         -- "Style" ]
         section [ "Done"
