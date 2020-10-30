@@ -68,6 +68,7 @@ hstyle = style_ $
   ".header:hover {" <>
     "background: #f0f0f0;" <>
   "}" <>
+  ".header:focus { background: rgb(229,248,226); }" <>
   ".header { display: block; }" <>
   ".header::-webkit-details-marker { display: none; }" <>
   ".block {" <>
