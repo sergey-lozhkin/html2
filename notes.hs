@@ -40,6 +40,7 @@ data Simple Static Server
 data Shadow
   filter: drop-shadow(8px 12px 30px gray);
   .shadow { box-shadow: 4px 8px 1rem #aaa; }
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
 
 data Firefox
   Loses bottom padding in fixed scrollable bottom element

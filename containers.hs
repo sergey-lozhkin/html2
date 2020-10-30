@@ -206,6 +206,7 @@ components = [ "Components"
   , "https://cloud.google.com/kubernetes-engine/"
   , "https://doc.traefik.io/traefik/"
   , "https://traefik.io/"
+  , "https://github.com/traefik"
   , "https://www.nomadproject.io/"
   , "https://helm.sh/"
   , "https://www.consul.io/"
@@ -216,6 +217,8 @@ components = [ "Components"
   , "https://rancher.com/"
   , "https://k3s.io/"
   , "https://github.com/kubernetes/kubernetes"
+  , "https://stackshare.io/stackups/nginx-vs-traefik"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=traefik+vs+nginx"
   ] -- components
 
 sites :: [Text]
@@ -242,10 +245,10 @@ main :: IO ()
 main =
   linkPage "Containers" ("https://kubernetes.io/images/favicon.png", "image/png") "containers.html" $ do
     (`with` [open_ ""]) $ section now
-    section pods
     section tutorials
     section links
     section news
+    section pods
     section components
     section sites
     section done

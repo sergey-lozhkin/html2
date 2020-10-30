@@ -283,6 +283,7 @@ learn = [ "Learn"
   , "https://www.reddit.com/r/haskell/comments/jjy6jq/ann_keycloakhs_v2/"
   , "http://haskell.1045720.n5.nabble.com/Stepping-away-td5898488.html"
   , "https://hackage.haskell.org/package/waargonaut"
+  , "https://css-tricks.com/the-css-custom-property-toggle-trick/"
   ] -- learn
 
 sites :: [Text]
