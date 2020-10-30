@@ -458,6 +458,12 @@ main = do
           , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
           ]
         -- "Style" ]
+        section [ "WebSocket"
+          , "https://github.com/uNetworking/uWebSockets"
+          , "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
+          , "https://www.google.com/search?client=firefox-b-1-d&q=web+socket"
+          ]
+        -- "WebSocket" ]
         section [ "Done"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display"
           , "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow"
