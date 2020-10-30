@@ -89,14 +89,13 @@ main = do
           "* { outline-style:none; outline-width:0px; }"
       body_ $ do
         (`with` [open_ ""]) $ section [ "Now"
-          , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
           , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
           , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
           , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
           , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
           ]
         -- "Now" ]
-        (`with` [open_ ""]) $ section [ "Tutorials"
+        section [ "Tutorials"
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
           , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
           , "https://www.stavros.io/posts/kubernetes-101/"
@@ -247,6 +246,7 @@ main = do
           , "https://kubernetes.io/blog/2016/03/five-days-of-kubernetes-12/"
           , "https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/"
           , "https://kubernetes.io/blog/2016/06/container-design-patterns/"
+          , "https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"
           ]
         -- "Links" ]
         section [ "News"
@@ -285,5 +285,6 @@ main = do
           , "https://initialcommit.com/blog/kubernetes-explained"
           , "https://www.youtube.com/watch?v=WwBdNXt6wO4"
           , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
+          , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
           ]
         -- "Done" ]
