@@ -12,11 +12,11 @@ html/Carousel.html:: Carousel.hs
 	runhaskell $^
 
 all:: bookmarks.html
-bookmarks.html:: bookmarks.hs
+bookmarks.html:: bookmarks.hs HStyle.hs
 	runhaskell $^
 
 all:: containers.html
-containers.html:: containers.hs
+containers.html:: containers.hs HStyle.hs
 	runhaskell $^
 
 serve::

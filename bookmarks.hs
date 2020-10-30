@@ -3,25 +3,14 @@
 
 module Main where
 
-import Prelude hiding (writeFile)
 import Lucid
-import Lucid.Base
-import Data.List (sort)
-import Data.Text (Text, unpack)
-import Data.Text.Lazy.IO (writeFile)
-import Control.Monad (mapM_, join)
-
-height :: [Text]
-height = [ "Height"
-  , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
-  , "https://www.google.com/search?q=html+max-height"
-  , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
-  , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
-  , "https://www.google.com/search?client=firefox-b-1-d&q=html+scrollheight"
-  ] -- height
+import Data.Text (Text)
+import HStyle
 
 current :: [Text]
 current = [ "Current"
+  , "https://css-tricks.com/comparing-various-ways-to-hide-things-in-css/"
+  , "https://css-tricks.com/more-on-content-visibility/"
   , "https://css-tricks.com/almanac/properties/p/position/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=html+body+position+fixed"
   , "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
@@ -43,6 +32,15 @@ now = [ "Now"
   , "https://html.spec.whatwg.org/#the-details-element"
   , "https://html5doctor.com/the-details-and-summary-elements/"
   ] -- now
+
+height :: [Text]
+height = [ "Height"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=html+height+property"
+  , "https://www.google.com/search?q=html+max-height"
+  , "https://stackoverflow.com/questions/38903331/how-to-get-inner-html-content-height/38903375"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=javascript+how+to+calculate+height+of+element+based+on+content"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=html+scrollheight"
+  ] -- height
 
 layout :: [Text]
 layout = [ "Layout"
@@ -91,6 +89,7 @@ queue = [ "Queue"
   , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories"
   , "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines"
   , "http://book.webtypography.net/"
+  , "https://css-tricks.com/comparing-static-site-generator-build-times/"
   ] -- queue
 
 viewport :: [Text]
@@ -281,6 +280,9 @@ learn = [ "Learn"
   , "https://medium.com/clear-left-thinking/all-you-need-to-know-about-hyphenation-in-css-2baee2d89179"
   , "https://css-tricks.com/anima-4-0-go-straight-from-design-to-react-in-the-design-handoff/"
   , "https://httpstatuses.com/304"
+  , "https://www.reddit.com/r/haskell/comments/jjy6jq/ann_keycloakhs_v2/"
+  , "http://haskell.1045720.n5.nabble.com/Stepping-away-td5898488.html"
+  , "https://hackage.haskell.org/package/waargonaut"
   ] -- learn
 
 sites :: [Text]
@@ -419,98 +421,21 @@ done = [ "Done"
   , "https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens"
   ] -- done
 
-section :: [Text] -> Html ()
-section (title:links) =
-  details_ [class_ "section"] $ do
-    header title
-    block links
-
-header :: Text -> Html ()
-header = summary_ [class_ "header"] . toHtml
-
-block :: [Text] -> Html ()
-block = div_ [class_ "block"] . mapM_ (join item)
-
-item :: Text -> Text -> Html ()
-item url text = a_ [class_ "item", href_ url] $ toHtml text
-
 main :: IO ()
-main = do
-  writeFile "bookmarks.html" $ renderText $ do
-    doctype_
-    html_ [lang_ "en"] $ do
-      head_ $ do
-        meta_ [charset_ "utf-8"]
-        meta_ [name_ "viewport", content_ "width=device-width, initial-scale=1, shrink-to-fit=no"]
-        title_ "Links"
-        link_ [rel_ "icon", type_ "image/svg+xml", href_ "bookmark.svg"]
-        style
-      body_ $ do
-        (`with` [open_ ""]) $ section height
-        (`with` [open_ ""]) $ section current
-        (`with` [open_ ""]) $ section now
-        section layout
-        section queue
-        section viewport
-        section flex
-        section grid
-        section svg
-        section learn
-        section sites
-        section tools
-        section styles
-        section webSocket
-        section done
-
-style :: Html ()
-style = style_ $
-  "html, body { " <>
-    "font-size: 12pt;" <>
-    "font-family: Avenir, Helvetica, Arial;" <>
-    "font-weight: 300;" <>
-    "line-height: 1.5;" <>
-    "padding: 0rem;" <>
-    "background: #fcfcfc;" <>
-  "}" <>
-  "*, *:before, *:after {" <>
-    "font-size: inherit;" <>
-    "font-family: inherit;" <>
-    "font-weight: inherit;" <>
-    "line-height: inherit;" <>
-    "margin: 0px;" <>
-    "padding: 0px;" <>
-    "border-width: 0px;" <>
-    "background: inherit;" <>
-  "}" <>
-  ".section {" <>
-    "border-top: 0.5px solid rgb(175,175,175);" <>
-  "}" <>
-  ".header {" <>
-    "font-size: 14pt;" <>
-    "font-weight: 400;" <>
-    "padding: 1em 2rem;" <>
-    "cursor: pointer;" <>
-  "}" <>
-  ".header:hover {" <>
-    "background: #f0f0f0;" <>
-  "}" <>
-  ".header { display: block; }" <>
-  ".header::-webkit-details-marker { display: none; }" <>
-  ".block {" <>
-    "padding: 0 0 1rem 0;" <>
-  "}" <>
-  ".item {" <>
-    "display: block;" <>
-    "padding-left: 2rem;" <>
-    "overflow: hidden;" <>
-    "white-space: nowrap;" <>
-  "}" <>
-  ".item:hover {" <>
-    "background: #f0f0f0;" <>
-  "}" <>
-  "a:link { text-decoration:inherit; }" <>
-  "a:visited { text-decoration:inherit; }" <>
-  "a:hover { text-decoration:inherit; }" <>
-  "a:active { text-decoration:inherit; }" <>
-  "a:focus { background: rgb(229,248,226); }" <>
-  "* { outline-style:none; outline-width:0px; }"
+main =
+  linkPage "Links" ("bookmark.svg", "image/svg+xml") "bookmarks.html" $ do
+    (`with` [open_ ""]) $ section height
+    (`with` [open_ ""]) $ section current
+    (`with` [open_ ""]) $ section now
+    section layout
+    section queue
+    section viewport
+    section flex
+    section grid
+    section svg
+    section learn
+    section sites
+    section tools
+    section styles
+    section webSocket
+    section done
