@@ -20,12 +20,17 @@ now = [ "Now"
 
 pods :: [Text]
 pods = [ "Pods"
+  , "https://github.com/kubernetes/kubernetes/issues/35183"
   , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/"
+  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#hook-details"
   , "https://kubernetes.io/docs/concepts/workloads/pods/"
   , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-termination"
   , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+how+to+run+script+on+pod+creation"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+how+to+run+script+on+pod+destruction"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+init+container"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+init+containers"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+special+container"
   ] -- pods
 
