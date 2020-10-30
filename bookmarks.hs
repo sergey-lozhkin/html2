@@ -424,9 +424,9 @@ done = [ "Done"
 main :: IO ()
 main =
   linkPage "Links" ("bookmark.svg", "image/svg+xml") "bookmarks.html" $ do
-    (`with` [open_ ""]) $ section height
     (`with` [open_ ""]) $ section current
     (`with` [open_ ""]) $ section now
+    (`with` [open_ ""]) $ section height
     section layout
     section queue
     section viewport
