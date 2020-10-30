@@ -395,6 +395,7 @@ styles = [ "Style"
   , "https://rancher.com/"
   , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
   , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
+  , "https://adventofhaskell.com/"
   ] -- styles
 
 webSocket :: [Text]
