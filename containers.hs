@@ -18,6 +18,17 @@ now = [ "Now"
   , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
   ] -- now
 
+pods :: [Text]
+pods = [ "Pods"
+  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+how+to+run+script+on+pod+creation"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+init+container"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+special+container"
+  ] -- pods
+
 tutorials :: [Text]
 tutorials = [ "Tutorials"
   , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
@@ -253,6 +264,7 @@ main = do
         style
       body_ $ do
         (`with` [open_ ""]) $ section now
+        section pods
         section tutorials
         section links
         section news
