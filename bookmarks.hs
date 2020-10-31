@@ -284,6 +284,9 @@ learn = [ "Learn"
   , "http://haskell.1045720.n5.nabble.com/Stepping-away-td5898488.html"
   , "https://hackage.haskell.org/package/waargonaut"
   , "https://css-tricks.com/the-css-custom-property-toggle-trick/"
+  , "https://css-tricks.com/using-your-own-design-system-with-kendoreact-components/"
+  , "https://css-tricks.com/almanac/properties/s/shape-outside/"
+  , "https://css-tricks.com/in-defense-of-tables-and-floats-in-modern-day-development/"
   ] -- learn
 
 sites :: [Text]
@@ -353,6 +356,7 @@ tools = [ "Tools"
   , "https://www.purescript.org/"
   , "https://stackoverflow.com/questions/16886258/which-javascript-library-should-i-use-for-client-side-hyphenation"
   , "https://www.google.com/search?client=firefox-b-1-d&q=Hyphenator.js"
+  , "https://www.javascriptjanuary.com/blog/webassembly-neither-web-nor-assembly-but-revolutionary"
   ] -- tools
 
 styles :: [Text]
@@ -397,6 +401,10 @@ styles = [ "Style"
   , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
   , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
   , "https://adventofhaskell.com/"
+  , "https://css-tricks.com/little-things-on-my-personal-site/"
+  , "https://computecuter.com/"
+  , "https://abhinavsarkar.net/posts/json-parsing-from-scratch-in-haskell-3/"
+  , "https://www.javascriptjanuary.com/blog/webassembly-neither-web-nor-assembly-but-revolutionary"
   ] -- styles
 
 webSocket :: [Text]

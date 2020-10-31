@@ -190,6 +190,11 @@ links = [ "Links"
   , "https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"
   , "http://boringis.cool/#lets-talk-about-kubernetes"
   , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
+  , "https://lwn.net/Articles/835599/"
+  , "https://lwn.net/Articles/676831/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+vs+systemd"
+  , "https://kubernetes.io/docs/concepts/workloads/controllers/job/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+job+vs+init+container"
   ] -- links
 
 news :: [Text]
