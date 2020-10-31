@@ -9,20 +9,49 @@ import HStyle
 
 now :: [Text]
 now = [ "Now"
-  , "https://www.stavros.io/posts/kubernetes-101/"
-  , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
   , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
   ] -- now
+
+cubes :: [Text]
+cubes = [ "Cubes"
+  , "https://kubernetes.io/docs/home/"
+  , "https://kubernetes.io/docs/reference/glossary/?all=true"
+  , "https://kubernetes.io/docs/concepts/architecture/nodes/"
+  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/"
+  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#hook-details"
+  , "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"
+  , "https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"
+  , "https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/"
+  , "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/"
+  , "https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/"
+  , "https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/"
+  , "https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/"
+  , "https://kubernetes.io/docs/concepts/services-networking/ingress/"
+  , "https://kubernetes.io/docs/concepts/services-networking/network-policies/"
+  , "https://kubernetes.io/docs/concepts/services-networking/service/"
+  , "https://kubernetes.io/docs/concepts/storage/persistent-volumes/"
+  , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+  , "https://kubernetes.io/docs/concepts/workloads/controllers/job/"
+  , "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/"
+  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-termination"
+  , "https://kubernetes.io/docs/reference/access-authn-authz/authorization/"
+  , "https://kubernetes.io/docs/reference/access-authn-authz/rbac/"
+  , "https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/"
+  , "https://kubernetes.io/docs/reference/kubectl/overview/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/"
+  , "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/"
+  ]
 
 pods :: [Text]
 pods = [ "Pods"
   , "https://github.com/kubernetes/kubernetes/issues/35183"
-  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/"
-  , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#hook-details"
-  , "https://kubernetes.io/docs/concepts/workloads/pods/"
-  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/"
-  , "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-termination"
-  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+how+to+run+script+on+pod+creation"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+how+to+run+script+on+pod+destruction"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+init+container"
@@ -37,37 +66,15 @@ tutorials = [ "Tutorials"
   , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
   , "https://github.com/ramitsurana/awesome-kubernetes"
   , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
-  , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
-  , "https://kubernetes.io/docs/concepts/workloads/pods/"
   , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
-  , "https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/"
   , "https://www.noqcks.io/notes/2018/02/03/understanding-kubernetes-resources/"
-  , "https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/"
-  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/"
   , "https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools"
-  , "https://kubernetes.io/docs/concepts/architecture/nodes/"
   , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture"
-  , "https://kubernetes.io/docs/concepts/services-networking/service/"
-  , "https://kubernetes.io/docs/concepts/services-networking/ingress/"
-  , "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/"
   , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
-  , "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/"
-  , "https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/"
   , "https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes"
-  , "https://kubernetes.io/docs/concepts/storage/persistent-volumes/"
-  , "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
-  , "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/"
-  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/"
   , "https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/"
-  , "https://kubernetes.io/docs/reference/access-authn-authz/authorization/"
-  , "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"
-  , "https://kubernetes.io/docs/concepts/services-networking/network-policies/"
-  , "https://kubernetes.io/docs/reference/kubectl/overview/"
-  , "https://kubernetes.io/docs/reference/access-authn-authz/rbac/"
-  , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/"
-  , "https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/"
-  , "https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+hostname+inside+pod"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+tutorial"
   ] -- tutorials
 
 links :: [Text]
@@ -187,14 +194,14 @@ links = [ "Links"
   , "https://kubernetes.io/blog/2016/03/five-days-of-kubernetes-12/"
   , "https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/"
   , "https://kubernetes.io/blog/2016/06/container-design-patterns/"
-  , "https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"
   , "http://boringis.cool/#lets-talk-about-kubernetes"
   , "https://itnext.io/the-abc-of-kubernetes-access-control-e7d280af5c88"
   , "https://lwn.net/Articles/835599/"
   , "https://lwn.net/Articles/676831/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+vs+systemd"
-  , "https://kubernetes.io/docs/concepts/workloads/controllers/job/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+job+vs+init+container"
+  , "https://www.manning.com/books/kubernetes-in-action"
+  , "https://forvo.com/search/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82/el/"
   ] -- links
 
 news :: [Text]
@@ -244,6 +251,8 @@ done = [ "Done"
   , "https://medium.com/@itmarketplace.net/kubernetes-101-12ad2424d2f1"
   , "https://thenewstack.io/kubernetes-not-scary-complex-even-confusing/"
   , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
+  , "https://www.stavros.io/posts/kubernetes-101/"
+  , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
   ] -- done
 
 main :: IO ()
@@ -251,6 +260,7 @@ main =
   linkPage "Containers" ("https://kubernetes.io/images/favicon.png", "image/png") "containers.html" $ do
     (`with` [open_ ""]) $ section now
     section tutorials
+    section cubes
     section links
     section news
     section pods
