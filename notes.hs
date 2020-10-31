@@ -38,9 +38,9 @@ data Simple Static Server
   python3 -m http.server 3333 --bind localhost
 
 data Shadow
-  filter: drop-shadow(8px 12px 30px gray);
-  .shadow { box-shadow: 4px 8px 1rem #aaa; }
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(8px 12px 30px gray); -- content shadow
+  .shadow { box-shadow: 4px 8px 1rem #aaa; } -- box shadow
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15); -- nice alpha transparency (black with 0.15 opacity)
 
 data Firefox
   Loses bottom padding in fixed scrollable bottom element
