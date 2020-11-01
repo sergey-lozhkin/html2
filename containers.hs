@@ -9,6 +9,11 @@ import HStyle
 
 now :: [Text]
 now = [ "Now"
+  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-i-introduction-to-pods-labels-replicas"
+  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
+  , "https://www.giantswarm.io/blog/basic-kubernetes-concepts-iii-services-give-abstraction"
+  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-iv-secrets-and-configmaps"
+  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
   ] -- now
 
 cubes :: [Text]
@@ -62,8 +67,6 @@ pods = [ "Pods"
 
 tutorials :: [Text]
 tutorials = [ "Tutorials"
-  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-using-deployments-manage-services-declaratively"
-  , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
   , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
   , "https://github.com/ramitsurana/awesome-kubernetes"
   , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
