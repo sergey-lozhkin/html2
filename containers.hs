@@ -9,7 +9,6 @@ import HStyle
 
 now :: [Text]
 now = [ "Now"
-  , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
   ] -- now
 
 cubes :: [Text]
@@ -17,6 +16,7 @@ cubes = [ "Cubes"
   , "https://kubernetes.io/docs/home/"
   , "https://kubernetes.io/docs/reference/glossary/?all=true"
   , "https://kubernetes.io/docs/concepts/architecture/nodes/"
+  , "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
   , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/"
   , "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#hook-details"
   , "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"
@@ -30,6 +30,7 @@ cubes = [ "Cubes"
   , "https://kubernetes.io/docs/concepts/services-networking/network-policies/"
   , "https://kubernetes.io/docs/concepts/services-networking/service/"
   , "https://kubernetes.io/docs/concepts/storage/persistent-volumes/"
+  , "https://kubernetes.io/docs/concepts/storage/volumes/"
   , "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
   , "https://kubernetes.io/docs/concepts/workloads/controllers/job/"
   , "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
@@ -47,7 +48,7 @@ cubes = [ "Cubes"
   , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/"
   , "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/"
   , "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/"
-  ]
+  ] -- cubes
 
 pods :: [Text]
 pods = [ "Pods"
@@ -202,6 +203,13 @@ links = [ "Links"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+job+vs+init+container"
   , "https://www.manning.com/books/kubernetes-in-action"
   , "https://forvo.com/search/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82/el/"
+  , "https://docs.docker.com/docker-hub/webhooks/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=webhook"
+  , "https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=webhook"
+  , "https://techbeacon.com/app-dev-testing/what-apache-kafka-why-it-so-popular-should-you-use-it"
+  , "https://www.rti.com/industries/cloud-computing"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=enterprise+service+management"
   ] -- links
 
 news :: [Text]
@@ -231,6 +239,11 @@ components = [ "Components"
   , "https://github.com/kubernetes/kubernetes"
   , "https://stackshare.io/stackups/nginx-vs-traefik"
   , "https://www.google.com/search?client=firefox-b-1-d&q=traefik+vs+nginx"
+  , "http://www.confd.io/"
+  , "https://bitbucket.org/amdatulabs/amdatu-kubernetes-deployer/src/master/"
+  , "https://bitbucket.org/amdatulabs/"
+  , "https://www.graylog.org/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+heapster"
   ] -- components
 
 sites :: [Text]
@@ -253,6 +266,7 @@ done = [ "Done"
   , "https://speakerdeck.com/thockin/illustrated-guide-to-kubernetes-networking"
   , "https://www.stavros.io/posts/kubernetes-101/"
   , "https://www.reddit.com/r/programming/comments/9343w8/a_short_concise_and_highlevel_introduction_to/"
+  , "https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned"
   ] -- done
 
 main :: IO ()
@@ -261,9 +275,9 @@ main =
     (`with` [open_ ""]) $ section now
     section tutorials
     section cubes
+    section pods
     section links
     section news
-    section pods
     section components
     section sites
     section done
