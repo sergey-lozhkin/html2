@@ -213,6 +213,8 @@ links = [ "Links"
   , "https://techbeacon.com/app-dev-testing/what-apache-kafka-why-it-so-popular-should-you-use-it"
   , "https://www.rti.com/industries/cloud-computing"
   , "https://www.google.com/search?client=firefox-b-1-d&q=enterprise+service+management"
+  , "https://docs.github.com/en"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=write+ahead+log"
   ] -- links
 
 news :: [Text]
