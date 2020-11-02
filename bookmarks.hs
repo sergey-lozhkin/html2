@@ -287,6 +287,9 @@ learn = [ "Learn"
   , "https://css-tricks.com/using-your-own-design-system-with-kendoreact-components/"
   , "https://css-tricks.com/almanac/properties/s/shape-outside/"
   , "https://css-tricks.com/in-defense-of-tables-and-floats-in-modern-day-development/"
+  , "https://stackoverflow.com/questions/64633184/configure-correctly-cors-with-wai-cors"
+  , "https://stackoverflow.com/questions/64634847/cant-get-cors-working-scotty-webserver-haskell"
+  , "https://www.reddit.com/r/programming/comments/jm7dr5/how_to_download_youtube_videos_on_your_iphone/"
   ] -- learn
 
 sites :: [Text]
