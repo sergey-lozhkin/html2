@@ -65,6 +65,12 @@ pods = [ "Pods"
   , "https://www.google.com/search?client=firefox-b-1-d&q=kubernetes+special+container"
   ] -- pods
 
+storage :: [Text]
+storage = [ "Storage"
+  , "https://www.enterprisestorageforum.com/cloud-storage/object-storage-protocol-could-mean-the-end-for-posix.html"
+  , "https://www.reddit.com/r/programming/comments/jmwb3y/new_object_storage_protocol_could_mean_the_end/"
+  ] -- storage
+
 tutorials :: [Text]
 tutorials = [ "Tutorials"
   , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
@@ -217,6 +223,7 @@ links = [ "Links"
   , "https://www.google.com/search?client=firefox-b-1-d&q=write+ahead+log"
   , "https://blog.acolyer.org/2020/10/26/helios-part-1/"
   , "https://blog.acolyer.org/2020/11/02/helios-part-ii/"
+  , "https://skillsmatter.com/conferences/13135-haskell-exchange-2020"
   ] -- links
 
 news :: [Text]
@@ -283,6 +290,7 @@ main =
     section tutorials
     section cubes
     section pods
+    section storage
     section links
     section news
     section components
