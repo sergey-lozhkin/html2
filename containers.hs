@@ -215,6 +215,8 @@ links = [ "Links"
   , "https://www.google.com/search?client=firefox-b-1-d&q=enterprise+service+management"
   , "https://docs.github.com/en"
   , "https://www.google.com/search?client=firefox-b-1-d&q=write+ahead+log"
+  , "https://blog.acolyer.org/2020/10/26/helios-part-1/"
+  , "https://blog.acolyer.org/2020/11/02/helios-part-ii/"
   ] -- links
 
 news :: [Text]

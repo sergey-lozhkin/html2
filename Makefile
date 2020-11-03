@@ -1,23 +1,23 @@
 all::
 
 %.html: %.hs
-	runhaskell $^
+	runhaskell $<
 
 all:: html/background.html
 html/background.html:: background.hs
-	runhaskell $^
+	runhaskell $<
 
 all:: html/Carousel.html
 html/Carousel.html:: Carousel.hs
-	runhaskell $^
+	runhaskell $<
 
 all:: bookmarks.html
 bookmarks.html:: bookmarks.hs HStyle.hs
-	runhaskell $^
+	runhaskell $<
 
 all:: containers.html
 containers.html:: containers.hs HStyle.hs
-	runhaskell $^
+	runhaskell $<
 
 serve::
 	python3 -m http.server 3333

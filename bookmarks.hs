@@ -290,6 +290,7 @@ learn = [ "Learn"
   , "https://stackoverflow.com/questions/64633184/configure-correctly-cors-with-wai-cors"
   , "https://stackoverflow.com/questions/64634847/cant-get-cors-working-scotty-webserver-haskell"
   , "https://www.reddit.com/r/programming/comments/jm7dr5/how_to_download_youtube_videos_on_your_iphone/"
+  , "https://blog.plover.com/talk/slide-download-2.html"
   ] -- learn
 
 sites :: [Text]
