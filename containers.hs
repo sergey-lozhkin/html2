@@ -224,6 +224,7 @@ links = [ "Links"
   , "https://blog.acolyer.org/2020/10/26/helios-part-1/"
   , "https://blog.acolyer.org/2020/11/02/helios-part-ii/"
   , "https://skillsmatter.com/conferences/13135-haskell-exchange-2020"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=skuber+scala"
   ] -- links
 
 news :: [Text]
