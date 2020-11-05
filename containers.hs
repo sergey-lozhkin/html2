@@ -16,6 +16,22 @@ now = [ "Now"
   , "https://www.giantswarm.io/blog/understanding-basic-kubernetes-concepts-v-daemon-sets-and-jobs"
   ] -- now
 
+tutorials :: [Text]
+tutorials = [ "Tutorials"
+  , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
+  , "https://github.com/ramitsurana/awesome-kubernetes"
+  , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
+  , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
+  , "https://www.noqcks.io/notes/2018/02/03/understanding-kubernetes-resources/"
+  , "https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools"
+  , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture"
+  , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+  , "https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes"
+  , "https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/"
+  , "https://www.google.com/search?q=kubernetes+hostname+inside+pod"
+  , "https://www.google.com/search?q=kubernetes+tutorial"
+  ] -- tutorials
+
 cubes :: [Text]
 cubes = [ "Cubes"
   , "https://kubernetes.io/docs/home/"
@@ -60,6 +76,10 @@ pods = [ "Pods"
   , "https://www.google.com/search?q=kubernetes+init+container"
   , "https://www.google.com/search?q=kubernetes+init+containers"
   , "https://www.google.com/search?q=kubernetes+special+container"
+  , "https://blog.viktoradam.net/2018/05/14/podlike/"
+  , "https://www.google.com/search?q=how+to+simulate+pod+docker+"
+  , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
+  , "https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/"
   ] -- pods
 
 storage :: [Text]
@@ -74,22 +94,6 @@ storage = [ "Storage"
   , "https://priorart.ip.com/IPCOM/000263656"
   , "https://www.google.com/search?q=s3+file+system"
   ] -- storage
-
-tutorials :: [Text]
-tutorials = [ "Tutorials"
-  , "https://github.com/kelseyhightower/kubernetes-the-hard-way"
-  , "https://github.com/ramitsurana/awesome-kubernetes"
-  , "https://distillery.com/blog/getting-started-kubernetes-amazon-web-services-aws/"
-  , "https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/"
-  , "https://www.noqcks.io/notes/2018/02/03/understanding-kubernetes-resources/"
-  , "https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools"
-  , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture"
-  , "https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
-  , "https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes"
-  , "https://jvns.ca/blog/2017/08/05/how-kubernetes-certificates-work/"
-  , "https://www.google.com/search?q=kubernetes+hostname+inside+pod"
-  , "https://www.google.com/search?q=kubernetes+tutorial"
-  ] -- tutorials
 
 links :: [Text]
 links = [ "Links"

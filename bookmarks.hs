@@ -416,6 +416,7 @@ styles = [ "Style"
   , "https://computecuter.com/"
   , "https://abhinavsarkar.net/posts/json-parsing-from-scratch-in-haskell-3/"
   , "https://www.javascriptjanuary.com/blog/webassembly-neither-web-nor-assembly-but-revolutionary"
+  , "https://cloud.google.com/kubernetes-engine"
   ] -- styles
 
 webSocket :: [Text]
