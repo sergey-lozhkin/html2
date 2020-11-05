@@ -291,6 +291,13 @@ learn = [ "Learn"
   , "https://stackoverflow.com/questions/64634847/cant-get-cors-working-scotty-webserver-haskell"
   , "https://www.reddit.com/r/programming/comments/jm7dr5/how_to_download_youtube_videos_on_your_iphone/"
   , "https://blog.plover.com/talk/slide-download-2.html"
+  , "https://css-tricks.com/gray-burst/"
+  , "https://css-tricks.com/gifs-and-prefers-reduced-motion/"
+  , "https://css-tricks.com/websites-we-like-whimsical/"
+  , "https://danielcwilson.com/blog/2020/10/additive-css-animations/"
+  , "https://css-tricks.com/getting-the-wordpress-block-editor-to-look-like-the-front-end-design/"
+  , "https://secretgeek.github.io/html_wysiwyg/html.html"
+  , "https://css-tricks.com/how-to-write-loops-with-preprocessors/"
   ] -- learn
 
 sites :: [Text]
