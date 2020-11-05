@@ -298,6 +298,10 @@ learn = [ "Learn"
   , "https://css-tricks.com/getting-the-wordpress-block-editor-to-look-like-the-front-end-design/"
   , "https://secretgeek.github.io/html_wysiwyg/html.html"
   , "https://css-tricks.com/how-to-write-loops-with-preprocessors/"
+  , "https://css-tricks.com/more-people-dipping-toes-into-web-monetization/"
+  , "https://css-tricks.com/how-to-animate-the-details-element-using-waapi/"
+  , "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+  , "https://css-tricks.com/quick-localstorage-usage-in-vue/"
   ] -- learn
 
 sites :: [Text]
