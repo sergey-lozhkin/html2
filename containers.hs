@@ -232,6 +232,7 @@ links = [ "Links"
   , "https://skillsmatter.com/conferences/13135-haskell-exchange-2020"
   , "https://www.google.com/search?q=skuber+scala"
   , "https://www.infoq.com/news/2020/11/google-new-cloud-shell-editor/"
+  , "https://blog.cloudflare.com/cloudflare-one/"
   ] -- links
 
 news :: [Text]
@@ -275,6 +276,16 @@ sites = [ "Sites"
   , "https://aws.amazon.com/eks/?whats-new-cards"
   ] -- sites
 
+security :: [Text]
+security = [ "Security"
+  , "https://www.paloaltonetworks.com/cyberpedia/what-is-a-zero-trust-architecture"
+  ] -- security
+
+network :: [Text]
+network = [ "Network"
+  , "https://blog.cloudflare.com/introducing-cloudflare-one/"
+  ] -- network
+
 done :: [Text]
 done = [ "Done"
   , "https://dev.to/danlebrero/kubernetes-explained-in-pictures-the-theme-park-analogy-3d99"
@@ -299,6 +310,8 @@ main =
     section cubes
     section pods
     section storage
+    section network
+    section security
     section links
     section news
     section components

@@ -375,6 +375,10 @@ tools = [ "Tools"
   , "https://stackoverflow.com/questions/16886258/which-javascript-library-should-i-use-for-client-side-hyphenation"
   , "https://www.google.com/search?q=Hyphenator.js"
   , "https://www.javascriptjanuary.com/blog/webassembly-neither-web-nor-assembly-but-revolutionary"
+  , "https://github.com/rsms/markdown-wasm"
+  , "https://github.com/l1ving/youtube-dl"
+  , "https://kazu-yamamoto.hatenablog.jp/entry/2020/10/23/141648"
+  , "https://www.reddit.com/r/haskell/comments/jh5bch/wich_web_framework/"
   ] -- tools
 
 styles :: [Text]
