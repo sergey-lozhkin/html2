@@ -302,6 +302,9 @@ learn = [ "Learn"
   , "https://css-tricks.com/how-to-animate-the-details-element-using-waapi/"
   , "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
   , "https://css-tricks.com/quick-localstorage-usage-in-vue/"
+  , "https://www.reddit.com/r/programming/comments/jdv4xv/floating_point_in_the_browser_part_3_when_xyx/"
+  , "https://css-tricks.com/how-to-create-a-commenting-engine-with-next-js-and-sanity/"
+  , "https://adamsilver.io/articles/bidirectional-scrolling-whats-not-to-like/"
   ] -- learn
 
 sites :: [Text]
