@@ -233,6 +233,7 @@ links = [ "Links"
   , "https://www.google.com/search?q=skuber+scala"
   , "https://www.infoq.com/news/2020/11/google-new-cloud-shell-editor/"
   , "https://blog.cloudflare.com/cloudflare-one/"
+  , "https://www.infoq.com/news/2020/11/consul-1-9-beta/"
   ] -- links
 
 news :: [Text]
