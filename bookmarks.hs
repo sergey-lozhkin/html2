@@ -139,6 +139,7 @@ svg = [ "SVG"
   , "https://hackage.haskell.org/package/svg-builder"
   , "http://svgicons.sparkk.fr/"
   , "https://www.sitepoint.com/css-with-svg/"
+  , "https://github.com/sammycage/lunasvg"
   ] -- svg
 
 learn :: [Text]
@@ -379,6 +380,8 @@ tools = [ "Tools"
   , "https://github.com/l1ving/youtube-dl"
   , "https://kazu-yamamoto.hatenablog.jp/entry/2020/10/23/141648"
   , "https://www.reddit.com/r/haskell/comments/jh5bch/wich_web_framework/"
+  , "https://www.reddit.com/r/haskell/comments/jqcujo/web_framework_guidance/"
+  , "https://joshwcomeau.com/operator-lookup/"
   ] -- tools
 
 styles :: [Text]
