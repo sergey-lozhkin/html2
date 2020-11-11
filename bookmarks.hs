@@ -311,6 +311,7 @@ learn = [ "Learn"
   , "https://css-tricks.com/the-raven-technique-one-step-closer-to-container-queries/"
   , "http://wcook.blogspot.com/2020/11/how-to-get-text-to-look-right-size-on.html"
   , "https://adactio.com/journal/17566"
+  , "https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/"
   ] -- learn
 
 sites :: [Text]
@@ -388,6 +389,7 @@ tools = [ "Tools"
   , "https://www.reddit.com/r/haskell/comments/jqcujo/web_framework_guidance/"
   , "https://joshwcomeau.com/operator-lookup/"
   , "https://omarabid.com/modern-web-dev"
+  , "https://www.reddit.com/r/haskell/comments/jqwe7v/ann_jsontohaskell_automatic_json_modelling_and/"
   ] -- tools
 
 styles :: [Text]
