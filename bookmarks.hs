@@ -387,6 +387,7 @@ tools = [ "Tools"
   , "https://www.reddit.com/r/haskell/comments/jh5bch/wich_web_framework/"
   , "https://www.reddit.com/r/haskell/comments/jqcujo/web_framework_guidance/"
   , "https://joshwcomeau.com/operator-lookup/"
+  , "https://omarabid.com/modern-web-dev"
   ] -- tools
 
 styles :: [Text]
