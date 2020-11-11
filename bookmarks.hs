@@ -118,6 +118,7 @@ flex = [ "Flex"
   , "https://github.com/philipwalton/flexbugs"
   , "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
   , "https://www.google.com/search?q=safari+fixed+flex+container"
+  , "https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/"
   ] -- flex
 
 grid :: [Text]
@@ -306,6 +307,10 @@ learn = [ "Learn"
   , "https://www.reddit.com/r/programming/comments/jdv4xv/floating_point_in_the_browser_part_3_when_xyx/"
   , "https://css-tricks.com/how-to-create-a-commenting-engine-with-next-js-and-sanity/"
   , "https://adamsilver.io/articles/bidirectional-scrolling-whats-not-to-like/"
+  , "https://davidwalsh.name/detect-sticky"
+  , "https://css-tricks.com/the-raven-technique-one-step-closer-to-container-queries/"
+  , "http://wcook.blogspot.com/2020/11/how-to-get-text-to-look-right-size-on.html"
+  , "https://adactio.com/journal/17566"
   ] -- learn
 
 sites :: [Text]

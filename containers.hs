@@ -234,6 +234,9 @@ links = [ "Links"
   , "https://www.infoq.com/news/2020/11/google-new-cloud-shell-editor/"
   , "https://blog.cloudflare.com/cloudflare-one/"
   , "https://www.infoq.com/news/2020/11/consul-1-9-beta/"
+  , "https://css-tricks.com/netlify-background-functions/"
+  , "https://www.infoq.com/news/2020/11/aws-amazon-mq-rabbitmq/"
+  , "https://www.infoq.com/news/2020/11/hockin-kubernetes-networking/"
   ] -- links
 
 news :: [Text]
