@@ -318,6 +318,7 @@ learn = [ "Learn"
   , "https://css-tricks.com/a-spreadsheet-importer-youll-enjoy-using/"
   , "https://css-tricks.com/how-film-school-helped-me-make-better-user-experiences/"
   , "https://theeventscalendar.com/blog/wordpress/how-to-work-with-wordpress-block-patterns/"
+  , "https://css-tricks.com/parsing-markdown-into-an-automated-table-of-contents/"
   ] -- learn
 
 sites :: [Text]
