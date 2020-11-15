@@ -93,6 +93,7 @@ storage = [ "Storage"
   , "https://www.google.com/search?q=Enterprise+Storage+Forum"
   , "https://priorart.ip.com/IPCOM/000263656"
   , "https://www.google.com/search?q=s3+file+system"
+  , "https://www.infoq.com/news/2020/11/cncf-graduates-rook/"
   ] -- storage
 
 links :: [Text]
