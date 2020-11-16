@@ -238,6 +238,8 @@ links = [ "Links"
   , "https://css-tricks.com/netlify-background-functions/"
   , "https://www.infoq.com/news/2020/11/aws-amazon-mq-rabbitmq/"
   , "https://www.infoq.com/news/2020/11/hockin-kubernetes-networking/"
+  , "https://www.infoq.com/news/2020/11/amazon-eventbridge-event-replay/"
+  , "https://ratysz.github.io/article/scheduling-1/"
   ] -- links
 
 news :: [Text]
