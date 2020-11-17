@@ -319,6 +319,10 @@ learn = [ "Learn"
   , "https://css-tricks.com/how-film-school-helped-me-make-better-user-experiences/"
   , "https://theeventscalendar.com/blog/wordpress/how-to-work-with-wordpress-block-patterns/"
   , "https://css-tricks.com/parsing-markdown-into-an-automated-table-of-contents/"
+  , "https://css-tricks.com/a-complete-guide-to-css-gradients/"
+  , "https://www.magicpattern.design/tools/css-backgrounds/"
+  , "https://web.dev/logical-property-shorthands/"
+  , "https://css-tricks.com/mixing-colors-in-pure-css/"
   ] -- learn
 
 sites :: [Text]
