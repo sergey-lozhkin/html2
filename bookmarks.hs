@@ -323,6 +323,8 @@ learn = [ "Learn"
   , "https://www.magicpattern.design/tools/css-backgrounds/"
   , "https://web.dev/logical-property-shorthands/"
   , "https://css-tricks.com/mixing-colors-in-pure-css/"
+  , "https://css-tricks.com/jetpack-backup/"
+  , "https://css-tricks.com/copyediting-with-semantic-html/"
   ] -- learn
 
 sites :: [Text]
