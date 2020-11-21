@@ -119,6 +119,7 @@ flex = [ "Flex"
   , "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis"
   , "https://www.google.com/search?q=safari+fixed+flex+container"
   , "https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/"
+  , "https://css-tricks.com/grid-auto-flow-css-grid-flex-direction-flexbox/"
   ] -- flex
 
 grid :: [Text]
@@ -131,6 +132,7 @@ grid = [ "Grid"
   , "https://www.google.com/search?q=css+tables+vs+css+grid"
   , "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"
   , "https://www.google.com/search?q=html+grid+layout"
+  , "https://frontend.horse/articles/thinking-outside-the-box-with-css-grid/"
   ] -- grid
 
 svg :: [Text]
@@ -325,6 +327,11 @@ learn = [ "Learn"
   , "https://css-tricks.com/mixing-colors-in-pure-css/"
   , "https://css-tricks.com/jetpack-backup/"
   , "https://css-tricks.com/copyediting-with-semantic-html/"
+  , "https://github.com/upptime/upptime"
+  , "https://css-tricks.com/color-theming-with-css-custom-properties-and-tailwind/"
+  , "https://css-tricks.com/console-log-myvariable/"
+  , "https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/"
+  , "https://css-tricks.com/how-you-might-build-a-modern-day-webring/"
   ] -- learn
 
 sites :: [Text]
@@ -404,6 +411,8 @@ tools = [ "Tools"
   , "https://omarabid.com/modern-web-dev"
   , "https://www.reddit.com/r/haskell/comments/jqwe7v/ann_jsontohaskell_automatic_json_modelling_and/"
   , "https://github.com/reflex-frp"
+  , "https://github.com/upptime/upptime"
+  , "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/83"
   ] -- tools
 
 styles :: [Text]
@@ -453,6 +462,7 @@ styles = [ "Style"
   , "https://abhinavsarkar.net/posts/json-parsing-from-scratch-in-haskell-3/"
   , "https://www.javascriptjanuary.com/blog/webassembly-neither-web-nor-assembly-but-revolutionary"
   , "https://cloud.google.com/kubernetes-engine"
+  , "https://css-tricks.com/mediastack/"
   ] -- styles
 
 webSocket :: [Text]
