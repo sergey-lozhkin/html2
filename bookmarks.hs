@@ -145,6 +145,8 @@ svg = [ "SVG"
   , "https://github.com/sammycage/lunasvg"
   , "https://css-tricks.com/libraries-for-svg-drawing-animations/"
   , "https://svgbox.net/"
+  , "https://www.graphery.org/svg/"
+  , "https://css-tricks.com/creating-ui-components-in-svg/"
   ] -- svg
 
 learn :: [Text]
@@ -332,6 +334,7 @@ learn = [ "Learn"
   , "https://css-tricks.com/console-log-myvariable/"
   , "https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/"
   , "https://css-tricks.com/how-you-might-build-a-modern-day-webring/"
+  , "https://css-tricks.com/dry-ing-up-styled-components/"
   ] -- learn
 
 sites :: [Text]
