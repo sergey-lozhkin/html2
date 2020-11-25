@@ -241,6 +241,7 @@ links = [ "Links"
   , "https://www.infoq.com/news/2020/11/hockin-kubernetes-networking/"
   , "https://www.infoq.com/news/2020/11/amazon-eventbridge-event-replay/"
   , "https://ratysz.github.io/article/scheduling-1/"
+  , "https://blog.softwaremill.com/a-case-for-akka-coordination-lease-4867887e4d7f"
   ] -- links
 
 news :: [Text]
