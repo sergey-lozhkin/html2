@@ -336,6 +336,10 @@ learn = [ "Learn"
   , "https://css-tricks.com/how-you-might-build-a-modern-day-webring/"
   , "https://css-tricks.com/dry-ing-up-styled-components/"
   , "https://css-tricks.com/rendering-spectrum/"
+  , "https://sylormiller.com/posts/2020/core-web-vitals/"
+  , "https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/"
+  , "https://css-tricks.com/considerations-for-making-a-css-framework/"
+  , "https://thoughtbot.com/blog/tailwind-versus-bem"
   ] -- learn
 
 sites :: [Text]

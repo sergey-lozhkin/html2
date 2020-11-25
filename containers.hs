@@ -95,6 +95,7 @@ storage = [ "Storage"
   , "https://www.google.com/search?q=s3+file+system"
   , "https://www.infoq.com/news/2020/11/cncf-graduates-rook/"
   , "https://www.infoq.com/articles/whats-the-next-step-for-data-management/"
+  , "https://www.infoq.com/news/2020/11/aws-s3-storage-lens/"
   ] -- storage
 
 links :: [Text]
