@@ -335,6 +335,7 @@ learn = [ "Learn"
   , "https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/"
   , "https://css-tricks.com/how-you-might-build-a-modern-day-webring/"
   , "https://css-tricks.com/dry-ing-up-styled-components/"
+  , "https://css-tricks.com/rendering-spectrum/"
   ] -- learn
 
 sites :: [Text]
