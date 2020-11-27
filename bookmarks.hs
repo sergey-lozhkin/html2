@@ -340,6 +340,8 @@ learn = [ "Learn"
   , "https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/"
   , "https://css-tricks.com/considerations-for-making-a-css-framework/"
   , "https://thoughtbot.com/blog/tailwind-versus-bem"
+  , "https://css-tricks.com/three-things-you-didnt-know-about-avif/"
+  , "https://css-tricks.com/exploring-what-the-details-and-summary-elements-can-do/"
   ] -- learn
 
 sites :: [Text]
