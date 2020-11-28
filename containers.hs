@@ -96,6 +96,8 @@ storage = [ "Storage"
   , "https://www.infoq.com/news/2020/11/cncf-graduates-rook/"
   , "https://www.infoq.com/articles/whats-the-next-step-for-data-management/"
   , "https://www.infoq.com/news/2020/11/aws-s3-storage-lens/"
+  , "https://www.google.com/search?client=firefox-b-1-d&q=open+source+s3"
+  , "https://min.io/"
   ] -- storage
 
 links :: [Text]

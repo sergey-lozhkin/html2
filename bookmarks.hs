@@ -342,6 +342,7 @@ learn = [ "Learn"
   , "https://thoughtbot.com/blog/tailwind-versus-bem"
   , "https://css-tricks.com/three-things-you-didnt-know-about-avif/"
   , "https://css-tricks.com/exploring-what-the-details-and-summary-elements-can-do/"
+  , "https://www.google.com/search?q=javascript+module+pattern"
   ] -- learn
 
 sites :: [Text]
@@ -498,6 +499,7 @@ done = [ "Done"
   , "https://www.google.com/search?q=html+overflow+model"
   , "https://css-tricks.com/almanac/properties/h/hyphenate/"
   , "https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens"
+  , "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
   ] -- done
 
 main :: IO ()
