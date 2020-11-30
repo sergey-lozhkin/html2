@@ -98,6 +98,7 @@ storage = [ "Storage"
   , "https://www.infoq.com/news/2020/11/aws-s3-storage-lens/"
   , "https://www.google.com/search?client=firefox-b-1-d&q=open+source+s3"
   , "https://min.io/"
+  , "https://www.infoq.com/news/2020/11/etcd-cncf-graduation/"
   ] -- storage
 
 links :: [Text]
