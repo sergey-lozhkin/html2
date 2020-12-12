@@ -247,6 +247,7 @@ links = [ "Links"
   , "https://ratysz.github.io/article/scheduling-1/"
   , "https://blog.softwaremill.com/a-case-for-akka-coordination-lease-4867887e4d7f"
   , "https://www.infoq.com/articles/building-cloud-brokerage/"
+  , "https://www.fpcomplete.com/blog/why-we-built-kube360/"
   ] -- links
 
 news :: [Text]
