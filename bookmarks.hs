@@ -344,6 +344,7 @@ learn = [ "Learn"
   , "https://css-tricks.com/exploring-what-the-details-and-summary-elements-can-do/"
   , "https://www.google.com/search?q=javascript+module+pattern"
   , "https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/"
+  , "https://debuggingcss.com/"
   ] -- learn
 
 sites :: [Text]
