@@ -7,8 +7,8 @@ import Lucid
 import Data.Text (Text)
 import HStyle
 
-current :: [Text]
-current = [ "Current"
+passport :: [Text]
+passport = [ "Passport"
   , "https://washington.mid.ru/en/consular-services/"
   , "https://washington.mid.ru/en/consular-services/consulate/contacts/"
   , "https://washington.mid.ru/en/consular-services/consulate/russian-consulates-in-the-us/"
@@ -19,9 +19,20 @@ current = [ "Current"
   , "https://washington.mid.ru/ru/consular-services/citizens-russia/international-passport/making/"
   , "https://www.gosuslugi.ru/10052"
   , "https://www.gosuslugi.ru/10052/1"
-  ] -- current
+  , "https://transferwise.com/us"
+  , "https://paysend.com/en/send-money/from-usa-to-russia/"
+  , "https://www.xe.com/"
+  ] -- passport
+
+money :: [Text]
+money = [ "Money"
+  , "https://transferwise.com/us"
+  , "https://paysend.com/en/send-money/from-usa-to-russia/"
+  , "https://www.xe.com/"
+  ] -- money
 
 main :: IO ()
 main =
   linkPage "Passport" ("passport.png", "image/png") "passport.html" $ do
-    (`with` [open_ ""]) $ section current
+    (`with` [open_ ""]) $ section passport
+    (`with` [open_ ""]) $ section money
