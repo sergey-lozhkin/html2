@@ -29,6 +29,7 @@ money = [ "Money"
   , "https://transferwise.com/us"
   , "https://paysend.com/en/send-money/from-usa-to-russia/"
   , "https://www.xe.com/"
+  , "https://www.westernunion.com/"
   ] -- money
 
 main :: IO ()
